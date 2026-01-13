@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>坂井麻雀店公式サイト</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 更新履歴 -->
+        <div class="section">
+            <div class="section-header">
+                <span>💬</span>
+                <span>更新履歴</span>
+            </div>
+            <ul class="update-list">
+                <li>
+                    <a href="#">Ratingページを更新しました！(2025/11/10)</a>
+                    <div class="sub-item">⚡ 個人成績</div>
+                </li>
+                <li>
+                    <a href="records.html">戦績ページに最新の対局履歴を追加しました！(2025/12/01)</a>
+                    <div class="sub-item">⚔ 戦績</div>
+                </li>
+                <li><a href="#">駐車場について追記しました(2025/11/07)</a></li>
+                <li><a href="#">ハウスルールについて役など一般的な事項を追記しました。</a></li>
+            </ul>
+        </div>
+
+        <!-- Information -->
+        <div class="section">
+            <div class="section-header">
+                <span>❓</span>
+                <span>Infomation</span>
+            </div>
+            <p class="address">
+                <span class="address-label">住所：</span>
+                浜松市浜名区中瀬7401 浜松ホトニクス株式会社中沢寮A102(1階になります)
+            </p>
+            
+            <div class="collapsible" onclick="toggleCollapsible(this)">
+                駐車場について
+            </div>
+            <div class="collapsible-content">
+                <p>写真右側の手前2台が誰も使ってなくて空いてます。</p>
+                <p>8192のWR-Vの両隣停めて大丈夫です。</p>
+            </div>
+
+            <div class="image-container">
+                <div class="placeholder-image">駐車場の写真</div>
+            </div>
+        </div>
+
+        <!-- ハウスルール -->
+        <div class="section">
+            <div class="section-header">
+                <span>🔥</span>
+                <span>ハウスルール</span>
+            </div>
+            
+            <div class="collapsible" onclick="toggleCollapsible(this)">
+                タップで開く
+            </div>
+            <div class="collapsible-content" style="padding-left: 0;">
+                <p class="rule-intro">基本的に雀魂段位戦準拠</p>
+                
+                <ul class="rule-list">
+                    <li>スタート点数・返し点：25,000点持ち、<span class="hl">30,000点返し</span>。←ここは雀魂と違います</li>
+                    <li>連荘（レンチャン）：聴牌（テンパイ）連荘。親が和了るかテンパイで連荘します。</li>
+                    <li>アガリ止め・聴牌止め：あり。オーラス（南4局）の親が1位かつ規定点数（30,000点）以上の状態で局が終わると、<span class="hl-warn">強制的に試合終了</span>となります。</li>
+                    <li>飛び（トビ）：あり。誰かの点数が<span class="hl-warn">0点未満</span>になった時点で試合終了（0点ぴったりはセーフで続行）。</li>
+                    <li>南入・西入：東場終了時（東風戦）または南場終了時（東南戦）に、<span class="hl">1位の持ち点が30,000点未満</span>の場合、南入（東南戦の場合は西入）します。以降は誰かが30,000点以上になった時点で即終了するサドンデスルールです。</li>
+                    <li>積み棒：1本場につき300点です。</li>
+                    <li>フリテンリーチ：あり（ツモアガリのみ）。</li>
+                    <li>喰いタン（クイタン）：あり。</li>
+                    <li>後付け（アトヅケ）：あり。</li>
+                    <li>ダブロン、トリプルロン：あり（頭ハネではない）。</li>
+                    <li>ローカル役：<span class="hl">流し満貫</span>は採用されます。</li>
+                </ul>
+
+                <p class="rule-subsection"><span class="hl-warn">赤：各一枚</span></p>
+
+                <div class="rule-note">
+                    祝儀：一発赤裏(面前のみ)、役満10枚or5枚オール、ダブル役満以降・・・一つにつきロン+5枚、ツモ+3枚<br>
+                    ※例：トリプル役満自摸時 -11枚オール
+                </div>
+
+                <p class="rule-section-title">西入サドンデス</p>
+                <p class="rule-subsection">九種九牌、四風連打で本場増、親は流れない</p>
+                <p class="rule-subsection">オーラス時の供託はトップが総取り</p>
+                <p class="rule-subsection">和了やめ：アリ</p>
+                <p class="rule-subsection">📋 加カン時のアガリ→ドラ乗る</p>
+                <p class="rule-subsection">📋 ダブロン時：供託・本場は頭ハネ</p>
+
+                <p class="rule-section-title">チョンボ：</p>
+                <p class="rule-subsection">親がチョンボした場合は流れ、子がチョンボした場合は本場増減せずに当該親継続</p>
+                <p class="rule-subsection">誤ロン、空立直→<span class="hl-warn">満貫払い</span>(ほかの人の進行をゆがめる、妨害になっているため)</p>
+                <p class="rule-subsection">誤発声(誤ポン、錯チー)→当日1回までは罰符を見逃し、<span class="hl-warn">2回目以降は罰符で満貫払い</span>。</p>
+                <p class="rule-subsection">山崩れの措置：続行不可能と判断した場合は流します。故意の場合は<span class="hl-warn">満貫払い</span></p>
+                <p class="rule-subsection">自分の牌姿の撮影可</p>
+                <p class="rule-subsection">終了時間はあらかじめ決めるよう心掛けます。</p>
+                <p class="rule-subsection">記録をメモするためにスマホを触っていますが、裏でシミュレータ等は使用しておりません。ご了承ください。</p>
+            </div>
+        </div>
+
+        <!-- 各種データ -->
+        <div class="section">
+            <div class="section-header">
+                <span>🔥</span>
+                <span>各種データ</span>
+                <span class="update-date">11/10更新</span>
+            </div>
+            <div class="data-links">
+                <a href="#">⚡ 個人成績</a>
+                <a href="records.html">⚔ 戦績</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleCollapsible(element) {
+            element.classList.toggle('collapsed');
+            const content = element.nextElementSibling;
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.collapsible-content').forEach(c => c.style.display = 'none');
+            document.querySelectorAll('.collapsible').forEach(c => c.classList.add('collapsed'));
+        });
+    </script>
+</body>
+</html>
