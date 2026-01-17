@@ -12,11 +12,72 @@ body {
     padding: 20px;
 }
 
+/* ========== ヘッダー ========== */
+.site-header {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: linear-gradient(
+        135deg,
+        #1a1a2e 0%,
+        #16213e 50%,
+        #0f3460 100%
+    );
+}
+
+.header-overlay {
+    display: none;
+}
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.6) 100%
+    );
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.site-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.site-subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
+}
+
+/* ========== コンテナ ========== */
 .container {
     max-width: 900px;
     margin: 0 auto;
 }
 
+/* ========== セクション ========== */
 .section {
     background-color: #1a1a1a;
     border-radius: 8px;
@@ -40,7 +101,7 @@ body {
     margin-left: 10px;
 }
 
-/* リスト共通 */
+/* ========== リスト共通 ========== */
 .update-list {
     list-style: none;
     padding-left: 10px;
@@ -75,7 +136,7 @@ a:hover {
     margin-top: 3px;
 }
 
-/* Information */
+/* ========== Information ========== */
 .address-label {
     color: #e07050;
 }
@@ -84,7 +145,7 @@ a:hover {
     margin-bottom: 15px;
 }
 
-/* 折りたたみ */
+/* ========== 折りたたみ ========== */
 .collapsible {
     cursor: pointer;
     display: flex;
@@ -92,6 +153,7 @@ a:hover {
     gap: 8px;
     margin-bottom: 10px;
     color: #999;
+    user-select: none;
 }
 
 .collapsible::before {
@@ -114,7 +176,24 @@ a:hover {
     margin-bottom: 5px;
 }
 
-/* 画像 */
+/* section-headerにcollapsibleを追加した場合 */
+.section-header.collapsible {
+    cursor: pointer;
+    user-select: none;
+}
+
+.section-header.collapsible::before {
+    content: "▼";
+    font-size: 10px;
+    transition: transform 0.3s;
+    margin-right: 4px;
+}
+
+.section-header.collapsible.collapsed::before {
+    transform: rotate(-90deg);
+}
+
+/* ========== 画像 ========== */
 .image-container {
     margin-top: 20px;
     border-radius: 8px;
@@ -131,7 +210,14 @@ a:hover {
     color: #555;
 }
 
-/* ハウスルール */
+.content-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* ========== ハウスルール ========== */
 .rule-intro {
     color: #777;
     margin-bottom: 15px;
@@ -157,7 +243,6 @@ a:hover {
     color: #555;
 }
 
-/* 重要箇所のみハイライト */
 .hl {
     color: #e8c36a;
 }
@@ -191,7 +276,7 @@ a:hover {
     color: #999;
 }
 
-/* データリンク */
+/* ========== データリンク ========== */
 .data-links {
     padding-left: 10px;
 }
@@ -202,7 +287,7 @@ a:hover {
     font-size: 14px;
 }
 
-/* 戦績ページ */
+/* ========== 戦績ページ ========== */
 .page-title {
     font-size: 22px;
     margin-bottom: 20px;
@@ -246,3 +331,102 @@ a:hover {
 
 .score-plus { color: #6a9e6a; }
 .score-minus { color: #c46a6a; }
+
+/* ========== レスポンシブ ========== */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .site-header {
+        height: 150px;
+        margin: 0 0 15px;
+        border-radius: 8px;
+    }
+
+    .site-title {
+        font-size: 24px;
+    }
+
+    .site-subtitle {
+        font-size: 12px;
+    }
+
+    .section {
+        padding: 15px;
+    }
+
+    .record-table th,
+    .record-table td {
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+}
+
+/* ========== 画像表示ボタン ========== */
+.image-toggle-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 10px;
+    background-color: #252525;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+    color: #999;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.image-toggle-btn:hover {
+    background-color: #303030;
+    border-color: #4a4a4a;
+}
+
+.image-toggle-btn.active {
+    background-color: #2a3a4a;
+    border-color: #4a6a8a;
+    color: #7aa2d4;
+}
+
+.hidden-image {
+    display: none;
+    margin-top: 15px;
+}
+
+.hidden-image.show {
+    display: block;
+}
+
+/* ========== 画像表示ボタン ========== */
+.image-toggle-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 10px;
+    background-color: #252525;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+    color: #999;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.image-toggle-btn:hover {
+    background-color: #303030;
+    border-color: #4a4a4a;
+}
+
+.image-toggle-btn.active {
+    background-color: #2a3a4a;
+    border-color: #4a6a8a;
+    color: #7aa2d4;
+}
+
+.hidden-image {
+    display: none;
+    margin-top: 15px;
+}
+
+.hidden-image.show {
+    display: block;
+}

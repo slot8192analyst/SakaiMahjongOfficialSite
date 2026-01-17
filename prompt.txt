@@ -1,0 +1,12 @@
+以下のディレクトリ構成で雀荘の公式サイトというていで
+友達にのみに公開する静的サイトを作成しています。
+
+C:.
+    .gitignore
+    index.html
+    records.html
+    style.css
+
+上記サイトはGitHubのリポジトリで管理しており、
+Cloudflare経由でデプロイし公開しています。
+

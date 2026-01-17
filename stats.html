@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人成績 | 坂井麻雀店</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">坂井麻雀店</h1>
+            <p class="site-subtitle">Sakai Mahjong Club</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← トップに戻る</a>
+        <h1 class="page-title">⚡ 個人成績</h1>
+
+        <div class="section">
+            <div class="section-header">
+                <span>📊</span>
+                <span>成績ランキング</span>
+            </div>
+            <table class="record-table">
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>プレイヤー</th>
+                        <th>対局数</th>
+                        <th>総pt</th>
+                        <th>平均着順</th>
+                        <th>1着</th>
+                        <th>2着</th>
+                        <th>3着</th>
+                        <th>4着</th>
+                    </tr>
+                </thead>
+                <tbody id="stats-body">
+                    <!-- JSで読み込み -->
+                </tbody>
+            </table>
+        </div>
+
+        <a href="index.html" class="back-link">← トップに戻る</a>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/stats.js"></script>
+</body>
+</html>
