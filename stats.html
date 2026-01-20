@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ヘッダー -->
     <header class="site-header">
         <div class="header-content">
             <h1 class="site-title">坂井麻雀店</h1>
@@ -19,10 +18,24 @@
         <a href="index.html" class="back-link">← トップに戻る</a>
         <h1 class="page-title">⚡ 個人成績</h1>
 
+        <!-- プレイヤー選択 -->
+        <div class="section">
+            <div class="stats-player-select">
+                <label for="player-select">プレイヤーを選択:</label>
+                <select id="player-select">
+                    <option value="">-- 選択してください --</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- スタッツ表示エリア -->
+        <div id="stats-container"></div>
+
+        <!-- ランキング表 -->
         <div class="section">
             <div class="section-header">
                 <span>📊</span>
-                <span>成績ランキング</span>
+                <span>総合ランキング</span>
             </div>
             <table class="record-table">
                 <thead>
@@ -30,17 +43,12 @@
                         <th>順位</th>
                         <th>プレイヤー</th>
                         <th>対局数</th>
-                        <th>総pt</th>
                         <th>平均着順</th>
-                        <th>1着</th>
-                        <th>2着</th>
-                        <th>3着</th>
-                        <th>4着</th>
+                        <th>連対率</th>
+                        <th>ラス回避</th>
                     </tr>
                 </thead>
-                <tbody id="stats-body">
-                    <!-- JSで読み込み -->
-                </tbody>
+                <tbody id="ranking-body"></tbody>
             </table>
         </div>
 
@@ -48,6 +56,74 @@
     </div>
 
     <script src="js/main.js"></script>
-    <script src="js/stats.js"></script>
+    <script src="js/playerStats.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', async function() {
+        try {
+            const response = await fetch('data/stats-total.json');
+            const data = await response.json();
+            const players = data.players;
+
+            // 対局数が1以上のプレイヤーをフィルタしてソート
+            const activePlayers = Object.entries(players)
+                .filter(([_, stats]) => stats.summary.games > 0)
+                .sort((a, b) => a[1].summary.avgRank - b[1].summary.avgRank);
+
+            // プルダウン生成
+            const select = document.getElementById('player-select');
+            activePlayers.forEach(([name, _]) => {
+                const option = document.createElement('option');
+                option.value = name;
+                option.textContent = name;
+                select.appendChild(option);
+            });
+
+            // 選択時にスタッツカード表示
+            const container = document.getElementById('stats-container');
+            select.addEventListener('change', function() {
+                const selectedName = this.value;
+                if (selectedName && players[selectedName]) {
+                    container.innerHTML = statsRenderer.renderStatsCard(selectedName, players[selectedName]);
+                } else {
+                    container.innerHTML = '';
+                }
+            });
+
+            // ランキング表生成
+            const tbody = document.getElementById('ranking-body');
+            activePlayers.forEach(([name, stats], index) => {
+                const rank = index + 1;
+                const s = stats.summary;
+                const rankClass = rank <= 3 ? `rank-${rank}` : '';
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="${rankClass}">${rank}位</td>
+                    <td>${name}</td>
+                    <td>${s.games}</td>
+                    <td>${s.avgRank.toFixed(2)}</td>
+                    <td>${s.rates.top2.toFixed(1)}%</td>
+                    <td>${s.rates.avoid4th.toFixed(1)}%</td>
+                `;
+                row.style.cursor = 'pointer';
+                row.addEventListener('click', () => {
+                    select.value = name;
+                    select.dispatchEvent(new Event('change'));
+                    container.scrollIntoView({ behavior: 'smooth' });
+                });
+                tbody.appendChild(row);
+            });
+
+            // 最初のプレイヤーを自動選択
+            if (activePlayers.length > 0) {
+                select.value = activePlayers[0][0];
+                select.dispatchEvent(new Event('change'));
+            }
+
+        } catch (err) {
+            console.error('データ読み込みエラー:', err);
+        }
+    });
+    </script>
 </body>
 </html>

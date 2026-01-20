@@ -2,10 +2,35 @@
 友達にのみに公開する静的サイトを作成しています。
 
 C:.
-    .gitignore
-    index.html
-    records.html
-    style.css
+│  .gitignore
+│  index.html
+│  prompt.txt
+│  records.html
+│  session.html
+│  stats.html
+│  style.css
+│
+├─.vscode
+│      settings.json
+│
+├─contents
+│      houserules.html
+│      updates.html
+│
+├─data
+│  │  stats-total.json
+│  │
+│  └─sessions
+├─images
+│      header.png
+│      parking.png
+│
+└─js
+        main.js
+        playerStats.js
+        records.js
+        session.js
+        stats.js
 
 上記サイトはGitHubのリポジトリで管理しており、
 Cloudflare経由でデプロイし公開しています。

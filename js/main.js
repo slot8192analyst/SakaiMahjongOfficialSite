@@ -21,10 +21,14 @@ function toggleImage(event, imageId) {
 }
 
 function loadContent(url, elementId) {
+    const element = document.getElementById(elementId);
+    // 要素が存在しない場合は何もしない
+    if (!element) return;
+    
     fetch(url)
         .then(response => response.text())
         .then(html => {
-            document.getElementById(elementId).innerHTML = html;
+            element.innerHTML = html;
         })
         .catch(err => {
             console.error('読み込みエラー:', err);
@@ -32,7 +36,7 @@ function loadContent(url, elementId) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // コンテンツを読み込む
+    // コンテンツを読み込む（要素が存在する場合のみ）
     loadContent('contents/updates.html', 'updates-content');
     loadContent('contents/houserules.html', 'houserules-content');
 
@@ -40,7 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.collapsible').forEach(c => {
         if (c.classList.contains('section-header')) {
             c.classList.remove('collapsed');
-            c.nextElementSibling.style.display = 'block';
+            const content = c.nextElementSibling;
+            if (content) {
+                content.style.display = 'block';
+            }
         }
     });
 });

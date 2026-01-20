@@ -430,3 +430,269 @@ a:hover {
 .hidden-image.show {
     display: block;
 }
+
+/* ========== 個人スタッツカード ========== */
+.stats-card {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 8px;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+}
+
+.stats-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.stats-player-info {
+    min-width: 140px;
+}
+
+.stats-player-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.stats-summary {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 2px 15px;
+    font-size: 13px;
+}
+
+.stats-summary-item {
+    display: flex;
+    gap: 8px;
+}
+
+.stats-summary-label {
+    color: #888;
+}
+
+.stats-summary-value {
+    color: #fff;
+}
+
+/* 順位グラフ */
+.rank-chart {
+    min-width: 180px;
+}
+
+.rank-chart-title {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.rank-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 3px;
+    font-size: 11px;
+}
+
+.rank-bar-label {
+    width: 20px;
+    color: #888;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.rank-bar-track {
+    width: 100px;
+    height: 16px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.rank-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+}
+
+.rank-bar-value {
+    width: 45px;
+    color: #ccc;
+    font-size: 11px;
+    text-align: left;
+    flex-shrink: 0;
+}
+
+
+/* ドーナツチャート */
+.charts-row {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.donut-container {
+    text-align: center;
+    min-width: 100px;
+}
+
+.donut-title {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.donut-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.donut-chart {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.donut-legend {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    margin-top: 8px;
+    font-size: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.legend-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.legend-text {
+    color: #aaa;
+    white-space: nowrap;
+}
+
+/* スタッツセクション */
+.stats-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.stats-section {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    padding: 12px 15px;
+    min-width: 180px;
+    flex: 1;
+}
+
+.stats-section-title {
+    color: #7aa2d4;
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 12px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.stat-label {
+    color: #888;
+}
+
+.stat-value {
+    color: #ddd;
+}
+
+/* プレイヤー選択 */
+.stats-player-select {
+    margin-bottom: 20px;
+}
+
+.stats-player-select label {
+    color: #888;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.stats-player-select select {
+    background-color: #252525;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+    color: #ddd;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.stats-player-select select:focus {
+    outline: none;
+    border-color: #7aa2d4;
+}
+
+/* レスポンシブ */
+@media (max-width: 800px) {
+    .stats-card-header {
+        flex-wrap: wrap;
+    }
+    
+    .charts-row {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .stats-card {
+        padding: 15px;
+    }
+    
+    .stats-card-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .stats-player-name {
+        font-size: 24px;
+    }
+    
+    .rank-chart {
+        margin: 10px 0;
+    }
+    
+    .charts-row {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .stats-sections {
+        flex-direction: column;
+    }
+    
+    .stats-section {
+        min-width: auto;
+    }
+}
