@@ -1,0 +1,64 @@
+<!-- archive.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>過去のデータ | 坂井麻雀店</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">坂井麻雀店</h1>
+            <p class="site-subtitle">Sakai Mahjong Club</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← トップに戻る</a>
+        <h1 class="page-title">📂 2025年の成績</h1>
+
+        <!-- プレイヤー選択 -->
+        <div class="section">
+            <div class="stats-player-select">
+                <label for="player-select">プレイヤーを選択:</label>
+                <select id="player-select">
+                    <option value="">-- 選択してください --</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- スタッツ表示エリア -->
+        <div id="stats-container"></div>
+
+        <!-- ランキング表 -->
+        <div class="section">
+            <div class="section-header">
+                <span>📊</span>
+                <span>年間ランキング</span>
+                <span class="update-date">2025年</span>
+            </div>
+            <table class="record-table">
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>プレイヤー</th>
+                        <th>対局数</th>
+                        <th>平均着順</th>
+                        <th>連対率</th>
+                        <th>ラス回避</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking-body"></tbody>
+            </table>
+        </div>
+
+        <a href="index.html" class="back-link">← トップに戻る</a>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/playerStats.js"></script>
+    <script src="js/archive.js"></script>
+</body>
+</html>

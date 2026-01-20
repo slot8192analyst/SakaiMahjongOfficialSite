@@ -90,8 +90,13 @@ class PlayerStatsRenderer {
             { rank: 4, rate: rates['4th'], color: this.colors.rank[4] }
         ];
 
+        // 50%を超える値があるかチェック
+        const maxRate = Math.max(...rankData.map(d => d.rate));
+        const scaleMax = maxRate > 50 ? 100 : 50;
+
         const bars = rankData.map(d => {
-            const widthPercent = d.rate;
+            // scaleMaxを100%として幅を計算
+            const widthPercent = (d.rate / scaleMax) * 100;
             return `
                 <div class="rank-bar">
                     <span class="rank-bar-label">${d.rank}位</span>
@@ -122,7 +127,17 @@ class PlayerStatsRenderer {
 
     fmtInt(value) {
         if (value === null || value === undefined) return '-';
-        return Math.round(value).toString();
+        if (value === 0) return '0';
+        return Math.round(value).toLocaleString();
+    }
+
+    // null/undefinedの場合は項目自体を表示しない用のヘルパー
+    renderStatItem(label, value, suffix = '') {
+        if (value === null || value === undefined) return '';
+        const formatted = suffix === 'int' 
+            ? this.fmtInt(value) 
+            : this.fmt(value, suffix);
+        return `<div class="stat-item"><span class="stat-label">${label}</span><span class="stat-value">${formatted}</span></div>`;
     }
 
     renderStatsCard(name, stats) {
@@ -202,55 +217,58 @@ class PlayerStatsRenderer {
                 <div class="stats-section">
                     <div class="stats-section-title">【基本成績】</div>
                     <div class="stats-grid">
-                        <div class="stat-item"><span class="stat-label">和了率</span><span class="stat-value">${this.fmt(agari.rate, '%')}</span></div>
-                        <div class="stat-item"><span class="stat-label">放銃率</span><span class="stat-value">${this.fmt(houju.rate, '%')}</span></div>
-                        <div class="stat-item"><span class="stat-label">聴牌率</span><span class="stat-value">${this.fmt(other.tenpaiRate, '%')}</span></div>
-                        <div class="stat-item"><span class="stat-label">流局時聴牌率</span><span class="stat-value">${this.fmt(other.noten, '%')}</span></div>
-                        <div class="stat-item"><span class="stat-label">自摸率</span><span class="stat-value">${this.fmt(agari.tsumoRate, '%')}</span></div>
-                        <div class="stat-item"><span class="stat-label">和了-放銃</span><span class="stat-value">${this.fmt(efficiency.agariHoujuDiff, '%')}</span></div>
+                        ${this.renderStatItem('和了率', agari.rate, '%')}
+                        ${this.renderStatItem('和了回数', agari.count, 'int')}
+                        ${this.renderStatItem('放銃率', houju.rate, '%')}
+                        ${this.renderStatItem('放銃回数', houju.count, 'int')}
+                        ${this.renderStatItem('聴牌率', other.tenpaiRate, '%')}
+                        ${this.renderStatItem('流局時聴牌率', other.noten, '%')}
+                        ${this.renderStatItem('自摸率', agari.tsumoRate, '%')}
+                        ${this.renderStatItem('和了-放銃', efficiency.agariHoujuDiff, '%')}
                     </div>
                 </div>
 
                 <div class="stats-section">
                     <div class="stats-section-title">【打点】</div>
                     <div class="stats-grid">
-                        <div class="stat-item"><span class="stat-label">平均打点</span><span class="stat-value">${this.fmtInt(agari.avgScore)}</span></div>
-                        <div class="stat-item"><span class="stat-label">立直時</span><span class="stat-value">${this.fmtInt(agari.byType.riichi.avgScore)}</span></div>
-                        <div class="stat-item"><span class="stat-label">副露時</span><span class="stat-value">${this.fmtInt(agari.byType.furo.avgScore)}</span></div>
-                        <div class="stat-item"><span class="stat-label">平均和了巡</span><span class="stat-value">${this.fmt(agari.avgTurn)}</span></div>
-                        <div class="stat-item"><span class="stat-label">平均放銃打点</span><span class="stat-value">${this.fmtInt(houju.avgScore)}</span></div>
+                        ${this.renderStatItem('平均打点', agari.avgScore, 'int')}
+                        ${this.renderStatItem('平均和了巡', agari.avgTurn, '')}
+                        ${this.renderStatItem('立直時打点', agari.byType.riichi.avgScore, 'int')}
+                        ${this.renderStatItem('副露時打点', agari.byType.furo.avgScore, 'int')}
+                        ${this.renderStatItem('黙聴時打点', agari.byType.dama.avgScore, 'int')}
+                        ${this.renderStatItem('平均放銃打点', houju.avgScore, 'int')}
                     </div>
                 </div>
 
                 <div class="stats-section">
                     <div class="stats-section-title">【立直】</div>
                     <div class="stats-grid">
-                        <div class="stat-item"><span class="stat-label">立直率</span><span class="stat-value">${this.fmt(riichi.rate, '%')}</span></div>
-                        <div class="stat-item"><span class="stat-label">成功率</span><span class="stat-value">${this.fmt(riichi.successRate, '%')}</span></div>
-                        <div class="stat-item"><span class="stat-label">和了率</span><span class="stat-value">${this.fmt(riichi.winRate, '%')}</span></div>
-                        <div class="stat-item"><span class="stat-label">先制率</span><span class="stat-value">${this.fmt(riichi.preemptiveRate, '%')}</span></div>
-                        <div class="stat-item"><span class="stat-label">追っかけ率</span><span class="stat-value">${this.fmt(riichi.chaseRate, '%')}</span></div>
-                        <div class="stat-item"><span class="stat-label">一発率</span><span class="stat-value">${this.fmt(riichi.ippatsuRate, '%')}</span></div>
-                        <div class="stat-item"><span class="stat-label">立直収入</span><span class="stat-value">${this.fmtInt(riichi.income)}</span></div>
-                        <div class="stat-item"><span class="stat-label">立直支出</span><span class="stat-value">${this.fmtInt(riichi.expense)}</span></div>
+                        ${this.renderStatItem('立直率', riichi.rate, '%')}
+                        ${this.renderStatItem('立直回数', riichi.count, 'int')}
+                        ${this.renderStatItem('成功率', riichi.successRate, '%')}
+                        ${this.renderStatItem('和了率', riichi.winRate, '%')}
+                        ${this.renderStatItem('先制率', riichi.preemptiveRate, '%')}
+                        ${this.renderStatItem('追っかけ率', riichi.chaseRate, '%')}
+                        ${this.renderStatItem('追っかけられ率', riichi.chasedRate, '%')}
+                        ${this.renderStatItem('一発率', riichi.ippatsuRate, '%')}
+                        ${this.renderStatItem('裏ドラ率', riichi.uraDoraRate, '%')}
+                        ${this.renderStatItem('平均立直巡', riichi.avgTurn, '')}
+                        ${this.renderStatItem('立直収入', riichi.income, 'int')}
+                        ${this.renderStatItem('立直支出', riichi.expense, 'int')}
                     </div>
                 </div>
 
                 <div class="stats-section">
-                    <div class="stats-section-title">【副露・流局】</div>
+                    <div class="stats-section-title">【副露・流局・効率】</div>
                     <div class="stats-grid">
-                        <div class="stat-item"><span class="stat-label">副露率</span><span class="stat-value">${this.fmt(furo.rate, '%')}</span></div>
-                        <div class="stat-item"><span class="stat-label">流局時聴牌率</span><span class="stat-value">${this.fmt(other.noten, '%')}</span></div>
-                        <div class="stat-item"><span class="stat-label">立直後流局率</span><span class="stat-value">${this.fmt(other.riichiFlowRate, '%')}</span></div>
-                    </div>
-                </div>
-
-                <div class="stats-section">
-                    <div class="stats-section-title">【効率指標】</div>
-                    <div class="stats-grid">
-                        <div class="stat-item"><span class="stat-label">打点効率</span><span class="stat-value">${this.fmt(efficiency.scoreEfficiency, '', 1)}</span></div>
-                        <div class="stat-item"><span class="stat-label">銃点損失</span><span class="stat-value">${this.fmt(efficiency.scoreLoss, '', 1)}</span></div>
-                        <div class="stat-item"><span class="stat-label">調整打点効率</span><span class="stat-value">${this.fmt(efficiency.adjustedEfficiency, '', 1)}</span></div>
+                        ${this.renderStatItem('副露率', furo.rate, '%')}
+                        ${this.renderStatItem('副露時和了率', furo.agariRate, '%')}
+                        ${this.renderStatItem('副露時平均打点', furo.avgScore, 'int')}
+                        ${this.renderStatItem('流局時聴牌率', other.noten, '%')}
+                        ${this.renderStatItem('立直後流局率', other.riichiFlowRate, '%')}
+                        ${this.renderStatItem('打点効率', efficiency.scoreEfficiency, '')}
+                        ${this.renderStatItem('銃点損失', efficiency.scoreLoss, '')}
+                        ${this.renderStatItem('調整打点効率', efficiency.adjustedEfficiency, '')}
                     </div>
                 </div>
             </div>

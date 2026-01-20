@@ -696,3 +696,299 @@ a:hover {
         min-width: auto;
     }
 }
+
+/* ========== 年度選択 ========== */
+.year-select {
+    margin-bottom: 20px;
+}
+
+.year-select label {
+    color: #888;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.year-select select {
+    background-color: #252525;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+    color: #ddd;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.year-select select:focus {
+    outline: none;
+    border-color: #7aa2d4;
+}
+
+/* ========== タブナビゲーション ========== */
+.tab-navigation {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 10px;
+    overflow-x: auto;
+}
+
+.tab-button {
+    background-color: #252525;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px 5px 0 0;
+    color: #888;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.tab-button:hover {
+    background-color: #303030;
+    color: #aaa;
+}
+
+.tab-button.active {
+    background-color: #1a1a2e;
+    border-color: #4a6a8a;
+    color: #7aa2d4;
+    border-bottom-color: #1a1a2e;
+}
+
+/* ========== タブコンテンツ ========== */
+.tab-content {
+    min-height: 200px;
+}
+
+.loading {
+    color: #666;
+    text-align: center;
+    padding: 40px;
+}
+
+.error-message {
+    color: #c46a6a;
+    text-align: center;
+    padding: 40px;
+}
+
+.no-data {
+    color: #666;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ========== セッションヘッダー ========== */
+.session-header {
+    margin-bottom: 20px;
+}
+
+.session-date {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 8px;
+}
+
+.session-info {
+    display: flex;
+    gap: 15px;
+    color: #888;
+    font-size: 13px;
+}
+
+.session-players {
+    color: #999;
+}
+
+.session-games {
+    color: #7aa2d4;
+}
+
+.session-highlight {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: rgba(232, 195, 106, 0.1);
+    border-left: 3px solid #e8c36a;
+    border-radius: 0 5px 5px 0;
+    color: #e8c36a;
+    font-size: 13px;
+}
+
+/* ========== 合計結果 ========== */
+.session-totals {
+    margin-bottom: 25px;
+}
+
+.session-totals h4 {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.totals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.total-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    background-color: #141414;
+    border-radius: 5px;
+    border-left: 3px solid #333;
+}
+
+.total-item.rank-1 {
+    border-left-color: #e8c36a;
+}
+
+.total-item.rank-2 {
+    border-left-color: #a0a0a0;
+}
+
+.total-item.rank-3 {
+    border-left-color: #b87333;
+}
+
+.total-rank {
+    color: #666;
+    font-size: 12px;
+    min-width: 30px;
+}
+
+.total-player {
+    flex: 1;
+    color: #ddd;
+    font-size: 14px;
+}
+
+.total-point {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* ========== 各半荘結果 ========== */
+.session-games {
+    margin-bottom: 20px;
+}
+
+.session-games h4 {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.round-cell {
+    text-align: center;
+    font-weight: bold;
+    color: #7aa2d4;
+    background-color: #141414;
+    vertical-align: middle;
+}
+
+/* ========== 詳細リンク ========== */
+.session-link {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.detail-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1a1a2e;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+    color: #7aa2d4;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.detail-link:hover {
+    background-color: #252545;
+    border-color: #4a6a8a;
+    text-decoration: none;
+}
+
+/* ========== 過去の対局一覧 ========== */
+.past-sessions-list {
+    list-style: none;
+    padding: 0;
+}
+
+.past-sessions-list li {
+    margin-bottom: 8px;
+}
+
+.past-sessions-list a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    background-color: #141414;
+    border-radius: 5px;
+    border: 1px solid #2a2a2a;
+    transition: all 0.2s;
+}
+
+.past-sessions-list a:hover {
+    background-color: #1a1a1a;
+    border-color: #3a3a3a;
+    text-decoration: none;
+}
+
+.past-date {
+    color: #ddd;
+    font-size: 14px;
+    min-width: 120px;
+}
+
+.past-players {
+    flex: 1;
+    color: #888;
+    font-size: 13px;
+}
+
+.past-games {
+    color: #7aa2d4;
+    font-size: 12px;
+}
+
+/* ========== レスポンシブ ========== */
+@media (max-width: 600px) {
+    .tab-navigation {
+        gap: 5px;
+    }
+
+    .tab-button {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    .session-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .totals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .past-sessions-list a {
+        flex-wrap: wrap;
+    }
+
+    .past-date {
+        min-width: auto;
+    }
+
+    .past-players {
+        width: 100%;
+        order: 3;
+        margin-top: 5px;
+    }
+}

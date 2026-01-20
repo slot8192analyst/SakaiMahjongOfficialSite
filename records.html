@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ヘッダー -->
     <header class="site-header">
         <div class="header-content">
             <h1 class="site-title">坂井麻雀店</h1>
@@ -19,8 +18,29 @@
         <a href="index.html" class="back-link">← トップに戻る</a>
         <h1 class="page-title">⚔ 戦績</h1>
 
-        <div id="records-container">
-            <!-- JSで読み込み -->
+        <!-- タブナビゲーション（直近の対局） -->
+        <div class="section">
+            <div class="section-header">
+                <span>📅</span>
+                <span>最近の対局</span>
+            </div>
+            <div class="tab-navigation" id="tab-navigation">
+                <!-- JSで生成 -->
+            </div>
+            <div class="tab-content" id="tab-content">
+                <!-- JSで生成 -->
+            </div>
+        </div>
+
+        <!-- 過去の対局一覧 -->
+        <div class="section">
+            <div class="section-header collapsible collapsed" onclick="toggleCollapsible(this)">
+                <span>📂</span>
+                <span>過去の対局一覧</span>
+            </div>
+            <div class="collapsible-content" id="past-sessions" style="display: none;">
+                <!-- JSで生成 -->
+            </div>
         </div>
 
         <a href="index.html" class="back-link">← トップに戻る</a>

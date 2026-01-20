@@ -1,4 +1,3 @@
-<!-- session.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -19,14 +18,39 @@
         <a href="records.html" class="back-link">← 戦績一覧に戻る</a>
         <h1 class="page-title" id="session-title">対局詳細</h1>
 
-        <div id="session-container">
-            <!-- JSで読み込み -->
+        <!-- 対局結果 -->
+        <div class="section" id="results-section">
+            <div class="section-header">
+                <span>🀄</span>
+                <span>対局結果</span>
+            </div>
+            <div id="results-container">
+                <!-- JSで生成 -->
+            </div>
+        </div>
+
+        <!-- 個人スタッツ -->
+        <div class="section">
+            <div class="section-header">
+                <span>📊</span>
+                <span>個人スタッツ</span>
+            </div>
+            <div class="stats-player-select">
+                <label for="player-select">プレイヤーを選択:</label>
+                <select id="player-select">
+                    <option value="">-- 選択してください --</option>
+                </select>
+            </div>
+            <div id="stats-container">
+                <!-- JSで生成 -->
+            </div>
         </div>
 
         <a href="records.html" class="back-link">← 戦績一覧に戻る</a>
     </div>
 
     <script src="js/main.js"></script>
+    <script src="js/playerStats.js"></script>
     <script src="js/session.js"></script>
 </body>
 </html>
