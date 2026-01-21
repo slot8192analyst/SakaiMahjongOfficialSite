@@ -140,6 +140,21 @@ class PlayerStatsRenderer {
         return `<div class="stat-item"><span class="stat-label">${label}</span><span class="stat-value">${formatted}</span></div>`;
     }
 
+    // 放銃時状況のキー名を正規化するヘルパー
+    getHoujuTimingValue(byTiming, key) {
+        if (key === 'furo') {
+            // 新形式(furo)または旧形式(furoAfter)をサポート
+            return byTiming.furo !== undefined ? byTiming.furo : byTiming.furoAfter;
+        }
+        return byTiming[key];
+    }
+
+    // 流局時聴牌率を取得するヘルパー
+    getRyukyokuTenpaiRate(other) {
+        // 新形式(ryukyokuTenpaiRate)または旧形式(noten)をサポート
+        return other.ryukyokuTenpaiRate !== undefined ? other.ryukyokuTenpaiRate : other.noten;
+    }
+
     renderStatsCard(name, stats) {
         const { summary, agari, riichi, furo, houju, other, efficiency } = stats;
 
@@ -151,7 +166,7 @@ class PlayerStatsRenderer {
 
         const houjuTimingSegments = [
             { label: '立直中', value: houju.byTiming.riichi, color: this.colors.houjuTiming.riichi },
-            { label: '副露中', value: houju.byTiming.furoAfter, color: this.colors.houjuTiming.furo },
+            { label: '副露中', value: this.getHoujuTimingValue(houju.byTiming, 'furo'), color: this.colors.houjuTiming.furo },
             { label: 'その他', value: houju.byTiming.other, color: this.colors.houjuTiming.other }
         ];
 
@@ -160,6 +175,8 @@ class PlayerStatsRenderer {
             { label: '副露', value: houju.toTarget.furo, color: this.colors.houjuTarget.furo },
             { label: '黙聴', value: houju.toTarget.dama, color: this.colors.houjuTarget.dama }
         ];
+
+        const ryukyokuTenpaiRate = this.getRyukyokuTenpaiRate(other);
 
         return `
         <div class="stats-card">
@@ -222,9 +239,9 @@ class PlayerStatsRenderer {
                         ${this.renderStatItem('放銃率', houju.rate, '%')}
                         ${this.renderStatItem('放銃回数', houju.count, 'int')}
                         ${this.renderStatItem('聴牌率', other.tenpaiRate, '%')}
-                        ${this.renderStatItem('流局時聴牌率', other.noten, '%')}
+                        ${this.renderStatItem('流局時聴牌率', ryukyokuTenpaiRate, '%')}
                         ${this.renderStatItem('自摸率', agari.tsumoRate, '%')}
-                        ${this.renderStatItem('和了-放銃', efficiency.agariHoujuDiff, '%')}
+                        ${this.renderStatItem('和了-放銃', efficiency ? efficiency.agariHoujuDiff : null, '%')}
                     </div>
                 </div>
 
@@ -264,11 +281,11 @@ class PlayerStatsRenderer {
                         ${this.renderStatItem('副露率', furo.rate, '%')}
                         ${this.renderStatItem('副露時和了率', furo.agariRate, '%')}
                         ${this.renderStatItem('副露時平均打点', furo.avgScore, 'int')}
-                        ${this.renderStatItem('流局時聴牌率', other.noten, '%')}
-                        ${this.renderStatItem('立直後流局率', other.riichiFlowRate, '%')}
-                        ${this.renderStatItem('打点効率', efficiency.scoreEfficiency, '')}
-                        ${this.renderStatItem('銃点損失', efficiency.scoreLoss, '')}
-                        ${this.renderStatItem('調整打点効率', efficiency.adjustedEfficiency, '')}
+                        ${this.renderStatItem('流局時聴牌率', ryukyokuTenpaiRate, '%')}
+                        ${this.renderStatItem('立直後流局率', other.riichiFlowRate !== undefined ? other.riichiFlowRate : other.riichiRyukyokuRate, '%')}
+                        ${this.renderStatItem('打点効率', efficiency ? efficiency.scoreEfficiency : null, '')}
+                        ${this.renderStatItem('銃点損失', efficiency ? efficiency.scoreLoss : null, '')}
+                        ${this.renderStatItem('調整打点効率', efficiency ? efficiency.adjustedEfficiency : null, '')}
                     </div>
                 </div>
             </div>

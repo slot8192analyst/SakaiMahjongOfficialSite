@@ -3,6 +3,7 @@
 
 C:.
 │  .gitignore
+│  archive.html
 │  index.html
 │  prompt.txt
 │  records.html
@@ -18,14 +19,21 @@ C:.
 │      updates.html
 │
 ├─data
+│  │  records-index.json
+│  │  stats-2025.json
 │  │  stats-total.json
 │  │
 │  └─sessions
+│      └─2025-01-09
+│              results.json
+│              stats.json
+│
 ├─images
 │      header.png
 │      parking.png
 │
 └─js
+        archive.js
         main.js
         playerStats.js
         records.js
