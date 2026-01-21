@@ -66,7 +66,7 @@
         "avgScore": 5639.47,
         "byTiming": {
           "riichi": 17.67,
-          "furoAfter": 20.68,
+          "furo": 20.68,
           "other": 61.65
         },
         "toTarget": {
@@ -77,8 +77,8 @@
       },
       "other": {
         "tenpaiRate": 33.27,
-        "noten": 35.71,
-        "riichiFlowRate": 16.74
+        "ryukyokuTenpaiRate": 35.71,
+        "riichiRyukyokuRate": 16.74
       },
       "efficiency": {
         "scoreEfficiency": 1307.98,
@@ -152,7 +152,7 @@
         "avgScore": 5052.07,
         "byTiming": {
           "riichi": 19.83,
-          "furoAfter": 21.49,
+          "furo": 21.49,
           "other": 58.68
         },
         "toTarget": {
@@ -163,8 +163,8 @@
       },
       "other": {
         "tenpaiRate": 33.72,
-        "noten": 32.1,
-        "riichiFlowRate": 15.62
+        "ryukyokuTenpaiRate": 32.1,
+        "riichiRyukyokuRate": 15.62
       },
       "efficiency": {
         "scoreEfficiency": 1311.21,
@@ -238,7 +238,7 @@
         "avgScore": 6124.48,
         "byTiming": {
           "riichi": 20.98,
-          "furoAfter": 23.08,
+          "furo": 23.08,
           "other": 55.94
         },
         "toTarget": {
@@ -249,8 +249,8 @@
       },
       "other": {
         "tenpaiRate": 35.8,
-        "noten": 37.67,
-        "riichiFlowRate": 20.35
+        "ryukyokuTenpaiRate": 37.67,
+        "riichiRyukyokuRate": 20.35
       },
       "efficiency": {
         "scoreEfficiency": 1356.59,
@@ -324,7 +324,7 @@
         "avgScore": 5601.96,
         "byTiming": {
           "riichi": 13.73,
-          "furoAfter": 23.53,
+          "furo": 23.53,
           "other": 62.75
         },
         "toTarget": {
@@ -335,8 +335,8 @@
       },
       "other": {
         "tenpaiRate": 32.66,
-        "noten": 28.99,
-        "riichiFlowRate": 17.13
+        "ryukyokuTenpaiRate": 28.99,
+        "riichiRyukyokuRate": 17.13
       },
       "efficiency": {
         "scoreEfficiency": 1440.52,
@@ -410,7 +410,7 @@
         "avgScore": 5377.78,
         "byTiming": {
           "riichi": 22.22,
-          "furoAfter": 0.0,
+          "furo": 0.0,
           "other": 77.78
         },
         "toTarget": {
@@ -421,8 +421,8 @@
       },
       "other": {
         "tenpaiRate": 23.53,
-        "noten": 11.11,
-        "riichiFlowRate": 9.52
+        "ryukyokuTenpaiRate": 11.11,
+        "riichiRyukyokuRate": 9.52
       },
       "efficiency": {
         "scoreEfficiency": 976.66,
@@ -496,7 +496,7 @@
         "avgScore": 5718.89,
         "byTiming": {
           "riichi": 18.89,
-          "furoAfter": 21.67,
+          "furo": 21.67,
           "other": 59.44
         },
         "toTarget": {
@@ -507,8 +507,8 @@
       },
       "other": {
         "tenpaiRate": 33.18,
-        "noten": 27.5,
-        "riichiFlowRate": 13.11
+        "ryukyokuTenpaiRate": 27.5,
+        "riichiRyukyokuRate": 13.11
       },
       "efficiency": {
         "scoreEfficiency": 1285.58,
@@ -582,7 +582,7 @@
         "avgScore": 6157.49,
         "byTiming": {
           "riichi": 16.77,
-          "furoAfter": 26.95,
+          "furo": 26.95,
           "other": 56.29
         },
         "toTarget": {
@@ -593,8 +593,8 @@
       },
       "other": {
         "tenpaiRate": 32.85,
-        "noten": 34.96,
-        "riichiFlowRate": 18.31
+        "ryukyokuTenpaiRate": 34.96,
+        "riichiRyukyokuRate": 18.31
       },
       "efficiency": {
         "scoreEfficiency": 1376.02,
@@ -668,7 +668,7 @@
         "avgScore": 6822.22,
         "byTiming": {
           "riichi": 14.81,
-          "furoAfter": 11.11,
+          "furo": 11.11,
           "other": 74.07
         },
         "toTarget": {
@@ -679,8 +679,8 @@
       },
       "other": {
         "tenpaiRate": 22.4,
-        "noten": 26.47,
-        "riichiFlowRate": 23.64
+        "ryukyokuTenpaiRate": 26.47,
+        "riichiRyukyokuRate": 23.64
       },
       "efficiency": {
         "scoreEfficiency": 921.64,
@@ -754,7 +754,7 @@
         "avgScore": 6720,
         "byTiming": {
           "riichi": 20.0,
-          "furoAfter": 0.0,
+          "furo": 0.0,
           "other": 80.0
         },
         "toTarget": {
@@ -765,8 +765,8 @@
       },
       "other": {
         "tenpaiRate": 21.95,
-        "noten": 33.33,
-        "riichiFlowRate": 23.53
+        "ryukyokuTenpaiRate": 33.33,
+        "riichiRyukyokuRate": 23.53
       },
       "efficiency": {
         "scoreEfficiency": 736.88,
@@ -840,7 +840,7 @@
         "avgScore": 8866.67,
         "byTiming": {
           "riichi": 33.33,
-          "furoAfter": 0.0,
+          "furo": 0.0,
           "other": 66.67
         },
         "toTarget": {
@@ -851,8 +851,8 @@
       },
       "other": {
         "tenpaiRate": 31.43,
-        "noten": 11.11,
-        "riichiFlowRate": 0.0
+        "ryukyokuTenpaiRate": 11.11,
+        "riichiRyukyokuRate": 0.0
       },
       "efficiency": {
         "scoreEfficiency": 1559.74,
@@ -926,7 +926,7 @@
         "avgScore": 5130.56,
         "byTiming": {
           "riichi": 25.0,
-          "furoAfter": 36.11,
+          "furo": 36.11,
           "other": 38.89
         },
         "toTarget": {
@@ -937,8 +937,8 @@
       },
       "other": {
         "tenpaiRate": 28.99,
-        "noten": 25.64,
-        "riichiFlowRate": 11.11
+        "ryukyokuTenpaiRate": 25.64,
+        "riichiRyukyokuRate": 11.11
       },
       "efficiency": {
         "scoreEfficiency": 1042.13,
@@ -1012,7 +1012,7 @@
         "avgScore": 10342.86,
         "byTiming": {
           "riichi": 0.0,
-          "furoAfter": 0.0,
+          "furo": 0.0,
           "other": 100.0
         },
         "toTarget": {
@@ -1023,8 +1023,8 @@
       },
       "other": {
         "tenpaiRate": 27.5,
-        "noten": 50.0,
-        "riichiFlowRate": 16.67
+        "ryukyokuTenpaiRate": 50.0,
+        "riichiRyukyokuRate": 16.67
       },
       "efficiency": {
         "scoreEfficiency": 1152.5,
@@ -1098,7 +1098,7 @@
         "avgScore": 4716.67,
         "byTiming": {
           "riichi": 16.67,
-          "furoAfter": 0.0,
+          "furo": 0.0,
           "other": 83.33
         },
         "toTarget": {
@@ -1109,8 +1109,8 @@
       },
       "other": {
         "tenpaiRate": 11.76,
-        "noten": 18.18,
-        "riichiFlowRate": 50.0
+        "ryukyokuTenpaiRate": 18.18,
+        "riichiRyukyokuRate": 50.0
       },
       "efficiency": {
         "scoreEfficiency": 114.66,
@@ -1184,7 +1184,7 @@
         "avgScore": 7633.33,
         "byTiming": {
           "riichi": 0.0,
-          "furoAfter": 0.0,
+          "furo": 0.0,
           "other": 100.0
         },
         "toTarget": {
@@ -1195,8 +1195,8 @@
       },
       "other": {
         "tenpaiRate": 25.0,
-        "noten": 12.5,
-        "riichiFlowRate": 16.67
+        "ryukyokuTenpaiRate": 12.5,
+        "riichiRyukyokuRate": 16.67
       },
       "efficiency": {
         "scoreEfficiency": 1500.34,

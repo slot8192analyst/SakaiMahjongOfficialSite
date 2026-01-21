@@ -3,7 +3,7 @@
 class RecordsPage {
     constructor() {
         this.sessions = [];
-        this.recentCount = 3; // タブに表示する直近の件数
+        this.recentCount = 3;
         this.currentTab = 0;
     }
 
@@ -16,7 +16,6 @@ class RecordsPage {
             this.renderTabs();
             this.renderPastSessions();
 
-            // 最初のタブを選択
             if (this.sessions.length > 0) {
                 this.selectTab(0);
             }
@@ -47,7 +46,6 @@ class RecordsPage {
     async selectTab(index) {
         this.currentTab = index;
 
-        // タブボタンのアクティブ状態を更新
         document.querySelectorAll('.tab-button').forEach((btn, i) => {
             btn.classList.toggle('active', i === index);
         });
@@ -76,70 +74,75 @@ class RecordsPage {
                 <h3 class="session-date">${displayDate}</h3>
                 <p class="session-info">
                     <span class="session-players">${data.players.join(' / ')}</span>
-                    <span class="session-games">${data.games.length}半荘</span>
+                    <span class="session-games-count">${data.games.length}半荘</span>
                 </p>
                 ${sessionInfo.highlight ? `<p class="session-highlight">🎉 ${sessionInfo.highlight}</p>` : ''}
             </div>
         `;
 
-        // 合計結果
-        html += `
-            <div class="session-totals">
-                <h4>最終結果</h4>
-                <div class="totals-grid">
-                    ${data.totals.sort((a, b) => b.point - a.point).map((t, i) => {
-                        const rankClass = i < 3 ? `rank-${i + 1}` : '';
-                        const pointClass = t.point >= 0 ? 'score-plus' : 'score-minus';
-                        const pointText = t.point >= 0 ? `+${t.point.toFixed(1)}` : t.point.toFixed(1);
-                        return `
-                            <div class="total-item ${rankClass}">
-                                <span class="total-rank">${i + 1}位</span>
-                                <span class="total-player">${t.player}</span>
+        // 最終結果（人数分、ポイント順）
+    const sortedTotals = [...data.totals].sort((a, b) => b.point - a.point);
+    html += `
+        <div class="session-totals">
+            <h4>最終結果</h4>
+            <div class="totals-grid">
+                ${sortedTotals.map((t, i) => {
+                    const rankClass = i < 3 ? `rank-${i + 1}` : '';
+                    const pointClass = t.point >= 0 ? 'score-plus' : 'score-minus';
+                    const pointText = t.point >= 0 ? `+${t.point.toFixed(1)}` : t.point.toFixed(1);
+                    const incomeClass = t.income >= 0 ? 'score-plus' : 'score-minus';
+                    const incomeText = t.income >= 0 ? `+${t.income.toLocaleString()}pt` : `${t.income.toLocaleString()}pt`;
+                    return `
+                        <div class="total-item ${rankClass}">
+                            <span class="total-rank">${i + 1}位</span>
+                            <span class="total-player">${t.player}</span>
+                            <div class="total-scores">
                                 <span class="total-point ${pointClass}">${pointText}</span>
+                                <span class="total-income ${incomeClass}">${incomeText}</span>
                             </div>
-                        `;
-                    }).join('')}
-                </div>
+                        </div>
+                    `;
+                }).join('')}
             </div>
-        `;
+        </div>
+    `;
 
-        // 各半荘の結果
+        // 各半荘の結果（横軸：プレイヤー、縦軸：半荘）
         html += `
             <div class="session-games">
                 <h4>各半荘の結果</h4>
-                <table class="record-table">
-                    <thead>
-                        <tr>
-                            <th>回</th>
-                            <th>順位</th>
-                            <th>プレイヤー</th>
-                            <th>得点</th>
-                            <th>pt</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-        `;
-
-        data.games.forEach(game => {
-            game.results.forEach((result, i) => {
-                const rankClass = `rank-${result.rank}`;
-                const pointClass = result.point >= 0 ? 'score-plus' : 'score-minus';
-                const pointText = result.point >= 0 ? `+${result.point.toFixed(1)}` : result.point.toFixed(1);
-                html += `
-                    <tr>
-                        ${i === 0 ? `<td rowspan="4" class="round-cell">${game.round}</td>` : ''}
-                        <td class="${rankClass}">${result.rank}位</td>
-                        <td>${result.player}</td>
-                        <td>${result.score.toLocaleString()}</td>
-                        <td class="${pointClass}">${pointText}</td>
-                    </tr>
-                `;
-            });
-        });
-
-        html += `
-                    </tbody>
-                </table>
+                <div class="games-table-wrapper">
+                    <table class="games-table">
+                        <thead>
+                            <tr>
+                                <th class="round-header">回</th>
+                                ${data.players.map(player => `<th class="player-header">${player}</th>`).join('')}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${data.games.map(game => {
+                                const playerPoints = {};
+                                game.results.forEach(r => {
+                                    playerPoints[r.player] = r.point;
+                                });
+                                return `
+                                    <tr>
+                                        <td class="round-cell">${game.round}</td>
+                                        ${data.players.map(player => {
+                                            const point = playerPoints[player];
+                                            if (point === undefined) {
+                                                return `<td class="point-cell absent">-</td>`;
+                                            }
+                                            const pointClass = point >= 0 ? 'score-plus' : 'score-minus';
+                                            const pointText = point >= 0 ? `+${point.toFixed(1)}` : point.toFixed(1);
+                                            return `<td class="point-cell ${pointClass}">${pointText}</td>`;
+                                        }).join('')}
+                                    </tr>
+                                `;
+                            }).join('')}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         `;
 
