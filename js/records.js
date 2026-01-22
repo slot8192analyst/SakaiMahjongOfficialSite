@@ -1,5 +1,3 @@
-// js/records.js
-
 class RecordsPage {
     constructor() {
         this.sessions = [];
@@ -65,47 +63,56 @@ class RecordsPage {
         }
     }
 
+    // 祝儀欄を除いた実際の半荘数を計算
+    getActualGameCount(games) {
+        // roundを文字列に変換して「祝儀」を含むものを除外
+        return games.filter(game => !String(game.round).includes('祝儀')).length;
+    }
+
     renderSessionContent(data, sessionInfo) {
         const dateObj = new Date(data.date);
         const displayDate = `${dateObj.getFullYear()}年${dateObj.getMonth() + 1}月${dateObj.getDate()}日`;
+        
+        // 実際の半荘数（祝儀欄を除く）
+        const actualGameCount = this.getActualGameCount(data.games);
 
         let html = `
             <div class="session-header">
                 <h3 class="session-date">${displayDate}</h3>
                 <p class="session-info">
-                    <span class="session-players">${data.players.join(' / ')}</span>
-                    <span class="session-games-count">${data.games.length}半荘</span>
+                    <span class="session-players">参加メンバー: ${data.players.join(' / ')}</span>
+                    <span class="session-games-count">${actualGameCount}半荘</span>
                 </p>
                 ${sessionInfo.highlight ? `<p class="session-highlight">🎉 ${sessionInfo.highlight}</p>` : ''}
             </div>
         `;
 
         // 最終結果（人数分、ポイント順）
-    const sortedTotals = [...data.totals].sort((a, b) => b.point - a.point);
-    html += `
-        <div class="session-totals">
-            <h4>最終結果</h4>
-            <div class="totals-grid">
-                ${sortedTotals.map((t, i) => {
-                    const rankClass = i < 3 ? `rank-${i + 1}` : '';
-                    const pointClass = t.point >= 0 ? 'score-plus' : 'score-minus';
-                    const pointText = t.point >= 0 ? `+${t.point.toFixed(1)}` : t.point.toFixed(1);
-                    const incomeClass = t.income >= 0 ? 'score-plus' : 'score-minus';
-                    const incomeText = t.income >= 0 ? `+${t.income.toLocaleString()}pt` : `${t.income.toLocaleString()}pt`;
-                    return `
-                        <div class="total-item ${rankClass}">
-                            <span class="total-rank">${i + 1}位</span>
-                            <span class="total-player">${t.player}</span>
-                            <div class="total-scores">
-                                <span class="total-point ${pointClass}">${pointText}</span>
-                                <span class="total-income ${incomeClass}">${incomeText}</span>
+        const sortedTotals = [...data.totals].sort((a, b) => b.point - a.point);
+        html += `
+            <div class="session-totals">
+                <h4>最終結果</h4>
+                <div class="totals-grid">
+                    ${sortedTotals.map((t, i) => {
+                        const rankClass = i < 3 ? `rank-${i + 1}` : '';
+                        const pointClass = t.point >= 0 ? 'score-plus' : 'score-minus';
+                        const pointText = t.point >= 0 ? `+${t.point.toFixed(1)}` : t.point.toFixed(1);
+                        const incomeClass = t.income >= 0 ? 'score-plus' : 'score-minus';
+                        const incomeText = t.income >= 0 ? `+${t.income.toLocaleString()}pt` : `${t.income.toLocaleString()}pt`;
+                        return `
+                            <div class="total-item ${rankClass}">
+                                <span class="total-rank">${i + 1}位</span>
+                                <span class="total-player">${t.player}</span>
+                                <div class="total-scores">
+                                    <span class="total-point ${pointClass}">${pointText}</span>
+                                    <span class="total-income ${incomeClass}">${incomeText}</span>
+                                </div>
                             </div>
-                        </div>
-                    `;
-                }).join('')}
+                        `;
+                    }).join('')}
+                </div>
             </div>
-        </div>
-    `;
+        `;
 
         // 各半荘の結果（横軸：プレイヤー、縦軸：半荘）
         html += `

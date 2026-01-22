@@ -10,10 +10,10 @@ C:.
 │  session.html
 │  stats.html
 │  style.css
-│
+│  
 ├─.vscode
 │      settings.json
-│
+│      
 ├─contents
 │      houserules.html
 │      updates.html
@@ -24,7 +24,11 @@ C:.
 │  │  stats-total.json
 │  │
 │  └─sessions
-│      └─2025-01-09
+│      ├─2026-01-09
+│      │      results.json
+│      │      stats.json
+│      │
+│      └─2026-01-23
 │              results.json
 │              stats.json
 │

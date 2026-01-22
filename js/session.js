@@ -17,26 +17,44 @@ class SessionPage {
         }
 
         try {
-            await Promise.all([
-                this.loadResults(),
-                this.loadStats()
-            ]);
-
-            this.renderPage();
+            await this.loadResults();
+            this.renderResults();
         } catch (err) {
-            console.error('データ読み込みエラー:', err);
-            this.showError('データの読み込みに失敗しました');
+            console.error('results.json 読み込みエラー:', err);
+            this.showError('対局結果の読み込みに失敗しました');
+            return;
+        }
+
+        try {
+            await this.loadStats();
+            this.renderStatsSelector();
+        } catch (err) {
+            console.error('stats.json 読み込みエラー:', err);
+            document.getElementById('stats-container').innerHTML = 
+                '<p class="error-message">スタッツデータの読み込みに失敗しました</p>';
         }
     }
 
     async loadResults() {
-        const response = await fetch(`data/sessions/${this.date}/results.json`);
+        const url = `data/sessions/${this.date}/results.json`;
+        console.log('Loading results from:', url);
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
         this.results = await response.json();
+        console.log('Results loaded:', this.results);
     }
 
     async loadStats() {
-        const response = await fetch(`data/sessions/${this.date}/stats.json`);
+        const url = `data/sessions/${this.date}/stats.json`;
+        console.log('Loading stats from:', url);
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
         this.stats = await response.json();
+        console.log('Stats loaded:', this.stats);
     }
 
     showError(message) {
@@ -44,20 +62,15 @@ class SessionPage {
             `<p class="error-message">${message}</p>`;
     }
 
-    renderPage() {
+    renderResults() {
+        const container = document.getElementById('results-container');
+        const data = this.results;
+
         // タイトル更新
         const dateObj = new Date(this.date);
         const displayDate = `${dateObj.getFullYear()}年${dateObj.getMonth() + 1}月${dateObj.getDate()}日`;
         document.getElementById('session-title').textContent = `${displayDate} の対局`;
         document.title = `${displayDate} | 坂井麻雀店`;
-
-        this.renderResults();
-        this.renderStatsSelector();
-    }
-
-    renderResults() {
-        const container = document.getElementById('results-container');
-        const data = this.results;
 
         let html = '';
 
@@ -82,83 +95,58 @@ class SessionPage {
             </div>
         `;
 
-        // 各半荘の結果
-        html += `
-            <div class="session-games">
-                <h4>各半荘の結果</h4>
-                <table class="record-table">
-                    <thead>
-                        <tr>
-                            <th>回</th>
-                            <th>順位</th>
-                            <th>プレイヤー</th>
-                            <th>得点</th>
-                            <th>pt</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-        `;
-
-        data.games.forEach(game => {
-            game.results.forEach((result, i) => {
-                const rankClass = `rank-${result.rank}`;
-                const pointClass = result.point >= 0 ? 'score-plus' : 'score-minus';
-                const pointText = result.point >= 0 ? `+${result.point.toFixed(1)}` : result.point.toFixed(1);
-                html += `
-                    <tr>
-                        ${i === 0 ? `<td rowspan="4" class="round-cell">${game.round}</td>` : ''}
-                        <td class="${rankClass}">${result.rank}位</td>
-                        <td>${result.player}</td>
-                        <td>${result.score.toLocaleString()}</td>
-                        <td class="${pointClass}">${pointText}</td>
-                    </tr>
-                `;
-            });
-        });
-
-        html += `
-                    </tbody>
-                </table>
-            </div>
-        `;
-
         container.innerHTML = html;
     }
 
     renderStatsSelector() {
-        const playerSelect = document.getElementById('player-select');
+        const selectorContainer = document.querySelector('.stats-player-select');
         const statsContainer = document.getElementById('stats-container');
         const players = this.stats.players;
 
-        // プレイヤーをポイント順でソート
+        if (!players) {
+            statsContainer.innerHTML = '<p class="error-message">プレイヤーデータがありません</p>';
+            return;
+        }
+
+        // results.jsonのtotalsからこの日の参加者を取得し、ポイント順でソート
         const sortedPlayers = this.results.totals
             .sort((a, b) => b.point - a.point)
-            .map(t => t.player);
+            .map(t => t.player)
+            .filter(name => players[name] && players[name].summary.games > 0);
 
-        // プルダウン生成
-        sortedPlayers.forEach(name => {
-            if (players[name]) {
-                const option = document.createElement('option');
-                option.value = name;
-                option.textContent = name;
-                playerSelect.appendChild(option);
-            }
+        if (sortedPlayers.length === 0) {
+            statsContainer.innerHTML = '<p class="no-data">この日のスタッツデータはありません</p>';
+            return;
+        }
+
+        // ボタン形式のセレクターを生成
+        let buttonsHtml = '<div class="player-buttons">';
+        sortedPlayers.forEach((name, index) => {
+            const activeClass = index === 0 ? 'active' : '';
+            buttonsHtml += `<button class="player-button ${activeClass}" data-player="${name}">${name}</button>`;
+        });
+        buttonsHtml += '</div>';
+        selectorContainer.innerHTML = buttonsHtml;
+
+        // ボタンクリック時の処理
+        const buttons = selectorContainer.querySelectorAll('.player-button');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // アクティブ状態を切り替え
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // スタッツカードを表示
+                const playerName = button.dataset.player;
+                if (playerName && players[playerName]) {
+                    statsContainer.innerHTML = statsRenderer.renderStatsCard(playerName, players[playerName]);
+                }
+            });
         });
 
-        // 選択時にスタッツカード表示
-        playerSelect.addEventListener('change', function() {
-            const selectedName = this.value;
-            if (selectedName && players[selectedName]) {
-                statsContainer.innerHTML = statsRenderer.renderStatsCard(selectedName, players[selectedName]);
-            } else {
-                statsContainer.innerHTML = '';
-            }
-        });
-
-        // 最初のプレイヤーを自動選択
+        // 最初のプレイヤーを自動表示
         if (sortedPlayers.length > 0 && players[sortedPlayers[0]]) {
-            playerSelect.value = sortedPlayers[0];
-            playerSelect.dispatchEvent(new Event('change'));
+            statsContainer.innerHTML = statsRenderer.renderStatsCard(sortedPlayers[0], players[sortedPlayers[0]]);
         }
     }
 }
