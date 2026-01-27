@@ -1,3 +1,5 @@
+// js/records.js
+
 class RecordsPage {
     constructor() {
         this.sessions = [];
@@ -57,15 +59,39 @@ class RecordsPage {
             const response = await fetch(`data/sessions/${session.date}/results.json`);
             const data = await response.json();
             tabContent.innerHTML = this.renderSessionContent(data, session);
+
+            // 点数推移グラフを読み込み
+            this.loadPointsChart(session.date);
+
         } catch (err) {
             console.error('セッションデータ読み込みエラー:', err);
             tabContent.innerHTML = '<p class="error-message">データの読み込みに失敗しました</p>';
         }
     }
 
+    // 点数推移グラフを読み込むメソッド
+    async loadPointsChart(date) {
+        const chartContainerId = `points-chart-${date}`;
+        const container = document.getElementById(chartContainerId);
+        
+        if (!container) return;
+
+        try {
+            const response = await fetch(`data/sessions/${date}/points.json`);
+            if (!response.ok) {
+                container.innerHTML = '<p class="no-data">点数推移データがありません</p>';
+                return;
+            }
+            const pointsData = await response.json();
+            pointsChartRenderer.renderChartWithNavigation(pointsData, chartContainerId);
+        } catch (err) {
+            console.error('点数推移データ読み込みエラー:', err);
+            container.innerHTML = '<p class="no-data">点数推移データの読み込みに失敗しました</p>';
+        }
+    }
+
     // 祝儀欄を除いた実際の半荘数を計算
     getActualGameCount(games) {
-        // roundを文字列に変換して「祝儀」を含むものを除外
         return games.filter(game => !String(game.round).includes('祝儀')).length;
     }
 
@@ -150,6 +176,14 @@ class RecordsPage {
                         </tbody>
                     </table>
                 </div>
+            </div>
+        `;
+
+        // 点数推移グラフセクション
+        html += `
+            <div class="session-chart">
+                <h4>点数推移グラフ</h4>
+                <div id="points-chart-${data.date}"></div>
             </div>
         `;
 

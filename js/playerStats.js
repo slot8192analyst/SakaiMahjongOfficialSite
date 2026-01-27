@@ -141,12 +141,12 @@ class PlayerStatsRenderer {
     }
 
     renderStatsCard(name, stats) {
-        const { summary, agari, riichi, furo, houju, other, efficiency } = stats;
+        const { summary, agari, riichi, furo, houju, other, efficiency, tobiRate } = stats;
 
         const agariTypeSegments = [
             { label: '立直', value: agari.byType.riichi.rate, color: this.colors.agari.riichi },
             { label: '副露', value: agari.byType.furo.rate, color: this.colors.agari.furo },
-            { label: '黙聴', value: agari.byType.dama.rate, color: this.colors.agari.dama }
+            { label: '闇聴', value: agari.byType.dama.rate, color: this.colors.agari.dama }
         ];
 
         const houjuTimingSegments = [
@@ -158,7 +158,7 @@ class PlayerStatsRenderer {
         const houjuTargetSegments = [
             { label: '立直', value: houju.toTarget.riichi, color: this.colors.houjuTarget.riichi },
             { label: '副露', value: houju.toTarget.furo, color: this.colors.houjuTarget.furo },
-            { label: '黙聴', value: houju.toTarget.dama, color: this.colors.houjuTarget.dama }
+            { label: '闇聴', value: houju.toTarget.dama, color: this.colors.houjuTarget.dama }
         ];
 
         return `
@@ -224,6 +224,7 @@ class PlayerStatsRenderer {
                         ${this.renderStatItem('聴牌率', other.tenpaiRate, '%')}
                         ${this.renderStatItem('流局時聴牌率', other.ryukyokuTenpaiRate, '%')}
                         ${this.renderStatItem('自摸率', agari.tsumoRate, '%')}
+                        ${this.renderStatItem('飛び率', tobiRate, '%')}
                         ${this.renderStatItem('和了-放銃', efficiency ? efficiency.agariHoujuDiff : null, '%')}
                     </div>
                 </div>
@@ -235,7 +236,7 @@ class PlayerStatsRenderer {
                         ${this.renderStatItem('平均和了巡', agari.avgTurn, '')}
                         ${this.renderStatItem('立直時打点', agari.byType.riichi.avgScore, 'int')}
                         ${this.renderStatItem('副露時打点', agari.byType.furo.avgScore, 'int')}
-                        ${this.renderStatItem('黙聴時打点', agari.byType.dama.avgScore, 'int')}
+                        ${this.renderStatItem('闇聴時打点', agari.byType.dama.avgScore, 'int')}
                         ${this.renderStatItem('平均放銃打点', houju.avgScore, 'int')}
                     </div>
                 </div>
@@ -247,6 +248,7 @@ class PlayerStatsRenderer {
                         ${this.renderStatItem('立直回数', riichi.count, 'int')}
                         ${this.renderStatItem('成功率', riichi.successRate, '%')}
                         ${this.renderStatItem('和了率', riichi.winRate, '%')}
+                        ${this.renderStatItem('放銃率', riichi.dealInRate, '%')}
                         ${this.renderStatItem('先制率', riichi.preemptiveRate, '%')}
                         ${this.renderStatItem('追っかけ率', riichi.chaseRate, '%')}
                         ${this.renderStatItem('追っかけられ率', riichi.chasedRate, '%')}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通算データ | 坂井麻雀店</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">坂井麻雀店</h1>
+            <p class="site-subtitle">Sakai Mahjong Club</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← トップに戻る</a>
+        <h1 class="page-title">📈 通算データ</h1>
+
+        <!-- データ種別タブ -->
+        <div class="section">
+            <div class="data-type-tabs">
+                <button class="data-type-tab active" data-type="points">ポイント</button>
+                <button class="data-type-tab" data-type="scores">点棒</button>
+                <button class="data-type-tab" data-type="chips">祝儀</button>
+                <button class="data-type-tab" data-type="rate">レート</button>
+                <button class="data-type-tab" data-type="income">収入</button>
+                <button class="data-type-tab" data-type="comparison">比較</button>
+            </div>
+        </div>
+
+        <!-- グラフ表示エリア -->
+        <div class="section" id="chart-section">
+            <div class="section-header">
+                <span>📊</span>
+                <span id="chart-title">通算ポイント収支推移（半荘ごと）</span>
+            </div>
+            <div class="cumulative-chart-controls">
+                <div class="player-filter">
+                    <span class="filter-label">表示プレイヤー:</span>
+                    <div class="player-checkboxes" id="player-checkboxes"></div>
+                </div>
+            </div>
+            <div class="points-chart-wrapper" id="cumulative-chart"></div>
+        </div>
+
+        <!-- ランキング表 -->
+        <div class="section" id="ranking-section">
+            <div class="section-header">
+                <span>🏆</span>
+                <span id="ranking-title">通算ポイントランキング</span>
+            </div>
+            <table class="record-table">
+                <thead>
+                    <tr id="ranking-header">
+                        <th>順位</th>
+                        <th>プレイヤー</th>
+                        <th>通算pt</th>
+                        <th>半荘数</th>
+                        <th>平均pt</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking-body"></tbody>
+            </table>
+        </div>
+
+        <!-- プレイヤー比較セクション -->
+        <div class="section" id="comparison-section" style="display: none;">
+            <div class="section-header">
+                <span>👥</span>
+                <span>プレイヤー比較</span>
+            </div>
+            <div class="cumulative-chart-controls">
+                <div class="player-filter">
+                    <span class="filter-label">比較するプレイヤー:</span>
+                    <div class="player-checkboxes" id="comparison-checkboxes"></div>
+                </div>
+            </div>
+            <div id="comparison-content"></div>
+        </div>
+
+        <a href="index.html" class="back-link">← トップに戻る</a>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/cumulativeChart.js"></script>
+    <script src="js/cumulative.js"></script>
+</body>
+</html>

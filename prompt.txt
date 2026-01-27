@@ -4,6 +4,7 @@
 C:.
 │  .gitignore
 │  archive.html
+│  cumulative.html
 │  index.html
 │  prompt.txt
 │  records.html
@@ -13,7 +14,7 @@ C:.
 │  
 ├─.vscode
 │      settings.json
-│      
+│
 ├─contents
 │      houserules.html
 │      updates.html
@@ -23,12 +24,21 @@ C:.
 │  │  stats-2025.json
 │  │  stats-total.json
 │  │
+│  ├─cumulative
+│  │      chips-daily.json
+│  │      income-daily.json
+│  │      points-daily.json
+│  │      points-game.json
+│  │      rate-daily.json
+│  │
 │  └─sessions
 │      ├─2026-01-09
+│      │      points.json
 │      │      results.json
 │      │      stats.json
 │      │
 │      └─2026-01-23
+│              points.json
 │              results.json
 │              stats.json
 │
@@ -38,8 +48,11 @@ C:.
 │
 └─js
         archive.js
+        cumulative.js
+        cumulativeChart.js
         main.js
         playerStats.js
+        pointsChart.js
         records.js
         session.js
         stats.js
