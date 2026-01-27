@@ -32,18 +32,6 @@ body {
 .header-overlay {
     display: none;
 }
-.header-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.3) 0%,
-        rgba(0, 0, 0, 0.6) 100%
-    );
-}
 
 .header-content {
     position: relative;
@@ -69,6 +57,97 @@ body {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.8);
     letter-spacing: 2px;
+}
+
+/* ========== スクロールバー ========== */
+/* Webkit系ブラウザ（Chrome, Safari, Edge） */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 5px;
+    border: 2px solid #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+::-webkit-scrollbar-corner {
+    background: #1a1a1a;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #444 #1a1a1a;
+}
+
+/* テーブルラッパー専用（より目立つスタイル） */
+.stats-table-wrapper::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.stats-table-wrapper::-webkit-scrollbar-track {
+    background: #252525;
+    border-radius: 6px;
+}
+
+.stats-table-wrapper::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #4DD0E1 0%, #26a69a 100%);
+    border-radius: 6px;
+    border: 2px solid #252525;
+}
+
+.stats-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5de0f0 0%, #2eb8a8 100%);
+}
+
+/* ゲームテーブルラッパー */
+.games-table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.games-table-wrapper::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 4px;
+}
+
+.games-table-wrapper::-webkit-scrollbar-thumb {
+    background: #4a6a8a;
+    border-radius: 4px;
+}
+
+.games-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #5a7a9a;
+}
+
+/* ポイントチャートラッパー */
+.points-chart-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.points-chart-wrapper::-webkit-scrollbar-track {
+    background: #141414;
+    border-radius: 4px;
+}
+
+.points-chart-wrapper::-webkit-scrollbar-thumb {
+    background: #7aa2d4;
+    border-radius: 4px;
+}
+
+.points-chart-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #8ab2e4;
 }
 
 /* ========== コンテナ ========== */
@@ -332,71 +411,6 @@ a:hover {
 .score-plus { color: #6a9e6a; }
 .score-minus { color: #c46a6a; }
 
-/* ========== レスポンシブ ========== */
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-
-    .site-header {
-        height: 150px;
-        margin: 0 0 15px;
-        border-radius: 8px;
-    }
-
-    .site-title {
-        font-size: 24px;
-    }
-
-    .site-subtitle {
-        font-size: 12px;
-    }
-
-    .section {
-        padding: 15px;
-    }
-
-    .record-table th,
-    .record-table td {
-        padding: 8px 5px;
-        font-size: 12px;
-    }
-}
-
-/* ========== 画像表示ボタン ========== */
-.image-toggle-btn {
-    display: inline-block;
-    padding: 8px 16px;
-    margin-top: 10px;
-    background-color: #252525;
-    border: 1px solid #3a3a3a;
-    border-radius: 5px;
-    color: #999;
-    font-size: 13px;
-    cursor: pointer;
-    transition: background-color 0.2s, border-color 0.2s;
-}
-
-.image-toggle-btn:hover {
-    background-color: #303030;
-    border-color: #4a4a4a;
-}
-
-.image-toggle-btn.active {
-    background-color: #2a3a4a;
-    border-color: #4a6a8a;
-    color: #7aa2d4;
-}
-
-.hidden-image {
-    display: none;
-    margin-top: 15px;
-}
-
-.hidden-image.show {
-    display: block;
-}
-
 /* ========== 画像表示ボタン ========== */
 .image-toggle-btn {
     display: inline-block;
@@ -525,7 +539,6 @@ a:hover {
     flex-shrink: 0;
 }
 
-
 /* ドーナツチャート */
 .charts-row {
     display: flex;
@@ -653,50 +666,6 @@ a:hover {
     border-color: #7aa2d4;
 }
 
-/* レスポンシブ */
-@media (max-width: 800px) {
-    .stats-card-header {
-        flex-wrap: wrap;
-    }
-    
-    .charts-row {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 600px) {
-    .stats-card {
-        padding: 15px;
-    }
-    
-    .stats-card-header {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .stats-player-name {
-        font-size: 24px;
-    }
-    
-    .rank-chart {
-        margin: 10px 0;
-    }
-    
-    .charts-row {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-    
-    .stats-sections {
-        flex-direction: column;
-    }
-    
-    .stats-section {
-        min-width: auto;
-    }
-}
-
 /* ========== 年度選択 ========== */
 .year-select {
     margin-bottom: 20px;
@@ -802,7 +771,7 @@ a:hover {
     color: #999;
 }
 
-.session-games {
+.session-games-count {
     color: #7aa2d4;
 }
 
@@ -828,16 +797,16 @@ a:hover {
 }
 
 .totals-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
 .total-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 15px;
+    gap: 6px;
+    padding: 6px 10px;
     background-color: #141414;
     border-radius: 5px;
     border-left: 3px solid #333;
@@ -857,22 +826,33 @@ a:hover {
 
 .total-rank {
     color: #666;
-    font-size: 12px;
-    min-width: 30px;
+    font-size: 11px;
 }
 
 .total-player {
-    flex: 1;
     color: #ddd;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.total-scores {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1.3;
 }
 
 .total-point {
+    font-size: 13px;
     font-weight: bold;
-    font-size: 14px;
 }
 
-/* ========== 各半荘結果 ========== */
+.total-income {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+/* ========== 各半荘テーブル ========== */
 .session-games {
     margin-bottom: 20px;
 }
@@ -883,12 +863,50 @@ a:hover {
     margin-bottom: 10px;
 }
 
-.round-cell {
+.games-table-wrapper {
+    overflow-x: auto;
+}
+
+.games-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 400px;
+}
+
+.games-table th,
+.games-table td {
+    padding: 10px 8px;
     text-align: center;
-    font-weight: bold;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.games-table thead th {
+    background-color: #1a1a2e;
     color: #7aa2d4;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.round-header {
+    width: 50px;
+}
+
+.player-header {
+    min-width: 60px;
+}
+
+.round-cell {
     background-color: #141414;
-    vertical-align: middle;
+    color: #888;
+    font-weight: bold;
+}
+
+.point-cell {
+    font-size: 13px;
+}
+
+.point-cell.absent {
+    color: #555;
 }
 
 /* ========== 詳細リンク ========== */
@@ -958,249 +976,6 @@ a:hover {
     font-size: 12px;
 }
 
-/* ========== レスポンシブ ========== */
-@media (max-width: 600px) {
-    .tab-navigation {
-        gap: 5px;
-    }
-
-    .tab-button {
-        padding: 8px 15px;
-        font-size: 13px;
-    }
-
-    .session-info {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .totals-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .past-sessions-list a {
-        flex-wrap: wrap;
-    }
-
-    .past-date {
-        min-width: auto;
-    }
-
-    .past-players {
-        width: 100%;
-        order: 3;
-        margin-top: 5px;
-    }
-}
-
-/* ========== 最終結果（新レイアウト） ========== */
-.session-totals {
-    margin-bottom: 25px;
-}
-
-.session-totals h4 {
-    color: #888;
-    font-size: 13px;
-    margin-bottom: 10px;
-}
-
-.totals-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.total-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 10px;
-    background-color: #141414;
-    border-radius: 5px;
-    border-left: 3px solid #333;
-}
-
-.total-item.rank-1 {
-    border-left-color: #e8c36a;
-}
-
-.total-item.rank-2 {
-    border-left-color: #a0a0a0;
-}
-
-.total-item.rank-3 {
-    border-left-color: #b87333;
-}
-
-.total-rank {
-    color: #666;
-    font-size: 11px;
-}
-
-.total-player {
-    color: #ddd;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.total-scores {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    line-height: 1.3;
-}
-
-.total-point {
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.total-income {
-    font-size: 11px;
-    opacity: 0.7;
-}
-
-/* ========== レスポンシブ（最終結果） ========== */
-@media (max-width: 600px) {
-    .total-item {
-        padding: 5px 8px;
-    }
-
-    .total-player {
-        font-size: 12px;
-    }
-
-    .total-point {
-        font-size: 12px;
-    }
-
-    .total-income {
-        font-size: 10px;
-    }
-}
-
-
-/* ========== レスポンシブ（最終結果） ========== */
-@media (max-width: 600px) {
-    .totals-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .total-item {
-        padding: 5px 8px;
-    }
-
-    .total-player {
-        font-size: 12px;
-    }
-
-    .total-point {
-        font-size: 12px;
-    }
-
-    .total-income {
-        font-size: 10px;
-    }
-}
-
-
-
-/* ========== 各半荘テーブル（新レイアウト） ========== */
-.session-games {
-    margin-bottom: 20px;
-}
-
-.session-games h4 {
-    color: #888;
-    font-size: 13px;
-    margin-bottom: 10px;
-}
-
-.games-table-wrapper {
-    overflow-x: auto;
-}
-
-.games-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 400px;
-}
-
-.games-table th,
-.games-table td {
-    padding: 10px 8px;
-    text-align: center;
-    border-bottom: 1px solid #2a2a2a;
-}
-
-.games-table thead th {
-    background-color: #1a1a2e;
-    color: #7aa2d4;
-    font-weight: normal;
-    font-size: 13px;
-}
-
-.round-header {
-    width: 50px;
-}
-
-.player-header {
-    min-width: 60px;
-}
-
-.round-cell {
-    background-color: #141414;
-    color: #888;
-    font-weight: bold;
-}
-
-.point-cell {
-    font-size: 13px;
-}
-
-.point-cell.absent {
-    color: #555;
-}
-
-.session-games-count {
-    color: #7aa2d4;
-}
-
-/* ========== レスポンシブ（最終結果・テーブル） ========== */
-@media (max-width: 600px) {
-    .totals-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .total-item {
-        padding: 6px 10px;
-    }
-
-    .total-player {
-        font-size: 13px;
-    }
-
-    .total-point {
-        font-size: 13px;
-        min-width: 50px;
-    }
-
-    .total-income {
-        font-size: 11px;
-        min-width: 60px;
-    }
-
-    .games-table th,
-    .games-table td {
-        padding: 8px 4px;
-        font-size: 12px;
-    }
-
-    .player-header {
-        min-width: 50px;
-    }
-}
-
 /* ========== プレイヤー選択ボタン ========== */
 .player-buttons {
     display: flex;
@@ -1230,20 +1005,6 @@ a:hover {
     border-color: #4a6a8a;
     color: #7aa2d4;
     font-weight: bold;
-}
-
-/* レスポンシブ */
-@media (max-width: 600px) {
-    .player-buttons {
-        gap: 6px;
-    }
-
-    .player-button {
-        padding: 8px 14px;
-        font-size: 13px;
-        flex: 1 1 auto;
-        text-align: center;
-    }
 }
 
 /* ========== 点数推移グラフ ========== */
@@ -1301,24 +1062,6 @@ a:hover {
     display: block;
 }
 
-/* レスポンシブ対応 */
-@media (max-width: 600px) {
-    .points-chart-navigation {
-        gap: 10px;
-    }
-
-    .nav-button {
-        padding: 6px 12px;
-        font-size: 13px;
-    }
-
-    .nav-label {
-        font-size: 14px;
-        min-width: 80px;
-    }
-}
-
-/* style.css に追加 */
 .session-chart {
     margin-top: 25px;
     margin-bottom: 25px;
@@ -1330,7 +1073,7 @@ a:hover {
     margin-bottom: 10px;
 }
 
-/* ========== 通算収支ページ ========== */
+/* ========== 通算データページ ========== */
 .cumulative-chart-container {
     margin-bottom: 20px;
 }
@@ -1397,107 +1140,6 @@ a:hover {
     color: #ccc;
 }
 
-/* プレイヤー詳細カード */
-.player-detail-card {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    border-radius: 8px;
-    padding: 20px;
-}
-
-.player-detail-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.player-color-badge {
-    width: 24px;
-    height: 24px;
-    border-radius: 4px;
-}
-
-.player-detail-name {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-}
-
-.player-detail-stats {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
-}
-
-.detail-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.detail-stat-label {
-    font-size: 12px;
-    color: #888;
-}
-
-.detail-stat-value {
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-}
-
-.player-daily-results h5 {
-    color: #888;
-    font-size: 13px;
-    margin-bottom: 10px;
-}
-
-.daily-results-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.daily-results-table th,
-.daily-results-table td {
-    padding: 10px 12px;
-    text-align: left;
-    border-bottom: 1px solid #2a2a2a;
-}
-
-.daily-results-table th {
-    background-color: rgba(0, 0, 0, 0.2);
-    color: #777;
-    font-weight: normal;
-    font-size: 12px;
-}
-
-.daily-results-table td {
-    font-size: 13px;
-    color: #ccc;
-}
-
-/* レスポンシブ */
-@media (max-width: 600px) {
-    .player-filter {
-        flex-direction: column;
-    }
-
-    .player-detail-stats {
-        gap: 20px;
-    }
-
-    .detail-stat-value {
-        font-size: 18px;
-    }
-
-    .daily-results-table th,
-    .daily-results-table td {
-        padding: 8px 6px;
-        font-size: 12px;
-    }
-}
-
 /* ========== データ種別タブ ========== */
 .data-type-tabs {
     display: flex;
@@ -1554,69 +1196,6 @@ a:hover {
     background-color: #2a3a4a;
     border-color: #4a6a8a;
     color: #7aa2d4;
-}
-
-/* ========== 通算データページ ========== */
-.cumulative-chart-controls {
-    margin-bottom: 15px;
-}
-
-.player-filter {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.filter-label {
-    color: #888;
-    font-size: 13px;
-    padding-top: 6px;
-}
-
-.player-checkboxes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.player-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 4px 10px;
-    background-color: #252525;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
-    transition: background-color 0.2s;
-}
-
-.player-checkbox:hover {
-    background-color: #303030;
-}
-
-.player-checkbox input {
-    display: none;
-}
-
-.player-checkbox input:not(:checked) + .checkbox-color {
-    opacity: 0.3;
-}
-
-.player-checkbox input:not(:checked) ~ .checkbox-label {
-    color: #666;
-}
-
-.checkbox-color {
-    width: 12px;
-    height: 12px;
-    border-radius: 2px;
-    flex-shrink: 0;
-}
-
-.checkbox-label {
-    color: #ccc;
 }
 
 /* ========== プレイヤー詳細カード ========== */
@@ -1699,8 +1278,380 @@ a:hover {
     color: #ccc;
 }
 
+/* ========== 比較カード ========== */
+.comparison-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.comparison-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 100%;
+}
+
+/* ========== 成績一覧表ページ ========== */
+
+/* プレイヤートグルボタン */
+.player-toggle-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.toggle-all-btn {
+    padding: 8px 16px;
+    background: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.toggle-all-btn:hover {
+    background: #444;
+    border-color: #666;
+}
+
+.player-toggle-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.player-toggle-btn {
+    padding: 8px 16px;
+    background: #2a2a2a;
+    border: 2px solid #444;
+    border-radius: 20px;
+    color: #888;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.player-toggle-btn:hover {
+    border-color: #666;
+}
+
+.player-toggle-btn.active {
+    background: #1a3a4a;
+    border-color: #4DD0E1;
+    color: #4DD0E1;
+}
+
+/* 成績比較テーブル - ヘッダー固定 */
+.stats-table-wrapper {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 70vh;
+    margin: 0 -15px;
+    padding: 0 15px;
+}
+
+.stats-comparison-table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 13px;
+}
+
+.stats-comparison-table th,
+.stats-comparison-table td {
+    padding: 10px 12px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+    white-space: nowrap;
+}
+
+.stats-comparison-table thead th {
+    background: #1a1a1a;
+    color: #fff;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid #4DD0E1;
+}
+
+.stat-category-header {
+    text-align: left !important;
+    position: sticky;
+    left: 0;
+    z-index: 20;
+    background: #1a1a1a !important;
+    min-width: 80px;
+}
+
+.stat-name-header {
+    text-align: left !important;
+    position: sticky;
+    left: 80px;
+    z-index: 20;
+    background: #1a1a1a !important;
+    min-width: 120px;
+}
+
+.player-header {
+    min-width: 80px;
+}
+
+.stat-category {
+    background: #252525;
+    color: #4DD0E1;
+    font-weight: bold;
+    text-align: left !important;
+    vertical-align: middle;
+    position: sticky;
+    left: 0;
+    z-index: 5;
+    min-width: 80px;
+}
+
+.stat-name {
+    text-align: left !important;
+    color: #ccc;
+    background: #1e1e1e;
+    position: sticky;
+    left: 80px;
+    z-index: 5;
+    min-width: 120px;
+}
+
+.stats-comparison-table tbody tr:hover {
+    background: #2a2a2a;
+}
+
+.stats-comparison-table tbody tr:hover .stat-category {
+    background: #303030;
+}
+
+.stats-comparison-table tbody tr:hover .stat-name {
+    background: #2a2a2a;
+}
+
+/* ハイライト */
+.highlight-best {
+    background: rgba(76, 175, 80, 0.3) !important;
+    color: #81C784 !important;
+    font-weight: bold;
+}
+
+.highlight-worst {
+    background: rgba(244, 67, 54, 0.2) !important;
+    color: #EF5350 !important;
+}
+
+/* セクションヘッダー内のリンク */
+.section-header .table-link {
+    margin-left: auto;
+    font-size: 13px;
+    color: #4DD0E1;
+    text-decoration: none;
+    padding: 4px 12px;
+    background: rgba(77, 208, 225, 0.1);
+    border-radius: 15px;
+    transition: all 0.2s;
+}
+
+.section-header .table-link:hover {
+    background: rgba(77, 208, 225, 0.2);
+}
+
 /* ========== レスポンシブ ========== */
+@media (max-width: 800px) {
+    .stats-card-header {
+        flex-wrap: wrap;
+    }
+    
+    .charts-row {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .comparison-card {
+        max-width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-comparison-table {
+        font-size: 11px;
+    }
+
+    .stats-comparison-table th,
+    .stats-comparison-table td {
+        padding: 8px 6px;
+    }
+
+    .player-toggle-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .toggle-all-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .stat-category-header,
+    .stat-category {
+        min-width: 60px;
+    }
+
+    .stat-name-header,
+    .stat-name {
+        left: 60px;
+        min-width: 100px;
+    }
+}
+
 @media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .site-header {
+        height: 150px;
+        margin: 0 0 15px;
+        border-radius: 8px;
+    }
+
+    .site-title {
+        font-size: 24px;
+    }
+
+    .site-subtitle {
+        font-size: 12px;
+    }
+
+    .section {
+        padding: 15px;
+    }
+
+    .record-table th,
+    .record-table td {
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+
+    .stats-card {
+        padding: 15px;
+    }
+    
+    .stats-card-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .stats-player-name {
+        font-size: 24px;
+    }
+    
+    .rank-chart {
+        margin: 10px 0;
+    }
+    
+    .charts-row {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .stats-sections {
+        flex-direction: column;
+    }
+    
+    .stats-section {
+        min-width: auto;
+    }
+
+    .tab-navigation {
+        gap: 5px;
+    }
+
+    .tab-button {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    .session-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .totals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .total-item {
+        padding: 5px 8px;
+    }
+
+    .total-player {
+        font-size: 12px;
+    }
+
+    .total-point {
+        font-size: 12px;
+    }
+
+    .total-income {
+        font-size: 10px;
+    }
+
+    .games-table th,
+    .games-table td {
+        padding: 8px 4px;
+        font-size: 12px;
+    }
+
+    .player-header {
+        min-width: 50px;
+    }
+
+    .past-sessions-list a {
+        flex-wrap: wrap;
+    }
+
+    .past-date {
+        min-width: auto;
+    }
+
+    .past-players {
+        width: 100%;
+        order: 3;
+        margin-top: 5px;
+    }
+
+    .player-buttons {
+        gap: 6px;
+    }
+
+    .player-button {
+        padding: 8px 14px;
+        font-size: 13px;
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .points-chart-navigation {
+        gap: 10px;
+    }
+
+    .nav-button {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .nav-label {
+        font-size: 14px;
+        min-width: 80px;
+    }
+
     .data-type-tabs {
         gap: 6px;
     }
@@ -1729,28 +1680,7 @@ a:hover {
         padding: 8px 6px;
         font-size: 11px;
     }
-}
 
-/* ========== 比較カード ========== */
-.comparison-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.comparison-card {
-    flex: 1;
-    min-width: 300px;
-    max-width: 100%;
-}
-
-@media (min-width: 800px) {
-    .comparison-card {
-        max-width: calc(50% - 10px);
-    }
-}
-
-@media (max-width: 600px) {
     .comparison-cards {
         flex-direction: column;
     }

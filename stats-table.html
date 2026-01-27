@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成績一覧表 | 坂井麻雀店</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">坂井麻雀店</h1>
+            <p class="site-subtitle">Sakai Mahjong Club</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← トップに戻る</a>
+        <h1 class="page-title">📊 成績一覧表</h1>
+
+        <!-- プレイヤー選択 -->
+        <div class="section">
+            <div class="section-header">
+                <span>👥</span>
+                <span>表示プレイヤー</span>
+            </div>
+            <div class="player-toggle-controls">
+                <button class="toggle-all-btn" id="select-all-btn">全選択</button>
+                <button class="toggle-all-btn" id="deselect-all-btn">全解除</button>
+            </div>
+            <div class="player-toggle-buttons" id="player-toggles"></div>
+        </div>
+
+        <!-- 成績表 -->
+        <div class="section">
+            <div class="section-header">
+                <span>📋</span>
+                <span>成績比較表</span>
+            </div>
+            <div class="stats-table-wrapper">
+                <table class="stats-comparison-table" id="stats-table">
+                    <thead id="stats-table-head"></thead>
+                    <tbody id="stats-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="page-links">
+            <a href="stats.html" class="back-link">← 個人成績に戻る</a>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/statsTable.js"></script>
+</body>
+</html>
