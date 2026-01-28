@@ -9,9 +9,10 @@ C:.
 │  prompt.txt
 │  records.html
 │  session.html
+│  stats-table.html
 │  stats.html
 │  style.css
-│  
+│
 ├─.vscode
 │      settings.json
 │
@@ -29,7 +30,7 @@ C:.
 │  │      income-daily.json
 │  │      points-daily.json
 │  │      points-game.json
-│  │      rate-daily.json
+│  │      rate-game.json
 │  │
 │  └─sessions
 │      ├─2026-01-09
@@ -56,6 +57,7 @@ C:.
         records.js
         session.js
         stats.js
+        statsTable.js
 
 上記サイトはGitHubのリポジトリで管理しており、
 Cloudflare経由でデプロイし公開しています。

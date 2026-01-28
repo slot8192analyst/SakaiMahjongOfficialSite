@@ -71,6 +71,13 @@ class StatsTablePage {
                 ]
             },
             {
+                name: '親被り',
+                stats: [
+                    { key: 'other.oyaKaburiRate', label: '痛親かぶり率', format: 'percent', lowerIsBetter: true },
+                    { key: 'other.oyaKaburiAvgScore', label: '痛親かぶり平均', format: 'int', lowerIsBetter: true }
+                ]
+            },
+            {
                 name: '効率',
                 stats: [
                     { key: 'efficiency.scoreEfficiency', label: '打点効率', format: 'float' },
@@ -238,17 +245,7 @@ class StatsTablePage {
     }
 
     formatValue(value, format) {
-        if (value === null || value === undefined || value === 0 && format !== 'int') {
-            // 0は表示するが、nullやundefinedは'-'
-            if (value === 0) {
-                switch (format) {
-                    case 'int': return '0';
-                    case 'float': return '0.00';
-                    case 'percent': return '0.0%';
-                    case 'rank': return '0.00';
-                    default: return '0';
-                }
-            }
+        if (value === null || value === undefined) {
             return '-';
         }
 
@@ -286,6 +283,46 @@ class StatsTablePage {
         return '';
     }
 
+    // ハイライト対象のプレイヤーを取得
+    getHighlightPlayers(values, stat) {
+        // 有効な値のフィルタリング
+        // lowerIsBetterの場合は0も有効な値として扱う
+        const validValues = values.filter(v => {
+            if (v.value === null || v.value === undefined) return false;
+            if (stat.lowerIsBetter) {
+                // 低い方が良い場合、0も有効
+                return typeof v.value === 'number';
+            } else {
+                // 高い方が良い場合、0は除外（意味のあるデータがない可能性）
+                return typeof v.value === 'number' && v.value !== 0;
+            }
+        });
+
+        if (validValues.length < 2) {
+            return { bestPlayers: [], worstPlayers: [] };
+        }
+
+        // 最大値と最小値を取得
+        const maxValue = Math.max(...validValues.map(v => v.value));
+        const minValue = Math.min(...validValues.map(v => v.value));
+
+        // 全員同じ値の場合はハイライトしない
+        if (maxValue === minValue) {
+            return { bestPlayers: [], worstPlayers: [] };
+        }
+
+        // 最大値・最小値を持つプレイヤーをすべて取得
+        const maxPlayers = validValues.filter(v => v.value === maxValue).map(v => v.player);
+        const minPlayers = validValues.filter(v => v.value === minValue).map(v => v.player);
+
+        // lowerIsBetterに応じてbest/worstを決定
+        if (stat.lowerIsBetter) {
+            return { bestPlayers: minPlayers, worstPlayers: maxPlayers };
+        } else {
+            return { bestPlayers: maxPlayers, worstPlayers: minPlayers };
+        }
+    }
+
     renderTable() {
         const thead = document.getElementById('stats-table-head');
         const tbody = document.getElementById('stats-table-body');
@@ -316,26 +353,8 @@ class StatsTablePage {
                     value: this.getPlayerStat(player, stat)
                 }));
 
-                // 有効な値のみでハイライト計算（0より大きい値、または0も有効な場合）
-                const validValues = values.filter(v => 
-                    v.value !== null && v.value !== undefined && 
-                    (stat.format === 'int' || v.value !== 0)
-                );
-                
-                let maxPlayer = null;
-                let minPlayer = null;
-
-                if (validValues.length > 1) {
-                    const sorted = [...validValues].sort((a, b) => b.value - a.value);
-                    maxPlayer = sorted[0].player;
-                    minPlayer = sorted[sorted.length - 1].player;
-                    
-                    // 同じ値の場合はハイライトしない
-                    if (sorted[0].value === sorted[sorted.length - 1].value) {
-                        maxPlayer = null;
-                        minPlayer = null;
-                    }
-                }
+                // ハイライト対象を取得
+                const { bestPlayers, worstPlayers } = this.getHighlightPlayers(values, stat);
 
                 html += '<tr>';
                 
@@ -353,14 +372,10 @@ class StatsTablePage {
                     let cellClass = this.getValueClass(value, stat.format);
 
                     // ハイライト
-                    if (maxPlayer && minPlayer && value !== null && value !== undefined) {
-                        if (stat.lowerIsBetter) {
-                            if (player === minPlayer) cellClass += ' highlight-best';
-                            if (player === maxPlayer) cellClass += ' highlight-worst';
-                        } else {
-                            if (player === maxPlayer) cellClass += ' highlight-best';
-                            if (player === minPlayer) cellClass += ' highlight-worst';
-                        }
+                    if (bestPlayers.includes(player)) {
+                        cellClass += ' highlight-best';
+                    } else if (worstPlayers.includes(player)) {
+                        cellClass += ' highlight-worst';
                     }
 
                     html += `<td class="${cellClass}">${formatted}</td>`;

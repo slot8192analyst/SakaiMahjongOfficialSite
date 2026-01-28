@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-24T04:04:47",
+  "generated": "2026-01-28T11:09:00",
   "players": {
     "坂井": {
       "summary": {
@@ -75,7 +75,9 @@
       "other": {
         "tenpaiRate": 36.11,
         "ryukyokuTenpaiRate": 29.41,
-        "riichiRyukyokuRate": 16.67
+        "riichiRyukyokuRate": 16.67,
+        "oyaKaburiRate": 62.5,
+        "oyaKaburiAvgScore": 10580.0
       },
       "efficiency": {
         "scoreEfficiency": 1679.63,
@@ -159,7 +161,9 @@
       "other": {
         "tenpaiRate": 28.0,
         "ryukyokuTenpaiRate": 33.33,
-        "riichiRyukyokuRate": 50.0
+        "riichiRyukyokuRate": 50.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
       },
       "efficiency": {
         "scoreEfficiency": 844.0,
@@ -243,7 +247,9 @@
       "other": {
         "tenpaiRate": 32.61,
         "ryukyokuTenpaiRate": 23.08,
-        "riichiRyukyokuRate": 14.29
+        "riichiRyukyokuRate": 14.29,
+        "oyaKaburiRate": 85.71,
+        "oyaKaburiAvgScore": 8000.0
       },
       "efficiency": {
         "scoreEfficiency": 1793.25,
@@ -327,7 +333,9 @@
       "other": {
         "tenpaiRate": 36.36,
         "ryukyokuTenpaiRate": 100.0,
-        "riichiRyukyokuRate": 50.0
+        "riichiRyukyokuRate": 50.0,
+        "oyaKaburiRate": 100.0,
+        "oyaKaburiAvgScore": 8000.0
       },
       "efficiency": {
         "scoreEfficiency": 472.68,
@@ -411,7 +419,9 @@
       "other": {
         "tenpaiRate": 0.0,
         "ryukyokuTenpaiRate": 0.0,
-        "riichiRyukyokuRate": 0.0
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
       },
       "efficiency": {
         "scoreEfficiency": 0.0,
@@ -495,7 +505,9 @@
       "other": {
         "tenpaiRate": 33.02,
         "ryukyokuTenpaiRate": 46.67,
-        "riichiRyukyokuRate": 22.73
+        "riichiRyukyokuRate": 22.73,
+        "oyaKaburiRate": 40.0,
+        "oyaKaburiAvgScore": 8000.0
       },
       "efficiency": {
         "scoreEfficiency": 1749.21,
@@ -579,7 +591,9 @@
       "other": {
         "tenpaiRate": 26.88,
         "ryukyokuTenpaiRate": 23.53,
-        "riichiRyukyokuRate": 19.05
+        "riichiRyukyokuRate": 19.05,
+        "oyaKaburiRate": 55.56,
+        "oyaKaburiAvgScore": 14520.0
       },
       "efficiency": {
         "scoreEfficiency": 1688.83,
@@ -663,7 +677,9 @@
       "other": {
         "tenpaiRate": 0.0,
         "ryukyokuTenpaiRate": 0.0,
-        "riichiRyukyokuRate": 0.0
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
       },
       "efficiency": {
         "scoreEfficiency": 0.0,
@@ -747,7 +763,9 @@
       "other": {
         "tenpaiRate": 0.0,
         "ryukyokuTenpaiRate": 0.0,
-        "riichiRyukyokuRate": 0.0
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
       },
       "efficiency": {
         "scoreEfficiency": 0.0,
@@ -831,7 +849,9 @@
       "other": {
         "tenpaiRate": 0.0,
         "ryukyokuTenpaiRate": 0.0,
-        "riichiRyukyokuRate": 0.0
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
       },
       "efficiency": {
         "scoreEfficiency": 0.0,
@@ -915,7 +935,9 @@
       "other": {
         "tenpaiRate": 0.0,
         "ryukyokuTenpaiRate": 0.0,
-        "riichiRyukyokuRate": 0.0
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
       },
       "efficiency": {
         "scoreEfficiency": 0.0,
@@ -999,7 +1021,9 @@
       "other": {
         "tenpaiRate": 0.0,
         "ryukyokuTenpaiRate": 0.0,
-        "riichiRyukyokuRate": 0.0
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
       },
       "efficiency": {
         "scoreEfficiency": 0.0,
@@ -1083,7 +1107,9 @@
       "other": {
         "tenpaiRate": 0.0,
         "ryukyokuTenpaiRate": 0.0,
-        "riichiRyukyokuRate": 0.0
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
       },
       "efficiency": {
         "scoreEfficiency": 0.0,
@@ -1167,7 +1193,9 @@
       "other": {
         "tenpaiRate": 0.0,
         "ryukyokuTenpaiRate": 0.0,
-        "riichiRyukyokuRate": 0.0
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
       },
       "efficiency": {
         "scoreEfficiency": 0.0,
@@ -1251,13 +1279,15 @@
       "other": {
         "tenpaiRate": 24.32,
         "ryukyokuTenpaiRate": 16.67,
-        "riichiRyukyokuRate": 12.5
+        "riichiRyukyokuRate": 12.5,
+        "oyaKaburiRate": 100.0,
+        "oyaKaburiAvgScore": 8150.0
       },
       "efficiency": {
-        "scoreEfficiency": 756.7,
-        "scoreLoss": 797.24,
-        "adjustedEfficiency": -40.54,
-        "agariHoujuDiff": 0.0
+        "scoreEfficiency": null,
+        "scoreLoss": null,
+        "adjustedEfficiency": null,
+        "agariHoujuDiff": null
       },
       "tobiRate": null
     }

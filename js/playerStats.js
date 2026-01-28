@@ -146,7 +146,7 @@ class PlayerStatsRenderer {
         const agariTypeSegments = [
             { label: '立直', value: agari.byType.riichi.rate, color: this.colors.agari.riichi },
             { label: '副露', value: agari.byType.furo.rate, color: this.colors.agari.furo },
-            { label: '闇聴', value: agari.byType.dama.rate, color: this.colors.agari.dama }
+            { label: '闘聴', value: agari.byType.dama.rate, color: this.colors.agari.dama }
         ];
 
         const houjuTimingSegments = [
@@ -261,13 +261,21 @@ class PlayerStatsRenderer {
                 </div>
 
                 <div class="stats-section">
-                    <div class="stats-section-title">【副露・流局・効率】</div>
+                    <div class="stats-section-title">【副露・流局・親被り】</div>
                     <div class="stats-grid">
                         ${this.renderStatItem('副露率', furo.rate, '%')}
                         ${this.renderStatItem('副露時和了率', furo.agariRate, '%')}
                         ${this.renderStatItem('副露時平均打点', furo.avgScore, 'int')}
                         ${this.renderStatItem('流局時聴牌率', other.ryukyokuTenpaiRate, '%')}
                         ${this.renderStatItem('立直後流局率', other.riichiRyukyokuRate, '%')}
+                        ${this.renderStatItem('痛親かぶり率', other.oyaKaburiRate, '%')}
+                        ${this.renderStatItem('痛親かぶり平均', other.oyaKaburiAvgScore, 'int')}
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <div class="stats-section-title">【効率】</div>
+                    <div class="stats-grid">
                         ${this.renderStatItem('打点効率', efficiency ? efficiency.scoreEfficiency : null, '')}
                         ${this.renderStatItem('銃点損失', efficiency ? efficiency.scoreLoss : null, '')}
                         ${this.renderStatItem('調整打点効率', efficiency ? efficiency.adjustedEfficiency : null, '')}
