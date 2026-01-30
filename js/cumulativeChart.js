@@ -18,6 +18,7 @@ class CumulativeChartRenderer {
             '梶田': '#DCE775',
             '磯': '#FF8A65',
             '杉崎': '#A1887F',
+            '横塚': '#E91E63',   // ピンク（マゼンタ系）
         };
 
         this.defaultColors = [
