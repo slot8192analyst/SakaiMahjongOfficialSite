@@ -32,39 +32,66 @@
     {
       "round": 4,
       "results": [
-        { "player": "中江", "point": 0 },
-        { "player": "志村", "point": 0 },
-        { "player": "高木", "point": 0 },
-        { "player": "福原", "point": 0 }
+        { "player": "中江", "point": 54.6 },
+        { "player": "志村", "point": -54.4 },
+        { "player": "高木", "point": 13.8 },
+        { "player": "福原", "point": -14 }
       ]
     },
     {
       "round": 5,
       "results": [
-        { "player": "志村", "point": 0 },
-        { "player": "坂井", "point": 0 },
-        { "player": "高木", "point": 0 },
-        { "player": "福原", "point": 0 }
+        { "player": "志村", "point": 59.3 },
+        { "player": "坂井", "point": -39.1 },
+        { "player": "高木", "point": 3.8 },
+        { "player": "福原", "point": -24 }
+      ]
+    },
+    {
+      "round": 6,
+      "results": [
+        { "player": "志村", "point": 16.2 },
+        { "player": "坂井", "point": -40.8 },
+        { "player": "高木", "point": -26.9 },
+        { "player": "福原", "point": 51.5 }
+      ]
+    },
+    {
+      "round": 7,
+      "results": [
+        { "player": "志村", "point": 45.7 },
+        { "player": "坂井", "point": -18.9 },
+        { "player": "高木", "point": -31.4 },
+        { "player": "福原", "point": 4.6 }
+      ]
+    },
+    {
+      "round": 8,
+      "results": [
+        { "player": "志村", "point": 6.1 },
+        { "player": "坂井", "point": 44.7 },
+        { "player": "高木", "point": -18.7 },
+        { "player": "福原", "point": -32.1 }
       ]
     },
     {
       "round": "祝儀",
       "results": [
-        { "player": "志村", "point": 0 },
-        { "player": "坂井", "point": 0 },
-        { "player": "高木", "point": 0 },
-        { "player": "福原", "point": 0 },
-        { "player": "中江", "point": 0 },
+        { "player": "志村", "point": 9 },
+        { "player": "坂井", "point": -20 },
+        { "player": "高木", "point": 12 },
+        { "player": "福原", "point": -11 },
+        { "player": "中江", "point": 6 },
         { "player": "横塚", "point": 4 }
       ]
     }
   ],
   "totals": [
-    { "player": "坂井", "point": 0.0, "income": 0 },
-    { "player": "高木", "point": 0, "income": 0 },
-    { "player": "福原", "point": 0, "income": 0 },
-    { "player": "志村", "point": 0, "income": 0 },
-    { "player": "中江", "point": 0, "income": 0 },
+    { "player": "坂井", "point": -96.2, "income": -4886 },
+    { "player": "高木", "point": 58.3, "income": 2949 },
+    { "player": "福原", "point": -49.1, "income": -2573 },
+    { "player": "志村", "point": 39.8, "income": 2094 },
+    { "player": "中江", "point": 54.6, "income": 2238 },
     { "player": "横塚", "point": -7.4, "income": 178 }
   ]
 }
