@@ -146,7 +146,7 @@ class PlayerStatsRenderer {
         const agariTypeSegments = [
             { label: '立直', value: agari.byType.riichi.rate, color: this.colors.agari.riichi },
             { label: '副露', value: agari.byType.furo.rate, color: this.colors.agari.furo },
-            { label: '闘聴', value: agari.byType.dama.rate, color: this.colors.agari.dama }
+            { label: '闇聴', value: agari.byType.dama.rate, color: this.colors.agari.dama }
         ];
 
         const houjuTimingSegments = [
@@ -246,9 +246,9 @@ class PlayerStatsRenderer {
                     <div class="stats-grid">
                         ${this.renderStatItem('立直率', riichi.rate, '%')}
                         ${this.renderStatItem('立直回数', riichi.count, 'int')}
-                        ${this.renderStatItem('成功率', riichi.successRate, '%')}
-                        ${this.renderStatItem('和了率', riichi.winRate, '%')}
-                        ${this.renderStatItem('放銃率', riichi.dealInRate, '%')}
+                        ${this.renderStatItem('立直後和了率', riichi.successRate, '%')}
+                        ${this.renderStatItem('立直後自摸率', riichi.winRate, '%')}
+                        ${this.renderStatItem('立直後放銃率', riichi.dealInRate, '%')}
                         ${this.renderStatItem('先制率', riichi.preemptiveRate, '%')}
                         ${this.renderStatItem('追っかけ率', riichi.chaseRate, '%')}
                         ${this.renderStatItem('追っかけられ率', riichi.chasedRate, '%')}

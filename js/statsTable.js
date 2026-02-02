@@ -52,10 +52,11 @@ class StatsTablePage {
             {
                 name: '立直',
                 stats: [
-                    { key: 'riichi.rate', label: '立直率', format: 'percent' },
-                    { key: 'riichi.successRate', label: '立直成功率', format: 'percent' },
+                    { key: 'riichi.rate', label: '立直後和了率', format: 'percent' },
+                    { key: 'riichi.successRate', label: '立直後自摸率', format: 'percent' },
                     { key: 'riichi.dealInRate', label: '立直放銃率', format: 'percent', lowerIsBetter: true },
                     { key: 'riichi.chaseRate', label: '追っかけ率', format: 'percent' },
+                    { key: 'riichi.chasedRate', label: '追っかけられ率', format: 'percent' },
                     { key: 'riichi.ippatsuRate', label: '一発率', format: 'percent' },
                     { key: 'riichi.avgTurn', label: '平均立直巡', format: 'float', lowerIsBetter: true },
                     { key: 'riichi.income', label: '立直収入', format: 'int' },
