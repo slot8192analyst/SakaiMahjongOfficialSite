@@ -12,7 +12,6 @@ class CumulativePage {
         this.currentType = 'points';
         this.players = [];
         this.selectedPlayers = [];
-        this.selectedPlayersForComparison = [];
     }
 
     async init() {
@@ -31,7 +30,6 @@ class CumulativePage {
             
             this.setupTabs();
             this.setupPlayerCheckboxes();
-            this.setupComparisonSelect();
             
             this.updateDisplay();
         } catch (err) {
@@ -191,54 +189,14 @@ class CumulativePage {
         });
     }
 
-    setupComparisonSelect() {
-        const container = document.getElementById('comparison-checkboxes');
-        if (!container) return;
 
-        container.innerHTML = '';
-        
-        this.players.forEach((player, idx) => {
-            const color = cumulativeChartRenderer.getPlayerColor(player, idx);
-            const label = document.createElement('label');
-            label.className = 'player-checkbox';
-            label.innerHTML = `
-                <input type="checkbox" value="${player}">
-                <span class="checkbox-color" style="background-color: ${color}"></span>
-                <span class="checkbox-label">${player}</span>
-            `;
-            container.appendChild(label);
-        });
-
-        container.addEventListener('change', () => {
-            this.selectedPlayersForComparison = Array.from(
-                container.querySelectorAll('input:checked')
-            ).map(input => input.value);
-            this.renderComparison();
-        });
-
-        if (this.players.length >= 2) {
-            const checkboxes = container.querySelectorAll('input');
-            checkboxes[0].checked = true;
-            checkboxes[1].checked = true;
-            this.selectedPlayersForComparison = [this.players[0], this.players[1]];
-        }
-    }
 
     updateDisplay() {
         this.updateTitles();
-        
-        if (this.currentType === 'comparison') {
-            document.getElementById('chart-section').style.display = 'none';
-            document.getElementById('ranking-section').style.display = 'none';
-            document.getElementById('comparison-section').style.display = 'block';
-            this.renderComparison();
-        } else {
-            document.getElementById('chart-section').style.display = 'block';
-            document.getElementById('ranking-section').style.display = 'block';
-            document.getElementById('comparison-section').style.display = 'none';
-            this.renderChart();
-            this.renderRanking();
-        }
+        document.getElementById('chart-section').style.display = 'block';
+        document.getElementById('ranking-section').style.display = 'block';
+        this.renderChart();
+        this.renderRanking();
     }
 
     updateTitles() {
@@ -248,7 +206,6 @@ class CumulativePage {
             rate: { chart: 'レーティング推移（半荘ごと）', ranking: 'レーティングランキング' },
             income: { chart: '通算収入推移（日別）', ranking: '通算収入ランキング' },
             scores: { chart: '点棒授受推移（局ごと）', ranking: '通算点棒ランキング' },
-            comparison: { chart: 'プレイヤー比較', ranking: '' }
         };
         
         const t = titles[this.currentType] || titles.points;
@@ -396,24 +353,7 @@ class CumulativePage {
                 `;
             }).join('');
         
-            tbody.querySelectorAll('tr').forEach(row => {
-                row.style.cursor = 'pointer';
-                row.addEventListener('click', () => {
-                    const player = row.dataset.player;
-                    const comparisonTab = document.querySelector('[data-type="comparison"]');
-                    if (comparisonTab) {
-                        comparisonTab.click();
-                        const checkboxes = document.querySelectorAll('#comparison-checkboxes input');
-                        checkboxes.forEach(cb => {
-                            cb.checked = cb.value === player;
-                        });
-                        this.selectedPlayersForComparison = [player];
-                        this.renderComparison();
-                    }
-                });
-            });
-        
-            return;
+                return;
         }
     
         // 他のタブ用
@@ -483,22 +423,6 @@ class CumulativePage {
             `;
         }).join('');
     
-        tbody.querySelectorAll('tr').forEach(row => {
-            row.style.cursor = 'pointer';
-            row.addEventListener('click', () => {
-                const player = row.dataset.player;
-                const comparisonTab = document.querySelector('[data-type="comparison"]');
-                if (comparisonTab) {
-                    comparisonTab.click();
-                    const checkboxes = document.querySelectorAll('#comparison-checkboxes input');
-                    checkboxes.forEach(cb => {
-                        cb.checked = cb.value === player;
-                    });
-                    this.selectedPlayersForComparison = [player];
-                    this.renderComparison();
-                }
-            });
-        });
     }
 
     getPlayerGames(player) {
@@ -519,188 +443,6 @@ class CumulativePage {
         return count;
     }
 
-    renderComparison() {
-        const container = document.getElementById('comparison-content');
-        if (!container) return;
-
-        if (this.selectedPlayersForComparison.length === 0) {
-            container.innerHTML = '<p class="no-data">比較するプレイヤーを選択してください</p>';
-            return;
-        }
-
-        let html = '<div class="comparison-cards">';
-
-        this.selectedPlayersForComparison.forEach((playerName, idx) => {
-            const stats = this.getPlayerStats(playerName);
-            const color = cumulativeChartRenderer.getPlayerColor(playerName, idx);
-            const dailyResults = this.getPlayerDailyResults(playerName);
-
-            html += `
-                <div class="player-detail-card comparison-card">
-                    <div class="player-detail-header">
-                        <span class="player-color-badge" style="background-color: ${color}"></span>
-                        <span class="player-detail-name">${playerName}</span>
-                    </div>
-                    <div class="player-detail-stats">
-                        <div class="detail-stat">
-                            <span class="detail-stat-label">通算ポイント</span>
-                            <span class="detail-stat-value ${stats.points >= 0 ? 'score-plus' : 'score-minus'}">${stats.points >= 0 ? '+' : ''}${stats.points.toFixed(1)}</span>
-                        </div>
-                        <div class="detail-stat">
-                            <span class="detail-stat-label">通算祝儀</span>
-                            <span class="detail-stat-value ${stats.chips >= 0 ? 'score-plus' : 'score-minus'}">${stats.chips >= 0 ? '+' : ''}${Math.round(stats.chips)}</span>
-                        </div>
-                        <div class="detail-stat">
-                            <span class="detail-stat-label">レート</span>
-                            <span class="detail-stat-value ${stats.rate >= 1500 ? 'score-plus' : 'score-minus'}">${stats.rate.toFixed(2)}</span>
-                        </div>
-                        <div class="detail-stat">
-                            <span class="detail-stat-label">通算収入</span>
-                            <span class="detail-stat-value ${stats.income >= 0 ? 'score-plus' : 'score-minus'}">${stats.income >= 0 ? '+' : ''}${stats.income.toLocaleString()}</span>
-                        </div>
-                        <div class="detail-stat">
-                            <span class="detail-stat-label">参加半荘</span>
-                            <span class="detail-stat-value">${stats.games}半荘</span>
-                        </div>
-                        <div class="detail-stat">
-                            <span class="detail-stat-label">平均pt/半荘</span>
-                            <span class="detail-stat-value ${stats.avgPoints >= 0 ? 'score-plus' : 'score-minus'}">${stats.avgPoints >= 0 ? '+' : ''}${stats.avgPoints.toFixed(2)}</span>
-                        </div>
-                    </div>
-                    ${dailyResults.length > 0 ? `
-                    <div class="player-daily-results">
-                        <h5>日別収支</h5>
-                        <table class="daily-results-table">
-                            <thead>
-                                <tr>
-                                    <th>日付</th>
-                                    <th>半荘</th>
-                                    <th>ポイント</th>
-                                    <th>祝儀</th>
-                                    <th>収入</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ${dailyResults.map(day => `
-                                    <tr>
-                                        <td>${day.date}</td>
-                                        <td>${day.games}半荘</td>
-                                        <td class="${day.points >= 0 ? 'score-plus' : 'score-minus'}">${day.points >= 0 ? '+' : ''}${day.points.toFixed(1)}</td>
-                                        <td class="${day.chips >= 0 ? 'score-plus' : 'score-minus'}">${day.chips >= 0 ? '+' : ''}${Math.round(day.chips)}</td>
-                                        <td class="${day.income >= 0 ? 'score-plus' : 'score-minus'}">${day.income >= 0 ? '+' : ''}${day.income.toLocaleString()}</td>
-                                    </tr>
-                                `).join('')}
-                            </tbody>
-                        </table>
-                    </div>
-                    ` : ''}
-                </div>
-            `;
-        });
-
-        html += '</div>';
-        container.innerHTML = html;
-    }
-
-    getPlayerStats(playerName) {
-        const getLastValue = (data, defaultVal = 0) => {
-            if (!Array.isArray(data) || data.length === 0) return defaultVal;
-            const val = data[data.length - 1][playerName];
-            return typeof val === 'number' ? val : defaultVal;
-        };
-
-        const points = getLastValue(this.data.points, 0);
-        const chips = getLastValue(this.data.chips, 0);
-        const rate = getLastValue(this.data.rate, 1500);
-        const income = getLastValue(this.data.income, 0);
-
-        let games = 0;
-        if (this.data.points && this.data.points.length > 1) {
-            let prevValue = this.data.points[0][playerName] || 0;
-            for (let i = 1; i < this.data.points.length; i++) {
-                const val = this.data.points[i][playerName];
-                if (typeof val === 'number' && val !== prevValue) {
-                    games++;
-                    prevValue = val;
-                }
-            }
-        }
-
-        const avgPoints = games > 0 ? points / games : 0;
-
-        return { points, chips, rate, income, games, avgPoints };
-    }
-
-    getPlayerDailyResults(playerName) {
-        const pointsData = this.data.points;
-        const chipsData = this.data.chips;
-        const incomeData = this.data.income;
-        
-        if (!pointsData || pointsData.length < 2) return [];
-
-        const results = [];
-        const dates = [...new Set(
-            pointsData
-                .filter(d => d.年月日 && d.年月日 !== '開始')
-                .map(d => d.年月日)
-        )];
-
-        dates.forEach(date => {
-            const dayPointsEntries = pointsData.filter(d => d.年月日 === date);
-            if (dayPointsEntries.length === 0) return;
-
-            const firstDayIdx = pointsData.indexOf(dayPointsEntries[0]);
-            const prevDayPoints = firstDayIdx > 0 ? (pointsData[firstDayIdx - 1][playerName] || 0) : 0;
-            const lastDayPoints = dayPointsEntries[dayPointsEntries.length - 1][playerName];
-            
-            if (typeof lastDayPoints !== 'number') return;
-            
-            const dayPoints = lastDayPoints - prevDayPoints;
-            if (dayPoints === 0) return;
-
-            let games = 0;
-            let prev = prevDayPoints;
-            dayPointsEntries.forEach(entry => {
-                const val = entry[playerName];
-                if (typeof val === 'number' && val !== prev) {
-                    games++;
-                    prev = val;
-                }
-            });
-
-            let dayChips = 0;
-            if (chipsData) {
-                const dayChipsEntries = chipsData.filter(d => d.年月日 === date);
-                if (dayChipsEntries.length > 0) {
-                    const firstChipsIdx = chipsData.indexOf(dayChipsEntries[0]);
-                    const prevChips = firstChipsIdx > 0 ? (chipsData[firstChipsIdx - 1][playerName] || 0) : 0;
-                    const lastChips = dayChipsEntries[dayChipsEntries.length - 1][playerName] || 0;
-                    dayChips = lastChips - prevChips;
-                }
-            }
-
-            let dayIncome = 0;
-            if (incomeData) {
-                const dayIncomeEntries = incomeData.filter(d => d.年月日 === date);
-                if (dayIncomeEntries.length > 0) {
-                    const firstIncomeIdx = incomeData.indexOf(dayIncomeEntries[0]);
-                    const prevIncome = firstIncomeIdx > 0 ? (incomeData[firstIncomeIdx - 1][playerName] || 0) : 0;
-                    const lastIncome = dayIncomeEntries[dayIncomeEntries.length - 1][playerName] || 0;
-                    dayIncome = lastIncome - prevIncome;
-                }
-            }
-
-            results.push({
-                date,
-                games,
-                points: dayPoints,
-                chips: dayChips,
-                income: dayIncome
-            });
-        });
-
-        return results;
-    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {

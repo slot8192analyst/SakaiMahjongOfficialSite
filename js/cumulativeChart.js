@@ -19,7 +19,7 @@ class CumulativeChartRenderer {
             '磯': '#FF8A65',
             '杉崎': '#A1887F',
             '横塚': '#E91E63',   // ピンク（マゼンタ系）
-            '怜磨': '#FFFFFF'
+            '怜磨': '#FF6B35'   // ビビッドオレンジレッド
         };
 
         this.defaultColors = [
