@@ -30,6 +30,12 @@ class PlayerStatsRenderer {
 
     createDonutChart(segments) {
         const total = segments.reduce((sum, s) => sum + s.value, 0);
+        // ── デバッグログ ──
+        console.log('[createDonutChart] segments:', segments.map(s => `${s.label}=${s.value}`).join(', '), '| total:', total);
+        if (total === 0) {
+            console.warn('[createDonutChart] ⚠️ total=0 → 空のドーナツグラフを描画します (和了記録なし)');
+        }
+        // ─────────────────
         if (total === 0) {
             return `
                 <div class="donut-wrapper">
@@ -141,6 +147,62 @@ class PlayerStatsRenderer {
     }
 
     renderStatsCard(name, stats) {
+        // ── デバッグログ開始 ──────────────────────────────────
+        console.group(`[PlayerStats] renderStatsCard: ${name}`);
+
+        // 1. statsオブジェクト全体
+        console.log('stats (raw):', JSON.parse(JSON.stringify(stats)));
+
+        // 2. agari フィールドの存在チェック
+        const agariRaw = stats.agari;
+        console.log('agari field present:', agariRaw !== undefined && agariRaw !== null);
+        console.log('agari:', agariRaw);
+
+        // 3. agari.count / agari.rate
+        console.log('agari.count:', agariRaw?.count, '| agari.rate:', agariRaw?.rate);
+
+        // 4. agari.byType の各種チェック
+        const byTypeRaw = agariRaw?.byType;
+        console.log('agari.byType present:', byTypeRaw !== undefined && byTypeRaw !== null);
+        if (byTypeRaw) {
+            console.log('agari.byType.riichi:', byTypeRaw.riichi);
+            console.log('agari.byType.furo  :', byTypeRaw.furo);
+            console.log('agari.byType.dama  :', byTypeRaw.dama);
+
+            // byType合計が0かどうか
+            const totalByType =
+                (byTypeRaw.riichi?.rate ?? 0) +
+                (byTypeRaw.furo?.rate   ?? 0) +
+                (byTypeRaw.dama?.rate   ?? 0);
+            console.log('agari.byType rate合計:', totalByType,
+                totalByType === 0 ? '⚠️ 全て0 → 和了記録なしと判定される可能性あり' : '✅ 正常');
+        } else {
+            console.warn('⚠️ agari.byType が存在しない → 和了記録なしと判定される');
+        }
+
+        // 5. houju フィールドのチェック
+        const houjuRaw = stats.houju;
+        console.log('houju:', houjuRaw);
+        if (houjuRaw?.byTiming) {
+            const timingTotal =
+                (houjuRaw.byTiming.riichi ?? 0) +
+                (houjuRaw.byTiming.furo   ?? 0) +
+                (houjuRaw.byTiming.other  ?? 0);
+            console.log('houju.byTiming 合計:', timingTotal,
+                timingTotal === 0 ? '⚠️ 全て0' : '✅ 正常');
+        }
+
+        // 6. donutChartに渡されるセグメントを事前チェック
+        console.log('--- donutChart segments preview ---');
+        console.log('agariTypeSegments:', [
+            { label: '立直', value: byTypeRaw?.riichi?.rate },
+            { label: '副露', value: byTypeRaw?.furo?.rate   },
+            { label: '闇聴', value: byTypeRaw?.dama?.rate   },
+        ]);
+
+        console.groupEnd();
+        // ── デバッグログ終了 ──────────────────────────────────
+
         const { summary, agari, riichi, furo, houju, other, efficiency, tobiRate } = stats;
 
         const agariTypeSegments = [
