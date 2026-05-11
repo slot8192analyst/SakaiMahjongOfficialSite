@@ -158,6 +158,12 @@ class CumulativePage {
                 tabs.forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
                 this.currentType = tab.dataset.type;
+                // タブ切替時はスライダー状態をリセット
+                cumulativeChartRenderer._sliderOverride = null;
+                cumulativeChartRenderer._lastContainerId = null;
+                // 既存のスライダーUIを削除
+                const old = document.getElementById('cumulative-chart-slider');
+                if (old) old.remove();
                 this.updateDisplay();
             });
         });
