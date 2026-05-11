@@ -1,0 +1,159 @@
+{
+  "date": "2026-05-07",
+  "players": [
+    "梶田",
+    "福原",
+    "高木",
+    "坂井"
+  ],
+  "games": [
+    {
+      "round": 1,
+      "results": [
+        {
+          "player": "福原",
+          "point": 58.1
+        },
+        {
+          "player": "高木",
+          "point": 6.4
+        },
+        {
+          "player": "坂井",
+          "point": -16.2
+        },
+        {
+          "player": "梶田",
+          "point": -48.3
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "results": [
+        {
+          "player": "坂井",
+          "point": 50.0
+        },
+        {
+          "player": "福原",
+          "point": 8.1
+        },
+        {
+          "player": "高木",
+          "point": -18.4
+        },
+        {
+          "player": "梶田",
+          "point": -39.7
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "results": [
+        {
+          "player": "高木",
+          "point": 57.3
+        },
+        {
+          "player": "坂井",
+          "point": 4.4
+        },
+        {
+          "player": "福原",
+          "point": -22.6
+        },
+        {
+          "player": "梶田",
+          "point": -39.1
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "results": [
+        {
+          "player": "高木",
+          "point": 76.6
+        },
+        {
+          "player": "坂井",
+          "point": -2.0
+        },
+        {
+          "player": "福原",
+          "point": -30.6
+        },
+        {
+          "player": "梶田",
+          "point": -44.0
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "results": [
+        {
+          "player": "福原",
+          "point": 56.9
+        },
+        {
+          "player": "高木",
+          "point": 12.3
+        },
+        {
+          "player": "坂井",
+          "point": -17.1
+        },
+        {
+          "player": "梶田",
+          "point": -52.1
+        }
+      ]
+    },
+    {
+      "round": 6,
+      "results": [
+        {
+          "player": "福原",
+          "point": 119.0
+        },
+        {
+          "player": "梶田",
+          "point": 10.9
+        },
+        {
+          "player": "高木",
+          "point": -40.0
+        },
+        {
+          "player": "坂井",
+          "point": -89.9
+        }
+      ]
+    },
+    {
+      "round": "祝儀",
+      "results": [
+        {
+          "player": "福原",
+          "point": 10.0
+        },
+        {
+          "player": "坂井",
+          "point": 7.0
+        },
+        {
+          "player": "高木",
+          "point": -7.0
+        },
+        {
+          "player": "梶田",
+          "point": -10.0
+        }
+      ]
+    }
+  ],
+  "totals": []
+}
