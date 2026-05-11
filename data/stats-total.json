@@ -1,89 +1,89 @@
 {
-  "generated": "2026-05-04T21:39:16",
+  "generated": "2026-05-11T14:12:38",
   "players": {
     "坂井": {
       "summary": {
         "avgRank": 2.57,
-        "games": 75,
+        "games": 81,
         "ranks": {
-          "1st": 16,
-          "2nd": 18,
-          "3rd": 23,
-          "4th": 18
+          "1st": 17,
+          "2nd": 20,
+          "3rd": 25,
+          "4th": 19
         },
         "rates": {
-          "1st": 21.33,
-          "2nd": 24.0,
-          "3rd": 30.67,
-          "4th": 24.0,
-          "top2": 45.33,
-          "avoid4th": 76.0
+          "1st": 20.99,
+          "2nd": 24.69,
+          "3rd": 30.86,
+          "4th": 23.46,
+          "top2": 45.68,
+          "avoid4th": 76.54
         }
       },
       "agari": {
-        "count": 117,
-        "rate": 20.07,
-        "avgScore": 6267.52,
-        "avgTurn": 11.57,
+        "count": 173,
+        "rate": 20.0,
+        "avgScore": 5987.28,
+        "avgTurn": 11.55,
         "byType": {
           "riichi": {
-            "rate": 46.15,
-            "avgScore": 7668.52
+            "rate": 46.82,
+            "avgScore": 7282.72
           },
           "furo": {
-            "rate": 45.3,
-            "avgScore": 5209.43
+            "rate": 45.09,
+            "avgScore": 4946.15
           },
           "dama": {
-            "rate": 8.55,
-            "avgScore": 4310.0
+            "rate": 8.09,
+            "avgScore": 4292.86
           }
         },
-        "tsumoRate": 38.46
+        "tsumoRate": 38.15
       },
       "riichi": {
-        "count": 126,
-        "rate": 21.61,
-        "successRate": 42.86,
-        "winRate": 50.0,
-        "chaseRate": 23.02,
-        "preemptiveRate": 76.98,
-        "avgTurn": 9.04,
-        "income": 8131.481481481482,
-        "expense": 7750,
-        "ippatsuRate": 6.35,
-        "dealInRate": 12.7
+        "count": 180,
+        "rate": 20.81,
+        "successRate": 45.0,
+        "winRate": 51.85,
+        "chaseRate": 22.78,
+        "preemptiveRate": 77.22,
+        "avgTurn": 9.12,
+        "income": 7690.123456790124,
+        "expense": 7755.555555555556,
+        "ippatsuRate": 8.33,
+        "dealInRate": 10.0
       },
       "furo": {
-        "rate": 32.59
+        "rate": 33.41
       },
       "houju": {
-        "count": 82,
-        "rate": 14.07,
-        "avgScore": 6052.44,
+        "count": 112,
+        "rate": 12.95,
+        "avgScore": 6407.14,
         "byTiming": {
-          "riichi": 19.51,
-          "furo": 37.8,
-          "other": 42.68
+          "riichi": 16.07,
+          "furo": 36.61,
+          "other": 47.32
         },
         "toTarget": {
-          "riichi": 54.88,
-          "furo": 36.59,
-          "dama": 8.54
+          "riichi": 49.11,
+          "furo": 41.07,
+          "dama": 9.82
         }
       },
       "other": {
-        "tenpaiRate": 34.82,
-        "ryukyokuTenpaiRate": 40.19,
-        "riichiRyukyokuRate": 18.7,
-        "oyaKaburiRate": 48.28,
-        "oyaKaburiAvgScore": 10607.0
+        "tenpaiRate": 34.1,
+        "ryukyokuTenpaiRate": 41.1,
+        "riichiRyukyokuRate": 21.47,
+        "oyaKaburiRate": 52.38,
+        "oyaKaburiAvgScore": 10441.0
       },
       "efficiency": {
-        "scoreEfficiency": 1257.89,
-        "scoreLoss": 851.58,
-        "adjustedEfficiency": 406.31,
-        "agariHoujuDiff": 6.0
+        "scoreEfficiency": 1197.46,
+        "scoreLoss": 829.72,
+        "adjustedEfficiency": 367.73,
+        "agariHoujuDiff": 7.05
       },
       "tobiRate": null
     },
@@ -107,155 +107,155 @@
         }
       },
       "agari": {
-        "count": 60,
-        "rate": 25.1,
-        "avgScore": 5648.33,
-        "avgTurn": 12.38,
+        "count": 94,
+        "rate": 21.96,
+        "avgScore": 5732.98,
+        "avgTurn": 11.97,
         "byType": {
           "riichi": {
-            "rate": 46.67,
-            "avgScore": 7025.0
+            "rate": 44.68,
+            "avgScore": 7380.95
           },
           "furo": {
-            "rate": 45.0,
-            "avgScore": 4237.04
+            "rate": 43.62,
+            "avgScore": 4295.12
           },
           "dama": {
-            "rate": 8.33,
-            "avgScore": 5560.0
+            "rate": 11.7,
+            "avgScore": 4800.0
           }
         },
-        "tsumoRate": 38.33
+        "tsumoRate": 41.49
       },
       "riichi": {
-        "count": 54,
-        "rate": 22.59,
-        "successRate": 51.85,
+        "count": 87,
+        "rate": 20.33,
+        "successRate": 48.28,
         "winRate": 50.0,
-        "chaseRate": 16.67,
-        "preemptiveRate": 83.33,
-        "avgTurn": 8.93,
-        "income": 7382.142857142857,
-        "expense": 8950,
-        "ippatsuRate": 5.56,
-        "dealInRate": 3.7
+        "chaseRate": 21.84,
+        "preemptiveRate": 78.16,
+        "avgTurn": 9.2,
+        "income": 7714.285714285715,
+        "expense": 8600,
+        "ippatsuRate": 6.9,
+        "dealInRate": 5.75
       },
       "furo": {
-        "rate": 31.38
+        "rate": 29.21
       },
       "houju": {
-        "count": 30,
-        "rate": 12.55,
-        "avgScore": 5416.67,
+        "count": 53,
+        "rate": 12.38,
+        "avgScore": 4984.91,
         "byTiming": {
-          "riichi": 6.67,
-          "furo": 46.67,
-          "other": 46.67
+          "riichi": 9.43,
+          "furo": 39.62,
+          "other": 50.94
         },
         "toTarget": {
-          "riichi": 43.33,
-          "furo": 53.33,
-          "dama": 3.33
+          "riichi": 33.96,
+          "furo": 64.15,
+          "dama": 1.89
         }
       },
       "other": {
-        "tenpaiRate": 38.91,
-        "ryukyokuTenpaiRate": 46.67,
-        "riichiRyukyokuRate": 25.93,
-        "oyaKaburiRate": 50.0,
-        "oyaKaburiAvgScore": 8614.0
+        "tenpaiRate": 35.28,
+        "ryukyokuTenpaiRate": 43.53,
+        "riichiRyukyokuRate": 28.74,
+        "oyaKaburiRate": 42.31,
+        "oyaKaburiAvgScore": 8445.0
       },
       "efficiency": {
-        "scoreEfficiency": 1417.73,
-        "scoreLoss": 679.79,
-        "adjustedEfficiency": 737.94,
-        "agariHoujuDiff": 12.55
+        "scoreEfficiency": 1258.96,
+        "scoreLoss": 617.13,
+        "adjustedEfficiency": 641.83,
+        "agariHoujuDiff": 9.58
       },
       "tobiRate": null
     },
     "福原": {
       "summary": {
-        "avgRank": 2.18,
-        "games": 57,
+        "avgRank": 2.14,
+        "games": 63,
         "ranks": {
-          "1st": 19,
-          "2nd": 16,
-          "3rd": 15,
+          "1st": 22,
+          "2nd": 17,
+          "3rd": 17,
           "4th": 7
         },
         "rates": {
-          "1st": 33.33,
-          "2nd": 28.07,
-          "3rd": 26.32,
-          "4th": 12.28,
-          "top2": 61.4,
-          "avoid4th": 87.72
+          "1st": 34.92,
+          "2nd": 26.98,
+          "3rd": 26.98,
+          "4th": 11.11,
+          "top2": 61.9,
+          "avoid4th": 88.89
         }
       },
       "agari": {
-        "count": 83,
-        "rate": 21.67,
-        "avgScore": 6332.53,
-        "avgTurn": 12.08,
+        "count": 165,
+        "rate": 24.12,
+        "avgScore": 6703.03,
+        "avgTurn": 11.83,
         "byType": {
           "riichi": {
-            "rate": 57.83,
-            "avgScore": 7312.5
+            "rate": 49.09,
+            "avgScore": 8391.36
           },
           "furo": {
-            "rate": 32.53,
-            "avgScore": 4011.11
+            "rate": 38.79,
+            "avgScore": 3940.62
           },
           "dama": {
-            "rate": 9.64,
-            "avgScore": 8287.5
+            "rate": 12.12,
+            "avgScore": 8705.0
           }
         },
-        "tsumoRate": 33.73
+        "tsumoRate": 36.36
       },
       "riichi": {
-        "count": 87,
-        "rate": 22.72,
-        "successRate": 55.17,
-        "winRate": 39.58,
-        "chaseRate": 25.29,
-        "preemptiveRate": 74.71,
-        "avgTurn": 8.94,
-        "income": 7687.5,
-        "expense": 7112.5,
-        "ippatsuRate": 13.79,
-        "dealInRate": 9.2
+        "count": 150,
+        "rate": 21.93,
+        "successRate": 54.0,
+        "winRate": 45.68,
+        "chaseRate": 22.0,
+        "preemptiveRate": 78.0,
+        "avgTurn": 8.98,
+        "income": 8774.074074074075,
+        "expense": 6416.666666666667,
+        "ippatsuRate": 12.67,
+        "dealInRate": 8.0
       },
       "furo": {
-        "rate": 23.5
+        "rate": 25.73
       },
       "houju": {
-        "count": 40,
-        "rate": 10.44,
-        "avgScore": 5692.5,
+        "count": 63,
+        "rate": 9.21,
+        "avgScore": 4842.86,
         "byTiming": {
-          "riichi": 20.0,
-          "furo": 12.5,
-          "other": 67.5
+          "riichi": 19.05,
+          "furo": 19.05,
+          "other": 61.9
         },
         "toTarget": {
-          "riichi": 45.0,
-          "furo": 45.0,
-          "dama": 10.0
+          "riichi": 44.44,
+          "furo": 44.44,
+          "dama": 11.11
         }
       },
       "other": {
-        "tenpaiRate": 33.94,
-        "ryukyokuTenpaiRate": 39.34,
-        "riichiRyukyokuRate": 19.54,
-        "oyaKaburiRate": 62.5,
-        "oyaKaburiAvgScore": 8960.0
+        "tenpaiRate": 36.55,
+        "ryukyokuTenpaiRate": 37.72,
+        "riichiRyukyokuRate": 18.67,
+        "oyaKaburiRate": 55.81,
+        "oyaKaburiAvgScore": 9008.0
       },
       "efficiency": {
-        "scoreEfficiency": 1372.26,
-        "scoreLoss": 594.3,
-        "adjustedEfficiency": 777.96,
-        "agariHoujuDiff": 11.23
+        "scoreEfficiency": 1616.77,
+        "scoreLoss": 446.03,
+        "adjustedEfficiency": 1170.74,
+        "agariHoujuDiff": 14.91
       },
       "tobiRate": null
     },
@@ -433,87 +433,87 @@
     },
     "高木": {
       "summary": {
-        "avgRank": 2.42,
-        "games": 80,
+        "avgRank": 2.4,
+        "games": 86,
         "ranks": {
-          "1st": 27,
-          "2nd": 14,
-          "3rd": 17,
+          "1st": 29,
+          "2nd": 16,
+          "3rd": 19,
           "4th": 22
         },
         "rates": {
-          "1st": 33.75,
-          "2nd": 17.5,
-          "3rd": 21.25,
-          "4th": 27.5,
-          "top2": 51.25,
-          "avoid4th": 72.5
+          "1st": 33.72,
+          "2nd": 18.6,
+          "3rd": 22.09,
+          "4th": 25.58,
+          "top2": 52.33,
+          "avoid4th": 74.42
         }
       },
       "agari": {
-        "count": 150,
-        "rate": 23.92,
-        "avgScore": 6709.33,
+        "count": 207,
+        "rate": 22.52,
+        "avgScore": 6708.21,
         "avgTurn": 11.57,
         "byType": {
           "riichi": {
-            "rate": 48.67,
-            "avgScore": 7835.62
+            "rate": 45.41,
+            "avgScore": 7844.68
           },
           "furo": {
-            "rate": 42.67,
-            "avgScore": 5217.19
+            "rate": 46.38,
+            "avgScore": 5363.54
           },
           "dama": {
-            "rate": 8.67,
-            "avgScore": 7730.77
+            "rate": 8.21,
+            "avgScore": 8017.65
           }
         },
-        "tsumoRate": 38.67
+        "tsumoRate": 40.1
       },
       "riichi": {
-        "count": 148,
-        "rate": 23.6,
-        "successRate": 49.32,
-        "winRate": 35.62,
-        "chaseRate": 20.95,
-        "preemptiveRate": 79.05,
-        "avgTurn": 9.15,
-        "income": 8109.58904109589,
-        "expense": 6214.285714285715,
-        "ippatsuRate": 18.24,
-        "dealInRate": 9.46
+        "count": 213,
+        "rate": 23.18,
+        "successRate": 44.13,
+        "winRate": 37.23,
+        "chaseRate": 21.6,
+        "preemptiveRate": 78.4,
+        "avgTurn": 9.24,
+        "income": 8153.191489361702,
+        "expense": 6752.173913043478,
+        "ippatsuRate": 13.62,
+        "dealInRate": 10.8
       },
       "furo": {
-        "rate": 24.72
+        "rate": 26.33
       },
       "houju": {
-        "count": 62,
-        "rate": 9.89,
-        "avgScore": 5869.35,
+        "count": 104,
+        "rate": 11.32,
+        "avgScore": 5522.12,
         "byTiming": {
-          "riichi": 20.97,
-          "furo": 32.26,
-          "other": 46.77
+          "riichi": 21.15,
+          "furo": 32.69,
+          "other": 46.15
         },
         "toTarget": {
-          "riichi": 40.32,
-          "furo": 48.39,
-          "dama": 11.29
+          "riichi": 41.35,
+          "furo": 44.23,
+          "dama": 14.42
         }
       },
       "other": {
-        "tenpaiRate": 38.28,
-        "ryukyokuTenpaiRate": 37.17,
-        "riichiRyukyokuRate": 18.92,
-        "oyaKaburiRate": 40.54,
-        "oyaKaburiAvgScore": 9327.0
+        "tenpaiRate": 37.65,
+        "ryukyokuTenpaiRate": 40.35,
+        "riichiRyukyokuRate": 23.94,
+        "oyaKaburiRate": 42.0,
+        "oyaKaburiAvgScore": 9386.0
       },
       "efficiency": {
-        "scoreEfficiency": 1604.87,
-        "scoreLoss": 580.48,
-        "adjustedEfficiency": 1024.39,
-        "agariHoujuDiff": 14.03
+        "scoreEfficiency": 1510.69,
+        "scoreLoss": 625.1,
+        "adjustedEfficiency": 885.58,
+        "agariHoujuDiff": 11.2
       },
       "tobiRate": null
     },
@@ -537,69 +537,69 @@
         }
       },
       "agari": {
-        "count": 75,
-        "rate": 19.89,
-        "avgScore": 7148.0,
-        "avgTurn": 11.49,
+        "count": 83,
+        "rate": 19.04,
+        "avgScore": 7327.71,
+        "avgTurn": 11.62,
         "byType": {
           "riichi": {
-            "rate": 65.33,
-            "avgScore": 8314.29
+            "rate": 67.47,
+            "avgScore": 8487.5
           },
           "furo": {
-            "rate": 34.67,
-            "avgScore": 4950.0
+            "rate": 32.53,
+            "avgScore": 4922.22
           },
           "dama": {
             "rate": 0.0,
             "avgScore": 0.0
           }
         },
-        "tsumoRate": 44.0
+        "tsumoRate": 46.99
       },
       "riichi": {
-        "count": 84,
-        "rate": 22.28,
-        "successRate": 58.33,
-        "winRate": 51.02,
-        "chaseRate": 17.86,
-        "preemptiveRate": 82.14,
+        "count": 97,
+        "rate": 22.25,
+        "successRate": 57.73,
+        "winRate": 55.36,
+        "chaseRate": 18.56,
+        "preemptiveRate": 81.44,
         "avgTurn": 8.46,
-        "income": 8640.816326530612,
-        "expense": 6187.5,
-        "ippatsuRate": 11.9,
-        "dealInRate": 9.52
+        "income": 8808.92857142857,
+        "expense": 7210,
+        "ippatsuRate": 10.31,
+        "dealInRate": 10.31
       },
       "furo": {
-        "rate": 25.2
+        "rate": 25.23
       },
       "houju": {
-        "count": 51,
-        "rate": 13.53,
-        "avgScore": 5503.92,
+        "count": 65,
+        "rate": 14.91,
+        "avgScore": 5926.15,
         "byTiming": {
-          "riichi": 15.69,
-          "furo": 27.45,
-          "other": 56.86
+          "riichi": 15.38,
+          "furo": 29.23,
+          "other": 55.38
         },
         "toTarget": {
-          "riichi": 43.14,
-          "furo": 50.98,
-          "dama": 5.88
+          "riichi": 44.62,
+          "furo": 47.69,
+          "dama": 7.69
         }
       },
       "other": {
-        "tenpaiRate": 30.24,
-        "ryukyokuTenpaiRate": 28.79,
-        "riichiRyukyokuRate": 17.86,
-        "oyaKaburiRate": 57.14,
+        "tenpaiRate": 29.59,
+        "ryukyokuTenpaiRate": 28.95,
+        "riichiRyukyokuRate": 18.56,
+        "oyaKaburiRate": 53.33,
         "oyaKaburiAvgScore": 13169.0
       },
       "efficiency": {
-        "scoreEfficiency": 1421.74,
-        "scoreLoss": 744.68,
-        "adjustedEfficiency": 677.06,
-        "agariHoujuDiff": 6.36
+        "scoreEfficiency": 1395.2,
+        "scoreLoss": 883.59,
+        "adjustedEfficiency": 511.61,
+        "agariHoujuDiff": 4.13
       },
       "tobiRate": null
     },
@@ -1035,87 +1035,87 @@
     },
     "梶田": {
       "summary": {
-        "avgRank": 3.07,
-        "games": 15,
+        "avgRank": 3.24,
+        "games": 21,
         "ranks": {
           "1st": 2,
-          "2nd": 3,
+          "2nd": 4,
           "3rd": 2,
-          "4th": 8
+          "4th": 13
         },
         "rates": {
-          "1st": 13.33,
-          "2nd": 20.0,
-          "3rd": 13.33,
-          "4th": 53.33,
-          "top2": 33.33,
-          "avoid4th": 46.67
+          "1st": 9.52,
+          "2nd": 19.05,
+          "3rd": 9.52,
+          "4th": 61.9,
+          "top2": 28.57,
+          "avoid4th": 38.1
         }
       },
       "agari": {
-        "count": 5,
-        "rate": 7.94,
-        "avgScore": 6960.0,
-        "avgTurn": 11.4,
+        "count": 27,
+        "rate": 12.11,
+        "avgScore": 5914.81,
+        "avgTurn": 11.81,
         "byType": {
           "riichi": {
-            "rate": 60.0,
-            "avgScore": 6900.0
+            "rate": 66.67,
+            "avgScore": 6611.11
           },
           "furo": {
-            "rate": 40.0,
-            "avgScore": 7050.0
+            "rate": 25.93,
+            "avgScore": 5157.14
           },
           "dama": {
-            "rate": 0.0,
-            "avgScore": 0.0
+            "rate": 7.41,
+            "avgScore": 2300.0
           }
         },
-        "tsumoRate": 20.0
+        "tsumoRate": 29.63
       },
       "riichi": {
-        "count": 6,
-        "rate": 9.52,
+        "count": 36,
+        "rate": 16.14,
         "successRate": 50.0,
-        "winRate": 33.33,
-        "chaseRate": 0.0,
-        "preemptiveRate": 100.0,
-        "avgTurn": 8.33,
-        "income": 7233.333333333333,
-        "expense": 0,
-        "ippatsuRate": 16.67,
-        "dealInRate": 0.0
+        "winRate": 38.89,
+        "chaseRate": 19.44,
+        "preemptiveRate": 80.56,
+        "avgTurn": 8.72,
+        "income": 6833.333333333333,
+        "expense": 13000,
+        "ippatsuRate": 8.33,
+        "dealInRate": 2.78
       },
       "furo": {
-        "rate": 9.52
+        "rate": 18.39
       },
       "houju": {
-        "count": 13,
-        "rate": 20.63,
-        "avgScore": 5876.92,
+        "count": 35,
+        "rate": 15.7,
+        "avgScore": 6048.57,
         "byTiming": {
-          "riichi": 0.0,
-          "furo": 0.0,
-          "other": 100.0
+          "riichi": 2.86,
+          "furo": 11.43,
+          "other": 85.71
         },
         "toTarget": {
-          "riichi": 61.54,
-          "furo": 30.77,
-          "dama": 7.69
+          "riichi": 45.71,
+          "furo": 34.29,
+          "dama": 20.0
         }
       },
       "other": {
-        "tenpaiRate": 14.29,
+        "tenpaiRate": 22.42,
         "ryukyokuTenpaiRate": 28.57,
-        "riichiRyukyokuRate": 16.67,
-        "oyaKaburiRate": 75.0,
-        "oyaKaburiAvgScore": 9433.0
+        "riichiRyukyokuRate": 13.89,
+        "oyaKaburiRate": 69.23,
+        "oyaKaburiAvgScore": 10356.0
       },
       "efficiency": {
-        "scoreEfficiency": 552.62,
-        "scoreLoss": 1212.41,
-        "adjustedEfficiency": -659.78,
-        "agariHoujuDiff": -12.69
+        "scoreEfficiency": 716.28,
+        "scoreLoss": 949.63,
+        "adjustedEfficiency": -233.34,
+        "agariHoujuDiff": -3.59
       },
       "tobiRate": null
     },
@@ -1311,45 +1311,45 @@
         }
       },
       "agari": {
-        "count": 12,
-        "rate": 10.08,
-        "avgScore": 10041.67,
-        "avgTurn": 12.83,
+        "count": 19,
+        "rate": 13.19,
+        "avgScore": 8694.74,
+        "avgTurn": 12.63,
         "byType": {
           "riichi": {
-            "rate": 75.0,
-            "avgScore": 9355.56
+            "rate": 63.16,
+            "avgScore": 8283.33
           },
           "furo": {
-            "rate": 16.67,
-            "avgScore": 12000.0
+            "rate": 26.32,
+            "avgScore": 9160.0
           },
           "dama": {
-            "rate": 8.33,
-            "avgScore": 12300.0
+            "rate": 10.53,
+            "avgScore": 10000.0
           }
         },
-        "tsumoRate": 41.67
+        "tsumoRate": 26.32
       },
       "riichi": {
-        "count": 25,
-        "rate": 21.01,
-        "successRate": 36.0,
-        "winRate": 44.44,
-        "chaseRate": 24.0,
-        "preemptiveRate": 76.0,
-        "avgTurn": 8.64,
-        "income": 9911.111111111111,
+        "count": 29,
+        "rate": 20.14,
+        "successRate": 41.38,
+        "winRate": 33.33,
+        "chaseRate": 24.14,
+        "preemptiveRate": 75.86,
+        "avgTurn": 8.62,
+        "income": 8783.333333333334,
         "expense": 8700,
-        "ippatsuRate": 12.0,
-        "dealInRate": 4.0
+        "ippatsuRate": 10.34,
+        "dealInRate": 3.45
       },
       "furo": {
-        "rate": 13.45
+        "rate": 16.67
       },
       "houju": {
         "count": 16,
-        "rate": 13.45,
+        "rate": 11.11,
         "avgScore": 4756.25,
         "byTiming": {
           "riichi": 6.25,
@@ -1363,17 +1363,17 @@
         }
       },
       "other": {
-        "tenpaiRate": 25.21,
-        "ryukyokuTenpaiRate": 34.48,
-        "riichiRyukyokuRate": 32.0,
-        "oyaKaburiRate": 66.67,
+        "tenpaiRate": 26.39,
+        "ryukyokuTenpaiRate": 28.57,
+        "riichiRyukyokuRate": 27.59,
+        "oyaKaburiRate": 50.0,
         "oyaKaburiAvgScore": 10150.0
       },
       "efficiency": {
-        "scoreEfficiency": 1012.2,
-        "scoreLoss": 639.72,
-        "adjustedEfficiency": 372.48,
-        "agariHoujuDiff": -3.37
+        "scoreEfficiency": 1146.84,
+        "scoreLoss": 528.42,
+        "adjustedEfficiency": 618.42,
+        "agariHoujuDiff": 2.08
       },
       "tobiRate": null
     },
@@ -1655,69 +1655,69 @@
         }
       },
       "agari": {
-        "count": 11,
-        "rate": 16.92,
-        "avgScore": 6381.82,
-        "avgTurn": 11.64,
+        "count": 19,
+        "rate": 17.43,
+        "avgScore": 7236.84,
+        "avgTurn": 12.16,
         "byType": {
           "riichi": {
-            "rate": 36.36,
-            "avgScore": 9450.0
+            "rate": 42.11,
+            "avgScore": 10512.5
           },
           "furo": {
-            "rate": 54.55,
-            "avgScore": 5216.67
+            "rate": 52.63,
+            "avgScore": 5230.0
           },
           "dama": {
-            "rate": 9.09,
+            "rate": 5.26,
             "avgScore": 1100.0
           }
         },
-        "tsumoRate": 36.36
+        "tsumoRate": 47.37
       },
       "riichi": {
-        "count": 14,
-        "rate": 21.54,
-        "successRate": 28.57,
-        "winRate": 0.0,
-        "chaseRate": 50.0,
-        "preemptiveRate": 50.0,
-        "avgTurn": 10.07,
-        "income": 9700,
-        "expense": 5200,
+        "count": 24,
+        "rate": 22.02,
+        "successRate": 33.33,
+        "winRate": 25.0,
+        "chaseRate": 45.83,
+        "preemptiveRate": 54.17,
+        "avgTurn": 9.88,
+        "income": 11012.5,
+        "expense": 8400,
         "ippatsuRate": 0.0,
-        "dealInRate": 7.14
+        "dealInRate": 16.67
       },
       "furo": {
-        "rate": 23.08
+        "rate": 24.77
       },
       "houju": {
-        "count": 5,
-        "rate": 7.69,
-        "avgScore": 6940.0,
+        "count": 11,
+        "rate": 10.09,
+        "avgScore": 6254.55,
         "byTiming": {
-          "riichi": 20.0,
-          "furo": 40.0,
-          "other": 40.0
+          "riichi": 36.36,
+          "furo": 27.27,
+          "other": 36.36
         },
         "toTarget": {
-          "riichi": 80.0,
-          "furo": 20.0,
-          "dama": 0.0
+          "riichi": 63.64,
+          "furo": 27.27,
+          "dama": 9.09
         }
       },
       "other": {
-        "tenpaiRate": 35.38,
-        "ryukyokuTenpaiRate": 57.14,
-        "riichiRyukyokuRate": 42.86,
-        "oyaKaburiRate": 33.33,
-        "oyaKaburiAvgScore": 8300.0
+        "tenpaiRate": 36.7,
+        "ryukyokuTenpaiRate": 63.16,
+        "riichiRyukyokuRate": 29.17,
+        "oyaKaburiRate": 40.0,
+        "oyaKaburiAvgScore": 20150.0
       },
       "efficiency": {
-        "scoreEfficiency": 1079.8,
-        "scoreLoss": 533.69,
-        "adjustedEfficiency": 546.12,
-        "agariHoujuDiff": 9.23
+        "scoreEfficiency": 1261.38,
+        "scoreLoss": 631.08,
+        "adjustedEfficiency": 630.3,
+        "agariHoujuDiff": 7.34
       },
       "tobiRate": null
     }
