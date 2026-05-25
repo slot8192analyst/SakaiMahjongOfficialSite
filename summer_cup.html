@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUMMER CUP | 坂井麻雀店</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">坂井麻雀店</h1>
+            <p class="site-subtitle">Sakai Mahjong Club</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← トップに戻る</a>
+        <h1 class="page-title">☀️ SUMMER CUP</h1>
+
+        <!-- ① 連続8試合のベストで競います -->
+        <div class="section">
+            <div class="section-header">
+                <span>①</span>
+                <span>連続8試合のベストで競います</span>
+            </div>
+            <p style="font-size:14px; color:#999; margin-bottom:14px;">
+                本大会の順位は、<strong class="hl">連続した8試合のスコア合計のベスト記録</strong> で決まります。
+            </p>
+
+            <table class="record-table">
+                <thead>
+                    <tr>
+                        <th style="width:30%;">プレイ数</th>
+                        <th>集計対象</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1〜8試合</strong></td>
+                        <td>プレイした全試合の合計が、そのまま記録になる</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9試合以上</strong></td>
+                        <td>連続する8試合の中で、もっとも合計が高い区間が記録になる</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="rule-section-title">🎯 イメージ図（10試合プレイした場合）</p>
+            <div class="rule-note" style="font-family: 'Consolas', 'Menlo', monospace; font-size: 13px; line-height: 2;">
+                <span style="color:#7aa2d4;">試合:  ①  ②  ③  ④  ⑤  ⑥  ⑦  ⑧  ⑨  ⑩</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6a9e6a;">└──── 8試合の合計 ────┘</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← パターンA<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#e8c36a;">└──── 8試合の合計 ────┘</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← パターンB<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#b87333;">└──── 8試合の合計 ────┘</span>&nbsp;&nbsp;&nbsp;&nbsp;← <span class="hl-warn">パターンC ★最高記録ならこの区間を参照</span><br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;この中で一番高かった合計が「最終スコア」になる
+            </div>
+
+            <div class="rule-note" style="border-left-color: #38a169; margin-top:12px;">
+                💡 たくさん打つほど好調な8試合の区間にしやすくなり、爆死した試合があっても<br>
+                「ベスト区間の外」に追い出せれば <strong class="hl">無かったことにできる</strong> 仕組みです。
+            </div>
+        </div>
+
+        <!-- ② 1試合のスコアはどう決まる？ -->
+        <div class="section">
+            <div class="section-header">
+                <span>②</span>
+                <span>1試合のスコアはどう決まる？</span>
+            </div>
+
+            <div class="rule-note" style="text-align:center; font-family:'Consolas','Menlo',monospace; font-size:15px; color:#e8c36a; letter-spacing:2px;">
+                試合スコア &nbsp;＝&nbsp; 素点 &nbsp;＋&nbsp; 順位点（ウマ）
+            </div>
+
+            <table class="record-table" style="margin-top:14px;">
+                <thead>
+                    <tr>
+                        <th style="width:30%;">項目</th>
+                        <th>内容</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>素点</strong></td>
+                        <td>対局終了時の「持ち点 − 返し点」</td>
+                    </tr>
+                    <tr>
+                        <td><strong>順位点（ウマ）</strong></td>
+                        <td>順位によってもらえる／引かれるボーナス点</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="rule-note" style="border-left-color: #e07050; margin-top:12px;">
+                ⚠️ <strong class="hl-warn">注意：</strong>
+                持ち点がマイナスで終わった場合、<strong class="hl-warn">素点は「0」として扱われます</strong>（マイナスにはならない）。
+            </div>
+        </div>
+
+        <!-- まとめ -->
+        <div class="section">
+            <div class="section-header">
+                <span>📋</span>
+                <span>まとめ</span>
+            </div>
+            <ul class="rule-list">
+                <li>最終スコアは <strong class="hl">「連続8試合の合計のベスト」</strong> で決まる</li>
+                <li>1試合のスコア ＝ <strong class="hl">素点 ＋ ウマ</strong>。素点がマイナスなら0扱い</li>
+                <li>たくさん打つほど好調区間を引きやすい → <strong class="hl">試行回数が物を言う</strong></li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="back-link">← トップに戻る</a>
+    </div>
+</body>
+</html>
