@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-25T09:39:19",
+  "generated": "2026-05-25T10:33:18",
   "players": {
     "坂井": {
       "summary": {
@@ -1800,10 +1800,10 @@
         "oyaKaburiAvgScore": 12600.0
       },
       "efficiency": {
-        "scoreEfficiency": null,
-        "scoreLoss": null,
-        "adjustedEfficiency": null,
-        "agariHoujuDiff": null
+        "scoreEfficiency": 1430.15,
+        "scoreLoss": 541.16,
+        "adjustedEfficiency": 888.99,
+        "agariHoujuDiff": 1.78
       },
       "tobiRate": null
     }
