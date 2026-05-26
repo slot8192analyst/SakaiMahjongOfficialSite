@@ -3,8 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUMMER CUP | 坂井麻雀店</title>
+    <title>SUMMER CUP 2025 | 坂井麻雀店</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== SUMMER CUP ホーム専用スタイル ===== */
+
+        /* ヒーローバナー */
+        .cup-hero {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1a2a1a 50%, #2a1a0a 100%);
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            padding: 36px 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cup-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(232,195,106,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(122,162,212,0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .cup-hero-eyebrow {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #e8c36a;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .cup-hero-title {
+            font-size: 38px;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 6px;
+            margin: 0 0 6px;
+            text-shadow: 0 0 40px rgba(232,195,106,0.3);
+        }
+        .cup-hero-title span {
+            color: #e8c36a;
+        }
+        .cup-hero-year {
+            font-size: 14px;
+            color: #555;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+        .cup-hero-period {
+            display: inline-block;
+            background: rgba(232,195,106,0.1);
+            border: 1px solid rgba(232,195,106,0.3);
+            color: #e8c36a;
+            font-size: 13px;
+            padding: 6px 18px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* ナビリンク */
+        .cup-nav {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .cup-nav-btn {
+            display: block;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            text-decoration: none !important;
+            color: #bbb;
+            font-size: 13px;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .cup-nav-btn:hover {
+            border-color: #4a6a8a;
+            background: #1f2a35;
+            color: #7aa2d4;
+            text-decoration: none !important;
+        }
+        .cup-nav-btn .nav-icon {
+            display: block;
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+        .cup-nav-btn .nav-label {
+            display: block;
+            font-size: 12px;
+            color: #555;
+            margin-top: 3px;
+        }
+
+        /* コンセプトセクション */
+        .cup-concept-text {
+            font-size: 14px;
+            color: #aaa;
+            line-height: 2;
+        }
+        .cup-concept-text .em {
+            color: #e8c36a;
+            font-weight: bold;
+        }
+        .cup-catch {
+            font-size: 16px;
+            color: #ddd;
+            font-weight: bold;
+            line-height: 1.8;
+            border-left: 3px solid #e8c36a;
+            padding-left: 14px;
+            margin: 16px 0;
+        }
+
+        /* 賞品テーブル */
+        .cup-prize-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+        .cup-prize-table th {
+            background: #141414;
+            color: #666;
+            font-weight: normal;
+            font-size: 12px;
+            padding: 8px 12px;
+            text-align: left;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        .cup-prize-table td {
+            font-size: 14px;
+            padding: 12px;
+            border-bottom: 1px solid #1e1e1e;
+            color: #bbb;
+            vertical-align: middle;
+        }
+        .cup-prize-table tr:last-child td {
+            border-bottom: none;
+        }
+        .cup-prize-rank {
+            font-size: 18px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .cup-prize-rank.gold   { color: #e8c36a; }
+        .cup-prize-rank.silver { color: #a0a0a0; }
+        .cup-prize-rank.bronze { color: #b87333; }
+        .cup-prize-amount {
+            font-weight: bold;
+            color: #ddd;
+        }
+        .cup-prize-tbd {
+            color: #555;
+            font-size: 12px;
+        }
+        .cup-prize-scale {
+            font-size: 12px;
+            color: #e07050;
+            margin-top: 10px;
+        }
+
+        /* 参加賞バナー */
+        .cup-bonus-banner {
+            background: linear-gradient(135deg, #0d2010, #1a2a10);
+            border: 1px solid rgba(106,158,106,0.3);
+            border-radius: 8px;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 16px;
+        }
+        .cup-bonus-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        .cup-bonus-title {
+            font-size: 13px;
+            font-weight: bold;
+            color: #6a9e6a;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+        .cup-bonus-desc {
+            font-size: 13px;
+            color: #999;
+        }
+        .cup-bonus-desc strong {
+            color: #6a9e6a;
+        }
+
+        /* タイムライン（開催スケジュール） */
+        .cup-timeline {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .cup-timeline li {
+            display: flex;
+            gap: 14px;
+            padding: 10px 0;
+            border-bottom: 1px solid #1e1e1e;
+            font-size: 14px;
+            color: #999;
+        }
+        .cup-timeline li:last-child {
+            border-bottom: none;
+        }
+        .cup-timeline .tl-date {
+            color: #e8c36a;
+            font-size: 12px;
+            white-space: nowrap;
+            min-width: 80px;
+            padding-top: 1px;
+        }
+        .cup-timeline .tl-event {
+            color: #bbb;
+        }
+        .cup-timeline .tl-now {
+            display: inline-block;
+            background: rgba(232,195,106,0.15);
+            color: #e8c36a;
+            font-size: 10px;
+            padding: 1px 7px;
+            border-radius: 10px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -16,192 +246,143 @@
 
     <div class="container">
         <a href="index.html" class="back-link">← トップに戻る</a>
-        <h1 class="page-title">☀️ SUMMER CUP</h1>
 
-        <!-- 成績ページへのリンク -->
-        <div class="section">
-            <div class="section-header">
-                <span>📊</span>
-                <span>成績・順位</span>
-            </div>
-            <div class="data-links">
-                <a href="summer_cup_result.html">🏅 現在の成績・順位を見る</a>
-            </div>
+        <!-- ヒーローバナー -->
+        <div class="cup-hero">
+            <div class="cup-hero-eyebrow">Sakai Mahjong Club presents</div>
+            <h1 class="cup-hero-title">☀️ SUMMER <span>CUP</span></h1>
+            <div class="cup-hero-year">2025</div>
+            <div class="cup-hero-period">📅 &nbsp;2025年 6月1日 〜 8月31日</div>
         </div>
 
-        <!-- ① 連続8試合のベストで競います -->
+        <!-- ナビゲーション -->
+        <div class="cup-nav">
+            <a href="summer_cup_result.html" class="cup-nav-btn">
+                <span class="nav-icon">📊</span>
+                現在の成績・順位
+                <span class="nav-label">リアルタイム更新</span>
+            </a>
+            <a href="summer_cup_rule.html" class="cup-nav-btn">
+                <span class="nav-icon">📘</span>
+                ルール解説
+                <span class="nav-label">採点方式・計算方法</span>
+            </a>
+        </div>
+
+        <!-- 開催コンセプト -->
         <div class="section">
             <div class="section-header">
-                <span>①</span>
-                <span>連続8試合のベストで競います</span>
+                <span>🔥</span>
+                <span>開催コンセプト</span>
             </div>
-            <p style="font-size:14px; color:#999; margin-bottom:14px;">
-                本大会の順位は、<strong class="hl">連続した8試合のスコア合計のベスト記録</strong> で決まります。
+
+            <div class="cup-catch">
+                この夏、坂井麻雀店がアツくなる。<br>
+                実力と運と回数が、頂点を決める。
+            </div>
+
+            <p class="cup-concept-text">
+                今年度初の試みとして、<span class="em">夏の大型イベント「SUMMER CUP」</span> を開催します。<br>
+                日々の半荘が、ただの消化試合じゃなくなる。<br>
+                <span class="em">打てば打つほどチャンスが広がる</span>、攻撃的なルールで、
+                全員に優勝の可能性があります。<br><br>
+                勝負どころで燃えられるか。好調な8試合を引き寄せられるか。<br>
+                この夏、麻雀卓で<span class="em">己の限界に挑んでください。</span>
+            </p>
+        </div>
+
+        <!-- 開催スケジュール -->
+        <div class="section">
+            <div class="section-header">
+                <span>📅</span>
+                <span>開催スケジュール</span>
+            </div>
+            <ul class="cup-timeline">
+                <li>
+                    <span class="tl-date">6月 1日</span>
+                    <span class="tl-event">🚀 エントリー開始・対局開始<span class="tl-now">NOW</span></span>
+                </li>
+                <li>
+                    <span class="tl-date">6月〜8月</span>
+                    <span class="tl-event">⚔️ 対局期間（随時参加可）</span>
+                </li>
+                <li>
+                    <span class="tl-date">8月31日</span>
+                    <span class="tl-event">🏁 エントリー締め切り・最終対局日</span>
+                </li>
+                <li>
+                    <span class="tl-date">9月上旬</span>
+                    <span class="tl-event">🏆 結果発表・表彰</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 賞品・インセンティブ -->
+        <div class="section">
+            <div class="section-header">
+                <span>🏆</span>
+                <span>賞品・インセンティブ</span>
+            </div>
+
+            <table class="cup-prize-table">
+                <thead>
+                    <tr>
+                        <th style="width:25%;">順位</th>
+                        <th>賞品</th>
+                        <th style="width:35%;">備考</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="cup-prize-rank gold">🥇 優勝</span></td>
+                        <td><span class="cup-prize-amount">Amazonギフト券 5,000円〜</span></td>
+                        <td><span class="cup-prize-tbd">開催数により増額</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="cup-prize-rank silver">🥈 準優勝</span></td>
+                        <td><span class="cup-prize-amount cup-prize-tbd">検討中</span></td>
+                        <td><span class="cup-prize-tbd">開催数により決定</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="cup-prize-rank bronze">🥉 3位</span></td>
+                        <td><span class="cup-prize-amount cup-prize-tbd">検討中</span></td>
+                        <td><span class="cup-prize-tbd">開催数により決定</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="cup-prize-scale">
+                ⚡ 開催半荘数が増えるほど賞品グレードアップ予定！たくさん打ってプールを育てよう。
             </p>
 
-            <table class="record-table">
-                <thead>
-                    <tr>
-                        <th style="width:30%;">プレイ数</th>
-                        <th>集計対象</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>1〜8試合</strong></td>
-                        <td>プレイした全試合の合計が、そのまま記録になる</td>
-                    </tr>
-                    <tr>
-                        <td><strong>9試合以上</strong></td>
-                        <td>連続する8試合の中で、もっとも合計が高い区間が記録になる</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <p class="rule-section-title">🎯 イメージ図（10試合プレイした場合）</p>
-            <div style="overflow-x: auto;">
-                <table style="border-collapse: collapse; min-width: 480px; width: 100%; table-layout: fixed; font-size: 13px;">
-                    <colgroup>
-                        <col style="width: 64px;"><!-- ラベル列 -->
-                        <col><!-- ① -->
-                        <col><!-- ② -->
-                        <col><!-- ③ -->
-                        <col><!-- ④ -->
-                        <col><!-- ⑤ -->
-                        <col><!-- ⑥ -->
-                        <col><!-- ⑦ -->
-                        <col><!-- ⑧ -->
-                        <col><!-- ⑨ -->
-                        <col><!-- ⑩ -->
-                        <col style="width: 180px;"><!-- 説明列 -->
-                    </colgroup>
-                    <!-- ヘッダー行：試合番号 -->
-                    <thead>
-                        <tr>
-                            <th style="background:transparent; color:#666; font-weight:normal; text-align:right; padding: 6px 8px 6px 0; border:none; font-size:12px;">試合</th>
-                            <th style="background:transparent; color:#7aa2d4; font-weight:normal; text-align:center; padding:6px 2px; border:none;">①</th>
-                            <th style="background:transparent; color:#7aa2d4; font-weight:normal; text-align:center; padding:6px 2px; border:none;">②</th>
-                            <th style="background:transparent; color:#7aa2d4; font-weight:normal; text-align:center; padding:6px 2px; border:none;">③</th>
-                            <th style="background:transparent; color:#7aa2d4; font-weight:normal; text-align:center; padding:6px 2px; border:none;">④</th>
-                            <th style="background:transparent; color:#7aa2d4; font-weight:normal; text-align:center; padding:6px 2px; border:none;">⑤</th>
-                            <th style="background:transparent; color:#7aa2d4; font-weight:normal; text-align:center; padding:6px 2px; border:none;">⑥</th>
-                            <th style="background:transparent; color:#7aa2d4; font-weight:normal; text-align:center; padding:6px 2px; border:none;">⑦</th>
-                            <th style="background:transparent; color:#7aa2d4; font-weight:normal; text-align:center; padding:6px 2px; border:none;">⑧</th>
-                            <th style="background:transparent; color:#7aa2d4; font-weight:normal; text-align:center; padding:6px 2px; border:none;">⑨</th>
-                            <th style="background:transparent; color:#7aa2d4; font-weight:normal; text-align:center; padding:6px 2px; border:none;">⑩</th>
-                            <th style="background:transparent; border:none;"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- パターンA：①〜⑧ -->
-                        <tr>
-                            <td style="text-align:right; padding: 4px 8px 4px 0; color:#888; font-size:12px; border:none; white-space:nowrap;">パターンA</td>
-                            <td style="background:#1e3a2a; border-left: 3px solid #6a9e6a; border-top: 2px solid #6a9e6a; border-bottom: 2px solid #6a9e6a; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#1e3a2a; border-top: 2px solid #6a9e6a; border-bottom: 2px solid #6a9e6a; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#1e3a2a; border-top: 2px solid #6a9e6a; border-bottom: 2px solid #6a9e6a; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#1e3a2a; border-top: 2px solid #6a9e6a; border-bottom: 2px solid #6a9e6a; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#1e3a2a; border-top: 2px solid #6a9e6a; border-bottom: 2px solid #6a9e6a; padding:8px 4px; text-align:center; font-size:11px; color:#6a9e6a; white-space:nowrap;">8試合</td>
-                            <td style="background:#1e3a2a; border-top: 2px solid #6a9e6a; border-bottom: 2px solid #6a9e6a; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#1e3a2a; border-top: 2px solid #6a9e6a; border-bottom: 2px solid #6a9e6a; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#1e3a2a; border-top: 2px solid #6a9e6a; border-bottom: 2px solid #6a9e6a; border-right: 3px solid #6a9e6a; padding:8px 4px; text-align:center;"></td>
-                            <td style="padding:8px 4px; border:none;"></td>
-                            <td style="padding:8px 4px; border:none;"></td>
-                            <td style="padding: 4px 0 4px 10px; color:#6a9e6a; font-size:12px; border:none; white-space:nowrap;">① 〜 ⑧ の合計</td>
-                        </tr>
-                        <!-- パターンB：②〜⑨ -->
-                        <tr>
-                            <td style="text-align:right; padding: 4px 8px 4px 0; color:#888; font-size:12px; border:none; white-space:nowrap;">パターンB</td>
-                            <td style="padding:8px 4px; border:none;"></td>
-                            <td style="background:#3a3010; border-left: 3px solid #e8c36a; border-top: 2px solid #e8c36a; border-bottom: 2px solid #e8c36a; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#3a3010; border-top: 2px solid #e8c36a; border-bottom: 2px solid #e8c36a; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#3a3010; border-top: 2px solid #e8c36a; border-bottom: 2px solid #e8c36a; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#3a3010; border-top: 2px solid #e8c36a; border-bottom: 2px solid #e8c36a; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#3a3010; border-top: 2px solid #e8c36a; border-bottom: 2px solid #e8c36a; padding:8px 4px; text-align:center; font-size:11px; color:#e8c36a; white-space:nowrap;">8試合</td>
-                            <td style="background:#3a3010; border-top: 2px solid #e8c36a; border-bottom: 2px solid #e8c36a; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#3a3010; border-top: 2px solid #e8c36a; border-bottom: 2px solid #e8c36a; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#3a3010; border-top: 2px solid #e8c36a; border-bottom: 2px solid #e8c36a; border-right: 3px solid #e8c36a; padding:8px 4px; text-align:center;"></td>
-                            <td style="padding:8px 4px; border:none;"></td>
-                            <td style="padding:8px 4px; border:none;"></td>
-                            <td style="padding: 4px 0 4px 10px; color:#e8c36a; font-size:12px; border:none; white-space:nowrap;">② 〜 ⑨ の合計</td>
-                        </tr>
-                        <!-- パターンC：③〜⑩（最高記録） -->
-                        <tr>
-                            <td style="text-align:right; padding: 4px 8px 4px 0; color:#e07050; font-size:12px; border:none; white-space:nowrap;">パターンC ★</td>
-                            <td style="padding:8px 4px; border:none;"></td>
-                            <td style="padding:8px 4px; border:none;"></td>
-                            <td style="background:#3a1a0a; border-left: 3px solid #e07050; border-top: 2px solid #e07050; border-bottom: 2px solid #e07050; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#3a1a0a; border-top: 2px solid #e07050; border-bottom: 2px solid #e07050; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#3a1a0a; border-top: 2px solid #e07050; border-bottom: 2px solid #e07050; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#3a1a0a; border-top: 2px solid #e07050; border-bottom: 2px solid #e07050; padding:8px 4px; text-align:center; font-size:11px; color:#e07050; white-space:nowrap;">8試合</td>
-                            <td style="background:#3a1a0a; border-top: 2px solid #e07050; border-bottom: 2px solid #e07050; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#3a1a0a; border-top: 2px solid #e07050; border-bottom: 2px solid #e07050; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#3a1a0a; border-top: 2px solid #e07050; border-bottom: 2px solid #e07050; padding:8px 4px; text-align:center;"></td>
-                            <td style="background:#3a1a0a; border-top: 2px solid #e07050; border-bottom: 2px solid #e07050; border-right: 3px solid #e07050; padding:8px 4px; text-align:center;"></td>
-                            <td style="padding: 4px 0 4px 10px; color:#e07050; font-size:12px; border:none; white-space:nowrap;">③ 〜 ⑩ の合計 🏆</td>
-                        </tr>
-                        <!-- 説明行 -->
-                        <tr>
-                            <td colspan="12" style="padding: 12px 0 4px 0; text-align:center; color:#888; font-size:13px; border:none;">
-                                この中で一番高かった合計が <span class="hl">「最終スコア」</span> になる
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="rule-note" style="border-left-color: #38a169; margin-top:12px;">
-                💡 たくさん打つほど好調な8試合の区間にしやすくなり、爆死した試合があっても<br>
-                「ベスト区間の外」に追い出せれば <strong class="hl">無かったことにできる</strong> 仕組みです。
+            <!-- 参加賞バナー -->
+            <div class="cup-bonus-banner">
+                <div class="cup-bonus-icon">🎁</div>
+                <div>
+                    <div class="cup-bonus-title">参加賞</div>
+                    <div class="cup-bonus-desc">
+                        期間中に <strong>8半荘参加</strong> した方全員に、<strong>場代500円分サービス</strong>！<br>
+                        <span style="font-size:12px; color:#666;">まずは8半荘を目指して打ち続けよう。</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- ② 1試合のスコアはどう決まる？ -->
-        <div class="section">
-            <div class="section-header">
-                <span>②</span>
-                <span>1試合のスコアはどう決まる？</span>
-            </div>
-
-            <div class="rule-note" style="text-align:center; font-family:'Consolas','Menlo',monospace; font-size:15px; color:#e8c36a; letter-spacing:2px;">
-                試合スコア &nbsp;＝&nbsp; 素点 &nbsp;＋&nbsp; 順位点
-            </div>
-
-            <table class="record-table" style="margin-top:14px;">
-                <thead>
-                    <tr>
-                        <th style="width:30%;">項目</th>
-                        <th>内容</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>素点</strong></td>
-                        <td>対局終了時の持ち点</td>
-                    </tr>
-                    <tr>
-                        <td><strong>順位点</strong></td>
-                        <td>順位によってもらえる／引かれるボーナスポイント</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="rule-note" style="border-left-color: #e07050; margin-top:12px;">
-                ⚠️ <strong class="hl-warn">注意：</strong>
-                持ち点がマイナスで終わった場合、<strong class="hl-warn">素点は「0」として扱われます</strong>（マイナスにはならない）。
-            </div>
-        </div>
-
-        <!-- まとめ -->
+        <!-- ルール概要 -->
         <div class="section">
             <div class="section-header">
                 <span>📋</span>
-                <span>まとめ</span>
+                <span>ルール概要</span>
             </div>
             <ul class="rule-list">
-                <li>最終スコアは <strong class="hl">「連続8試合の合計のベスト」</strong> で決まる</li>
-                <li>1試合のスコア ＝ <strong class="hl">素点 ＋ 順位点</strong>。素点がマイナスなら0扱い</li>
-                <li>たくさん打つほど好調区間を引きやすい → <strong class="hl">試行回数を稼いだほうがよい</strong></li>
+                <li>連続した <strong class="hl">8試合のスコア合計のベスト記録</strong> で順位を競う</li>
+                <li>打てば打つほど好調な区間を引ける → <strong class="hl">試行回数が物を言う</strong></li>
+                <li>1試合スコア ＝ <strong class="hl">素点（持ち点−返し点）＋ 順位点（ウマ）</strong></li>
+                <li>素点がマイナスの場合は <strong class="hl-warn">0扱い</strong>（マイナスにはならない）</li>
             </ul>
+            <div class="data-links" style="margin-top:14px;">
+                <a href="summer_cup_rule.html">📘 詳しいルール解説を見る →</a>
+            </div>
         </div>
 
         <a href="index.html" class="back-link">← トップに戻る</a>
