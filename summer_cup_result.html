@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUMMER CUP 成績 | 坂井麻雀店</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== SUMMER CUP 成績ページ専用スタイル ===== */
+
+        /* プレイヤーカード */
+        .cup-card {
+            background-color: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+            transition: border-color 0.2s;
+        }
+        .cup-card:hover {
+            border-color: #3a4a6a;
+        }
+
+        /* カードヘッダー */
+        .cup-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 14px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        .cup-player-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ddd;
+            letter-spacing: 1px;
+        }
+        .cup-games-played {
+            font-size: 12px;
+            color: #555;
+            letter-spacing: 1px;
+        }
+
+        /* セクションタイトル（LATEST / BEST / COMBO） */
+        .cup-section-title {
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cup-section-title::before {
+            content: '';
+            display: inline-block;
+            width: 3px;
+            height: 12px;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+        .cup-section-title.latest       { color: #7aa2d4; }
+        .cup-section-title.latest::before { background: #7aa2d4; }
+        .cup-section-title.best         { color: #e8c36a; }
+        .cup-section-title.best::before  { background: #e8c36a; }
+        .cup-section-title.combo        { color: #c080d0; }
+        .cup-section-title.combo::before { background: #c080d0; }
+
+        /* ゲーム範囲テキスト */
+        .cup-range-info {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        .cup-warning {
+            font-size: 12px;
+            color: #e8c36a;
+            margin-bottom: 8px;
+        }
+
+        /* スコアグリッドテーブル */
+        .cup-grid {
+            border-collapse: separate;
+            border-spacing: 3px;
+            width: 100%;
+            margin-bottom: 8px;
+            table-layout: fixed;
+            overflow-x: auto;
+        }
+        .cup-grid th {
+            font-size: 10px;
+            color: #555;
+            padding: 3px 2px;
+            text-align: center;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+        .cup-grid td {
+            text-align: center;
+            padding: 10px 3px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .cup-cell-plus {
+            background: rgba(106, 158, 106, 0.15);
+            color: #6a9e6a;
+            border: 1px solid rgba(106, 158, 106, 0.3);
+        }
+        .cup-cell-minus {
+            background: rgba(196, 106, 106, 0.15);
+            color: #c46a6a;
+            border: 1px solid rgba(196, 106, 106, 0.3);
+        }
+        .cup-cell-zero {
+            background: rgba(136, 136, 136, 0.1);
+            color: #666;
+            border: 1px solid rgba(136, 136, 136, 0.2);
+        }
+        .cup-cell-empty {
+            background: transparent;
+            color: #333;
+            border: 1px dashed #2a2a2a;
+        }
+
+        /* 合計スコア表示 */
+        .cup-total {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            padding: 10px;
+            background: #141414;
+            border-radius: 6px;
+            margin-top: 6px;
+        }
+        .cup-total-label {
+            font-size: 11px;
+            color: #555;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .cup-total-value {
+            font-size: 22px;
+            font-weight: bold;
+            font-variant-numeric: tabular-nums;
+        }
+        .cup-total-value.positive { color: #6a9e6a; }
+        .cup-total-value.negative { color: #c46a6a; }
+        .cup-total-value.zero     { color: #666; }
+
+        /* セクション間の区切り */
+        .cup-section + .cup-section {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #222;
+        }
+
+        /* 並び順コントロール */
+        .cup-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .cup-controls label {
+            font-size: 13px;
+            color: #666;
+        }
+        .cup-controls select {
+            background: #1a1a1a;
+            color: #bbb;
+            border: 1px solid #2a2a2a;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 13px;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .cup-controls select:hover,
+        .cup-controls select:focus {
+            border-color: #4a6a8a;
+        }
+
+        /* グリッドのスクロール対応 */
+        .cup-grid-wrapper {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">坂井麻雀店</h1>
+            <p class="site-subtitle">Sakai Mahjong Club</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="summer_cup.html" class="back-link">← SUMMER CUP トップへ</a>
+        <h1 class="page-title">☀️ SUMMER CUP 成績</h1>
+
+        <!-- コントロール -->
+        <div class="section">
+            <div class="cup-controls">
+                <label>並び順:</label>
+                <select id="sortBy" onchange="render()">
+                    <option value="best">ベスト区間スコアが高い順</option>
+                    <option value="latest">最新区間スコアが高い順</option>
+                    <option value="name">名前順</option>
+                </select>
+            </div>
+            <p style="font-size:12px; color:#555; margin:0;">
+                各プレイヤーの <span style="color:#7aa2d4;">最新8試合</span> と <span style="color:#e8c36a;">最大スコア8試合区間</span> を表示しています。
+            </p>
+        </div>
+
+        <!-- プレイヤーカード出力エリア -->
+        <div id="cup-container"></div>
+
+        <a href="summer_cup.html" class="back-link">← SUMMER CUP トップへ</a>
+    </div>
+
+    <script>
+    // ===== データ読み込み =====
+    // JSONファイルから動的に読み込む。失敗時はインラインデータをフォールバックとして使用。
+    const FALLBACK_DATA = {
+        "坂井":  [65.9, 9, 14.5, -20, 55.2, 40.9, 13.8, 60, 34.4, 28, 12.9, -20, -15.6, 30.9, 33.7, 57, 44, 38.4, 59.4],
+        "中江":  [49, -3.4, 56.3, 9.8],
+        "福原":  [52.9, 38.2, 36.7, -2.4, 17.3, 52.6, 68.1, 38.1, 7.4, -0.6, 66.9, 129, -2.3, 10.2, 13.3, 44.2, 36.6, -4.2, -18],
+        "遥平":  [1.3, 55, -16.9, 39.4, 39.4, -2.5, -6, 6.3, 35.2, 5.9, 12.5],
+        "高木":  [-20, -2.2, 65.7, 78, -11.9, 9, 36.4, 11.6, 67.3, 86.6, 42.3, -10, 68.9, 62.3, -3.3, -11, 54.7, 52.5, 11.7, -12.5],
+        "梶田":  [-18.3, -9.7, -9.1, -14, -20, 40.9],
+        "阿部":  [6.3, -5.4, 57.3, 73.7, 40.6]
+    };
+
+    const WINDOW = 8;
+    let cupData = null;
+
+    // ===== ユーティリティ関数 =====
+    function classify(v) {
+        if (v > 0) return 'cup-cell-plus';
+        if (v < 0) return 'cup-cell-minus';
+        return 'cup-cell-zero';
+    }
+
+    function fmt(v) {
+        return (v > 0 ? '+' : '') + v.toFixed(1);
+    }
+
+    function sum(arr) {
+        return arr.reduce((a, b) => a + b, 0);
+    }
+
+    // 最大スコア区間を探す
+    function findBestWindow(arr) {
+        if (arr.length === 0) return null;
+        const w = Math.min(WINDOW, arr.length);
+        let bestStart = 0;
+        let bestSum = -Infinity;
+        for (let i = 0; i <= arr.length - w; i++) {
+            const s = sum(arr.slice(i, i + w));
+            if (s > bestSum) {
+                bestSum = s;
+                bestStart = i;
+            }
+        }
+        return {
+            start: bestStart,
+            length: w,
+            sum: bestSum,
+            games: arr.slice(bestStart, bestStart + w)
+        };
+    }
+
+    // 最新8試合区間を取得
+    function getLatest(arr) {
+        if (arr.length === 0) return null;
+        const w = Math.min(WINDOW, arr.length);
+        const start = arr.length - w;
+        return {
+            start,
+            length: w,
+            sum: sum(arr.slice(start)),
+            games: arr.slice(start)
+        };
+    }
+
+    // ===== HTML生成 =====
+    function renderGrid(games, startIndex) {
+        const headers = [];
+        const cells = [];
+        for (let i = 0; i < WINDOW; i++) {
+            if (i < games.length) {
+                const v = games[i];
+                headers.push(`<th>G${startIndex + i + 1}</th>`);
+                cells.push(`<td class="${classify(v)}">${fmt(v)}</td>`);
+            } else {
+                headers.push(`<th>—</th>`);
+                cells.push(`<td class="cup-cell-empty">—</td>`);
+            }
+        }
+        return `
+            <div class="cup-grid-wrapper">
+                <table class="cup-grid">
+                    <thead><tr>${headers.join('')}</tr></thead>
+                    <tbody><tr>${cells.join('')}</tr></tbody>
+                </table>
+            </div>`;
+    }
+
+    function renderSection(title, info, cls, totalGames) {
+        if (!info) {
+            return `<div class="cup-section">
+                        <div class="cup-section-title ${cls}">${title}</div>
+                        <div class="cup-warning">データなし</div>
+                    </div>`;
+        }
+        const rangeFrom = info.start + 1;
+        const rangeTo   = info.start + info.length;
+        const warning   = info.length < WINDOW
+            ? `<div class="cup-warning">⚠ 全${totalGames}試合のみ（8試合未満）</div>`
+            : '';
+        const totalCls  = info.sum > 0 ? 'positive' : info.sum < 0 ? 'negative' : 'zero';
+
+        return `
+            <div class="cup-section">
+                <div class="cup-section-title ${cls}">${title}</div>
+                <div class="cup-range-info">Game ${rangeFrom} — Game ${rangeTo} &nbsp;·&nbsp; ${info.length} games</div>
+                ${warning}
+                ${renderGrid(info.games, info.start)}
+                <div class="cup-total">
+                    <span class="cup-total-label">Total</span>
+                    <span class="cup-total-value ${totalCls}">${fmt(info.sum)}</span>
+                </div>
+            </div>`;
+    }
+
+    function render() {
+        const sortBy = document.getElementById('sortBy').value;
+
+        const players = Object.keys(cupData).map(name => {
+            const arr = cupData[name];
+            return {
+                name,
+                arr,
+                latest: getLatest(arr),
+                best:   findBestWindow(arr)
+            };
+        });
+
+        players.sort((a, b) => {
+            if (sortBy === 'latest') return (b.latest?.sum ?? -Infinity) - (a.latest?.sum ?? -Infinity);
+            if (sortBy === 'best')   return (b.best?.sum   ?? -Infinity) - (a.best?.sum   ?? -Infinity);
+            return a.name.localeCompare(b.name, 'ja');
+        });
+
+        const html = players.map((p, idx) => {
+            const sameRange = p.latest && p.best
+                && p.latest.start  === p.best.start
+                && p.latest.length === p.best.length;
+
+            let sections;
+            if (sameRange) {
+                sections = renderSection('LATEST = BEST STREAK', p.latest, 'combo', p.arr.length);
+            } else {
+                sections = renderSection('LATEST STREAK', p.latest, 'latest', p.arr.length)
+                         + renderSection('BEST STREAK',   p.best,   'best',   p.arr.length);
+            }
+
+            // ベスト順で並んでいる場合は順位を表示
+            const rankBadge = sortBy === 'best'
+                ? `<span style="font-size:13px; color:#555; margin-right:8px;">${idx + 1}位</span>`
+                : '';
+
+            return `
+                <div class="cup-card">
+                    <div class="cup-card-header">
+                        <div style="display:flex; align-items:center;">
+                            ${rankBadge}
+                            <span class="cup-player-name">${p.name}</span>
+                        </div>
+                        <div class="cup-games-played">${p.arr.length} GAMES PLAYED</div>
+                    </div>
+                    ${sections}
+                </div>`;
+        }).join('');
+
+        document.getElementById('cup-container').innerHTML = html;
+    }
+
+    // ===== 初期化：JSONを fetch してからレンダリング =====
+    fetch('data/summer_cup.json')
+        .then(r => r.json())
+        .then(json => {
+            cupData = json;
+            render();
+        })
+        .catch(() => {
+            // フォールバック
+            cupData = FALLBACK_DATA;
+            render();
+        });
+    </script>
+</body>
+</html>
