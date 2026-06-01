@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-01T08:42:05",
+  "generated": "2026-06-01T09:15:12",
   "players": {
     "坂井": {
       "summary": {
@@ -23,12 +23,12 @@
       "agari": {
         "count": 198,
         "rate": 20.06,
-        "avgScore": 6544.44,
+        "avgScore": 5958.08,
         "avgTurn": 11.62,
         "byType": {
           "riichi": {
             "rate": 47.47,
-            "avgScore": 8531.91
+            "avgScore": 7296.81
           },
           "furo": {
             "rate": 44.95,
@@ -49,7 +49,7 @@
         "chaseRate": 21.74,
         "preemptiveRate": 78.26,
         "avgTurn": 9.0,
-        "income": 8936.170212765957,
+        "income": 7701.063829787234,
         "expense": 8047.368421052632,
         "ippatsuRate": 9.18,
         "dealInRate": 9.18
@@ -80,9 +80,9 @@
         "oyaKaburiAvgScore": 10373.0
       },
       "efficiency": {
-        "scoreEfficiency": 1312.81,
+        "scoreEfficiency": 1195.19,
         "scoreLoss": 793.87,
-        "adjustedEfficiency": 518.95,
+        "adjustedEfficiency": 401.32,
         "agariHoujuDiff": 7.29
       },
       "tobiRate": null
@@ -249,7 +249,7 @@
         "ryukyokuTenpaiRate": 36.57,
         "riichiRyukyokuRate": 16.85,
         "oyaKaburiRate": 54.55,
-        "oyaKaburiAvgScore": 12973.0
+        "oyaKaburiAvgScore": 9103.0
       },
       "efficiency": {
         "scoreEfficiency": 1588.75,
