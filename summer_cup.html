@@ -120,7 +120,7 @@
             margin: 16px 0;
         }
 
-        /* 賞品テーブル */
+        /* 賞品テーブル（旧／参考用に残置） */
         .cup-prize-table {
             width: 100%;
             border-collapse: collapse;
@@ -234,6 +234,234 @@
             margin-left: 8px;
             vertical-align: middle;
         }
+
+        /* ===== 景品解禁システム ===== */
+        .cup-unlock-progress {
+            background: #141414;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 16px 18px;
+            margin-bottom: 16px;
+        }
+        .cup-unlock-progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .cup-unlock-progress-label {
+            font-size: 11px;
+            color: #666;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .cup-unlock-progress-count {
+            font-size: 13px;
+            color: #bbb;
+        }
+        .cup-unlock-progress-count .num {
+            font-size: 22px;
+            font-weight: bold;
+            color: #e8c36a;
+            font-variant-numeric: tabular-nums;
+            margin-right: 2px;
+        }
+        .cup-unlock-progress-total {
+            font-size: 13px;
+            color: #999;
+        }
+        .cup-unlock-progress-total .amount {
+            color: #e8c36a;
+            font-weight: bold;
+        }
+        .cup-unlock-bar {
+            position: relative;
+            height: 8px;
+            background: #0a0a0a;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+        .cup-unlock-bar-fill {
+            position: absolute;
+            inset: 0 auto 0 0;
+            background: linear-gradient(90deg, #6a9e6a, #e8c36a);
+            border-radius: 4px;
+            transition: width 0.6s ease;
+        }
+
+        /* 解禁ライン一覧 */
+        .cup-unlock-list {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0;
+        }
+        .cup-unlock-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            border-radius: 6px;
+            margin-bottom: 6px;
+            border: 1px solid #1e1e1e;
+            background: #141414;
+            transition: opacity 0.3s, border-color 0.3s, background 0.3s;
+        }
+        /* 未解禁（暗く） */
+        .cup-unlock-item.locked {
+            opacity: 0.45;
+            filter: grayscale(0.6);
+        }
+        /* 解禁済（明るく） */
+        .cup-unlock-item.unlocked {
+            border-color: rgba(232, 195, 106, 0.4);
+            background: linear-gradient(135deg, #1a1505, #1a1a0a);
+        }
+        .cup-unlock-icon {
+            font-size: 22px;
+            flex-shrink: 0;
+            width: 32px;
+            text-align: center;
+        }
+        .cup-unlock-main {
+            flex: 1;
+            min-width: 0;
+        }
+        .cup-unlock-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #ddd;
+            margin-bottom: 2px;
+        }
+        .cup-unlock-item.unlocked .cup-unlock-name {
+            color: #e8c36a;
+        }
+        .cup-unlock-meta {
+            font-size: 11px;
+            color: #666;
+            letter-spacing: 1px;
+        }
+        .cup-unlock-status {
+            flex-shrink: 0;
+            text-align: right;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        .cup-unlock-status .unlocked-badge {
+            display: inline-block;
+            background: rgba(232, 195, 106, 0.15);
+            border: 1px solid rgba(232, 195, 106, 0.4);
+            color: #e8c36a;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .cup-unlock-status .remaining {
+            color: #888;
+        }
+        .cup-unlock-status .remaining .num {
+            color: #7aa2d4;
+            font-weight: bold;
+            font-size: 14px;
+            margin-right: 2px;
+        }
+
+        /* ===== 抽選システム説明 ===== */
+        .cup-lottery-info {
+            background: linear-gradient(135deg, #1a0d2a, #2a1530);
+            border: 1px solid rgba(192, 128, 208, 0.3);
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-top: 18px;
+        }
+        .cup-lottery-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .cup-lottery-icon {
+            font-size: 22px;
+        }
+        .cup-lottery-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #c080d0;
+            letter-spacing: 2px;
+        }
+        .cup-lottery-lead {
+            font-size: 13px;
+            color: #bbb;
+            line-height: 1.7;
+            margin: 0 0 14px;
+        }
+        .cup-lottery-lead .em {
+            color: #c080d0;
+            font-weight: bold;
+        }
+        .cup-lottery-rules {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 14px;
+        }
+        .cup-lottery-rules li {
+            display: flex;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 13px;
+            color: #bbb;
+            line-height: 1.6;
+            border-bottom: 1px dashed rgba(192, 128, 208, 0.15);
+        }
+        .cup-lottery-rules li:last-child {
+            border-bottom: none;
+        }
+        .cup-lottery-rules .rule-tag {
+            flex-shrink: 0;
+            display: inline-block;
+            background: rgba(192, 128, 208, 0.15);
+            border: 1px solid rgba(192, 128, 208, 0.3);
+            color: #c080d0;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            white-space: nowrap;
+            align-self: flex-start;
+            margin-top: 2px;
+        }
+        .cup-lottery-rules .rule-text strong {
+            color: #ddd;
+        }
+        .cup-lottery-rules .rule-text .accent {
+            color: #c080d0;
+            font-weight: bold;
+        }
+        .cup-lottery-example {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid #c080d0;
+            border-radius: 4px;
+            padding: 10px 14px;
+            font-size: 12px;
+            color: #999;
+            line-height: 1.7;
+        }
+        .cup-lottery-example .ex-title {
+            display: block;
+            font-size: 11px;
+            color: #c080d0;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+        .cup-lottery-example strong {
+            color: #ddd;
+        }
     </style>
 </head>
 <body>
@@ -325,47 +553,70 @@
                 <span>賞品・インセンティブ</span>
             </div>
 
-            <table class="cup-prize-table">
-                <thead>
-                    <tr>
-                        <th style="width:25%;">順位</th>
-                        <th>賞品</th>
-                        <th style="width:35%;">備考</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><span class="cup-prize-rank gold">🥇 優勝</span></td>
-                        <td><span class="cup-prize-amount">Amazonギフト券 5,000円〜</span></td>
-                        <td><span class="cup-prize-tbd">開催数により増額</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="cup-prize-rank silver">🥈 準優勝</span></td>
-                        <td><span class="cup-prize-amount cup-prize-tbd">検討中</span></td>
-                        <td><span class="cup-prize-tbd">開催数により決定</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="cup-prize-rank bronze">🥉 3位</span></td>
-                        <td><span class="cup-prize-amount cup-prize-tbd">検討中</span></td>
-                        <td><span class="cup-prize-tbd">開催数により決定</span></td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- 進捗バー -->
+            <div class="cup-unlock-progress">
+                <div class="cup-unlock-progress-header">
+                    <span class="cup-unlock-progress-label">⚡ 賞品プール育成中</span>
+                    <span class="cup-unlock-progress-count">
+                        <span class="num" id="totalHansoCount">—</span>半荘 プレイ中
+                    </span>
+                </div>
+                <div class="cup-unlock-progress-total">
+                    現在の累計景品額：<span class="amount" id="currentPrizeTotal">—</span>
+                </div>
+                <div class="cup-unlock-bar">
+                    <div class="cup-unlock-bar-fill" id="unlockBarFill" style="width:0%;"></div>
+                </div>
+            </div>
 
-            <p class="cup-prize-scale">
-                ⚡ 開催半荘数が増えるほど賞品グレードアップ予定！たくさん打ってプールを育てよう。
+            <!-- 解禁リスト -->
+            <ul class="cup-unlock-list" id="unlockList"></ul>
+
+            <p class="cup-prize-scale" style="margin-top:14px;">
+                ⚡ みんなが打てば打つほど賞品が増えていく仕組み！たくさん打ってプールを育てよう。<br>
+                <span style="font-size:11px; color:#555;">※ 半荘数カウントは坂井を除く全プレイヤーの合計です。</span>
             </p>
 
-            <!-- 参加賞バナー -->
-            <div class="cup-bonus-banner">
-                <div class="cup-bonus-icon">🎁</div>
-                <div>
-                    <div class="cup-bonus-title">参加賞</div>
-                    <div class="cup-bonus-desc">
-                        期間中に <strong>8半荘参加</strong> した方全員に、<strong>場代500円分サービス</strong>！<br>
-                        <span style="font-size:12px; color:#666;">まずは8半荘を目指して打ち続けよう。</span>
-                    </div>
+            <!-- 抽選システム説明 -->
+            <div class="cup-lottery-info">
+                <div class="cup-lottery-header">
+                    <span class="cup-lottery-icon">🎟️</span>
+                    <span class="cup-lottery-title">抽選景品について</span>
                 </div>
+                <p class="cup-lottery-lead">
+                    解禁された抽選景品は、入賞者を除いた全員を対象に <span class="em">参加半荘数に応じた口数</span> で抽選を行います。<br>
+                    <span class="em">打てば打つほど当選確率がアップ</span>。3位入賞を逃しても、最後までチャンスは残ります。
+                </p>
+
+                <ul class="cup-lottery-rules">
+                    <li>
+                        <span class="rule-tag">口数</span>
+                        <span class="rule-text">
+                            <strong>参加半荘数 ＝ 抽選口数</strong>。<br>
+                            たくさん打った人ほど <span class="accent">当たりやすい</span> 仕組みです。
+                        </span>
+                    </li>
+                    <li>
+                        <span class="rule-tag">除外①</span>
+                        <span class="rule-text">
+                            <strong>1位・2位・3位の入賞者</strong> は抽選対象から外れます。<br>
+                            （上位景品との <span class="accent">二重取りはなし</span>）
+                        </span>
+                    </li>
+                    <li>
+                        <span class="rule-tag">除外②</span>
+                        <span class="rule-text">
+                            <strong>店主・坂井</strong> は抽選対象外です。
+                        </span>
+                    </li>
+                    <li>
+                        <span class="rule-tag">除外③</span>
+                        <span class="rule-text">
+                            一度抽選で当選した人は、<span class="accent">以降の抽選から除外</span> されます。<br>
+                            （1人で抽選景品の総取りはなし。なるべく多くの人に行き渡る仕組み）
+                        </span>
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -388,5 +639,101 @@
 
         <a href="index.html" class="back-link">← トップに戻る</a>
     </div>
+
+    <script>
+    (function() {
+        // 解禁ライン定義
+        const UNLOCK_TIERS = [
+            { threshold:   0, icon: '🥇', name: '1位 アマゾンギフト券 10,000円分',         amount: 10000 },
+            { threshold:  45, icon: '🥈', name: '2位 アマゾンギフト券 5,000円分',          amount:  5000 },
+            { threshold:  80, icon: '🥉', name: '3位 アマゾンギフト券 3,000円分',          amount:  3000 },
+            { threshold: 110, icon: '🎟️', name: '抽選1本目 (アマゾンギフト券 3,000円分)', amount:  3000 },
+            { threshold: 130, icon: '🎟️', name: '抽選2本目 (アマゾンギフト券 3,000円分)', amount:  3000 },
+            { threshold: 150, icon: '🎟️', name: '抽選3本目 (アマゾンギフト券 3,000円分)', amount:  3000 },
+            { threshold: 200, icon: '🎟️', name: '抽選4本目 アマゾンギフト券 (Extra😎⚡)', amount:  3000 },
+        ];
+
+        const EXCLUDED_PLAYER = '坂井';
+
+        function formatYen(n) {
+            return '¥' + n.toLocaleString('ja-JP');
+        }
+
+        function countHanso(data) {
+            let total = 0;
+            for (const name in data) {
+                if (name === EXCLUDED_PLAYER) continue;
+                total += Array.isArray(data[name]) ? data[name].length : 0;
+            }
+            return total;
+        }
+
+        function renderUnlock(hansoCount) {
+            // 累計景品額（解禁済み分の合計）
+            let cumulative = 0;
+            for (const t of UNLOCK_TIERS) {
+                if (hansoCount >= t.threshold) cumulative += t.amount;
+            }
+
+            // 次の解禁ラインまでの進捗（バー用）
+            const nextTier = UNLOCK_TIERS.find(t => hansoCount < t.threshold);
+            let barPct;
+            if (!nextTier) {
+                barPct = 100;
+            } else {
+                const prevThreshold = [...UNLOCK_TIERS]
+                    .filter(t => hansoCount >= t.threshold)
+                    .map(t => t.threshold)
+                    .pop() ?? 0;
+                const span = nextTier.threshold - prevThreshold;
+                const done = hansoCount - prevThreshold;
+                barPct = span > 0 ? Math.max(0, Math.min(100, (done / span) * 100)) : 0;
+            }
+
+            // 上部表示
+            document.getElementById('totalHansoCount').textContent = hansoCount;
+            document.getElementById('currentPrizeTotal').textContent = formatYen(cumulative);
+            document.getElementById('unlockBarFill').style.width = barPct + '%';
+
+            // リスト
+            const html = UNLOCK_TIERS.map(t => {
+                const unlocked = hansoCount >= t.threshold;
+                const remaining = t.threshold - hansoCount;
+                const meta = t.threshold === 0
+                    ? '初期景品'
+                    : `解禁ライン：${t.threshold}半荘`;
+                const status = unlocked
+                    ? `<span class="unlocked-badge">✓ 解禁済</span>`
+                    : `<span class="remaining">あと <span class="num">${remaining}</span>半荘</span>`;
+                return `
+                    <li class="cup-unlock-item ${unlocked ? 'unlocked' : 'locked'}">
+                        <div class="cup-unlock-icon">${t.icon}</div>
+                        <div class="cup-unlock-main">
+                            <div class="cup-unlock-name">${t.name}</div>
+                            <div class="cup-unlock-meta">${meta}</div>
+                        </div>
+                        <div class="cup-unlock-status">${status}</div>
+                    </li>`;
+            }).join('');
+            document.getElementById('unlockList').innerHTML = html;
+        }
+
+        // フォールバック（fetchが失敗したとき用）
+        const FALLBACK_DATA = {
+            "坂井":  [65.9, 9, 14.5, -20, 55.2, 40.9, 13.8, 60, 34.4, 28, 12.9, -20, -15.6, 30.9, 33.7, 57, 44, 38.4, 59.4],
+            "中江":  [49, -3.4, 56.3, 9.8],
+            "福原":  [52.9, 38.2, 36.7, -2.4, 17.3, 52.6, 68.1, 38.1, 7.4, -0.6, 66.9, 129, -2.3, 10.2, 13.3, 44.2, 36.6, -4.2, -18],
+            "遥平":  [1.3, 55, -16.9, 39.4, 39.4, -2.5, -6, 6.3, 35.2, 5.9, 12.5],
+            "高木":  [-20, -2.2, 65.7, 78, -11.9, 9, 36.4, 11.6, 67.3, 86.6, 42.3, -10, 68.9, 62.3, -3.3, -11, 54.7, 52.5, 11.7, -12.5],
+            "梶田":  [-18.3, -9.7, -9.1, -14, -20, 40.9],
+            "阿部":  [6.3, -5.4, 57.3, 73.7, 40.6]
+        };
+
+        fetch('data/summer_cup.json')
+            .then(r => r.json())
+            .then(json => renderUnlock(countHanso(json)))
+            .catch(() => renderUnlock(countHanso(FALLBACK_DATA)));
+    })();
+    </script>
 </body>
 </html>
