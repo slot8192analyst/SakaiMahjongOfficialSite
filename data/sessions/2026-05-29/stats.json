@@ -1,347 +1,347 @@
 {
-  "generated": "2026-06-01T08:42:05",
+  "generated": "2026-06-01T08:56:40",
   "players": {
     "坂井": {
       "summary": {
-        "avgRank": 2.54,
-        "games": 93,
+        "avgRank": 2.8,
+        "games": 5,
         "ranks": {
-          "1st": 20,
-          "2nd": 25,
-          "3rd": 26,
-          "4th": 22
+          "1st": 1,
+          "2nd": 1,
+          "3rd": 1,
+          "4th": 2
         },
         "rates": {
-          "1st": 21.51,
-          "2nd": 26.88,
-          "3rd": 27.96,
-          "4th": 23.66,
-          "top2": 48.39,
-          "avoid4th": 76.34
+          "1st": 20.0,
+          "2nd": 20.0,
+          "3rd": 20.0,
+          "4th": 40.0,
+          "top2": 40.0,
+          "avoid4th": 60.0
         }
       },
       "agari": {
-        "count": 198,
-        "rate": 20.06,
-        "avgScore": 6544.44,
-        "avgTurn": 11.62,
+        "count": 11,
+        "rate": 22.92,
+        "avgScore": 17981.82,
+        "avgTurn": 12.73,
         "byType": {
           "riichi": {
-            "rate": 47.47,
-            "avgScore": 8531.91
+            "rate": 45.45,
+            "avgScore": 33360.0
           },
           "furo": {
-            "rate": 44.95,
-            "avgScore": 4811.24
+            "rate": 45.45,
+            "avgScore": 5100.0
           },
           "dama": {
-            "rate": 7.58,
-            "avgScore": 4373.33
+            "rate": 9.09,
+            "avgScore": 5500.0
           }
         },
-        "tsumoRate": 38.38
+        "tsumoRate": 45.45
       },
       "riichi": {
-        "count": 207,
-        "rate": 20.97,
-        "successRate": 45.41,
-        "winRate": 51.06,
-        "chaseRate": 21.74,
-        "preemptiveRate": 78.26,
-        "avgTurn": 9.0,
-        "income": 8936.170212765957,
-        "expense": 8047.368421052632,
-        "ippatsuRate": 9.18,
-        "dealInRate": 9.18
+        "count": 13,
+        "rate": 27.08,
+        "successRate": 38.46,
+        "winRate": 80.0,
+        "chaseRate": 15.38,
+        "preemptiveRate": 84.62,
+        "avgTurn": 8.46,
+        "income": 33760,
+        "expense": 13300,
+        "ippatsuRate": 15.38,
+        "dealInRate": 7.69
       },
       "furo": {
-        "rate": 32.83
+        "rate": 33.33
       },
       "houju": {
-        "count": 126,
-        "rate": 12.77,
-        "avgScore": 6216.67,
+        "count": 9,
+        "rate": 18.75,
+        "avgScore": 5455.56,
         "byTiming": {
-          "riichi": 15.08,
-          "furo": 35.71,
-          "other": 49.21
+          "riichi": 11.11,
+          "furo": 33.33,
+          "other": 55.56
         },
         "toTarget": {
-          "riichi": 46.03,
-          "furo": 42.86,
+          "riichi": 22.22,
+          "furo": 66.67,
           "dama": 11.11
         }
       },
       "other": {
-        "tenpaiRate": 34.25,
-        "ryukyokuTenpaiRate": 41.62,
-        "riichiRyukyokuRate": 21.57,
-        "oyaKaburiRate": 52.0,
-        "oyaKaburiAvgScore": 10373.0
+        "tenpaiRate": 41.67,
+        "ryukyokuTenpaiRate": 66.67,
+        "riichiRyukyokuRate": 23.08,
+        "oyaKaburiRate": 75.0,
+        "oyaKaburiAvgScore": 10667.0
       },
       "efficiency": {
-        "scoreEfficiency": 1312.81,
-        "scoreLoss": 793.87,
-        "adjustedEfficiency": 518.95,
-        "agariHoujuDiff": 7.29
+        "scoreEfficiency": 4121.43,
+        "scoreLoss": 1022.92,
+        "adjustedEfficiency": 3098.52,
+        "agariHoujuDiff": 4.17
       },
       "tobiRate": null
     },
     "中江": {
       "summary": {
-        "avgRank": 2.5,
-        "games": 44,
+        "avgRank": 0.0,
+        "games": 0,
         "ranks": {
-          "1st": 9,
-          "2nd": 13,
-          "3rd": 13,
-          "4th": 9
+          "1st": 0,
+          "2nd": 0,
+          "3rd": 0,
+          "4th": 0
         },
         "rates": {
-          "1st": 20.45,
-          "2nd": 29.55,
-          "3rd": 29.55,
-          "4th": 20.45,
-          "top2": 50.0,
-          "avoid4th": 79.55
+          "1st": 0.0,
+          "2nd": 0.0,
+          "3rd": 0.0,
+          "4th": 0.0,
+          "top2": 0.0,
+          "avoid4th": 0.0
         }
       },
       "agari": {
-        "count": 103,
-        "rate": 21.82,
-        "avgScore": 5606.8,
-        "avgTurn": 12.01,
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
+        "avgTurn": 0.0,
         "byType": {
           "riichi": {
-            "rate": 43.69,
-            "avgScore": 7373.33
+            "rate": 0.0,
+            "avgScore": 0.0
           },
           "furo": {
-            "rate": 41.75,
-            "avgScore": 4172.09
-          },
-          "dama": {
-            "rate": 14.56,
-            "avgScore": 4420.0
-          }
-        },
-        "tsumoRate": 40.78
-      },
-      "riichi": {
-        "count": 96,
-        "rate": 20.34,
-        "successRate": 46.88,
-        "winRate": 51.11,
-        "chaseRate": 20.83,
-        "preemptiveRate": 79.17,
-        "avgTurn": 9.09,
-        "income": 7684.444444444444,
-        "expense": 7766.666666666667,
-        "ippatsuRate": 8.33,
-        "dealInRate": 6.25
-      },
-      "furo": {
-        "rate": 28.81
-      },
-      "houju": {
-        "count": 57,
-        "rate": 12.08,
-        "avgScore": 4833.33,
-        "byTiming": {
-          "riichi": 10.53,
-          "furo": 38.6,
-          "other": 50.88
-        },
-        "toTarget": {
-          "riichi": 35.09,
-          "furo": 61.4,
-          "dama": 3.51
-        }
-      },
-      "other": {
-        "tenpaiRate": 35.59,
-        "ryukyokuTenpaiRate": 45.16,
-        "riichiRyukyokuRate": 29.17,
-        "oyaKaburiRate": 44.83,
-        "oyaKaburiAvgScore": 8400.0
-      },
-      "efficiency": {
-        "scoreEfficiency": 1223.4,
-        "scoreLoss": 583.87,
-        "adjustedEfficiency": 639.54,
-        "agariHoujuDiff": 9.74
-      },
-      "tobiRate": null
-    },
-    "福原": {
-      "summary": {
-        "avgRank": 2.16,
-        "games": 75,
-        "ranks": {
-          "1st": 26,
-          "2nd": 20,
-          "3rd": 20,
-          "4th": 9
-        },
-        "rates": {
-          "1st": 34.67,
-          "2nd": 26.67,
-          "3rd": 26.67,
-          "4th": 12.0,
-          "top2": 61.33,
-          "avoid4th": 88.0
-        }
-      },
-      "agari": {
-        "count": 195,
-        "rate": 23.78,
-        "avgScore": 6681.03,
-        "avgTurn": 12.04,
-        "byType": {
-          "riichi": {
-            "rate": 48.21,
-            "avgScore": 8404.26
-          },
-          "furo": {
-            "rate": 40.0,
-            "avgScore": 4196.15
-          },
-          "dama": {
-            "rate": 11.79,
-            "avgScore": 8065.22
-          }
-        },
-        "tsumoRate": 35.9
-      },
-      "riichi": {
-        "count": 178,
-        "rate": 21.71,
-        "successRate": 52.81,
-        "winRate": 45.74,
-        "chaseRate": 22.47,
-        "preemptiveRate": 77.53,
-        "avgTurn": 9.21,
-        "income": 8776.595744680852,
-        "expense": 6664.705882352941,
-        "ippatsuRate": 12.92,
-        "dealInRate": 9.55
-      },
-      "furo": {
-        "rate": 26.71
-      },
-      "houju": {
-        "count": 78,
-        "rate": 9.51,
-        "avgScore": 4833.33,
-        "byTiming": {
-          "riichi": 21.79,
-          "furo": 19.23,
-          "other": 58.97
-        },
-        "toTarget": {
-          "riichi": 43.59,
-          "furo": 46.15,
-          "dama": 10.26
-        }
-      },
-      "other": {
-        "tenpaiRate": 36.46,
-        "ryukyokuTenpaiRate": 36.57,
-        "riichiRyukyokuRate": 16.85,
-        "oyaKaburiRate": 54.55,
-        "oyaKaburiAvgScore": 12973.0
-      },
-      "efficiency": {
-        "scoreEfficiency": 1588.75,
-        "scoreLoss": 459.65,
-        "adjustedEfficiency": 1129.1,
-        "agariHoujuDiff": 14.27
-      },
-      "tobiRate": null
-    },
-    "遥平": {
-      "summary": {
-        "avgRank": 2.82,
-        "games": 17,
-        "ranks": {
-          "1st": 2,
-          "2nd": 4,
-          "3rd": 6,
-          "4th": 5
-        },
-        "rates": {
-          "1st": 11.76,
-          "2nd": 23.53,
-          "3rd": 35.29,
-          "4th": 29.41,
-          "top2": 35.29,
-          "avoid4th": 70.59
-        }
-      },
-      "agari": {
-        "count": 35,
-        "rate": 19.55,
-        "avgScore": 5674.29,
-        "avgTurn": 11.37,
-        "byType": {
-          "riichi": {
-            "rate": 57.14,
-            "avgScore": 7065.0
-          },
-          "furo": {
-            "rate": 42.86,
-            "avgScore": 3820.0
+            "rate": 0.0,
+            "avgScore": 0.0
           },
           "dama": {
             "rate": 0.0,
             "avgScore": 0.0
           }
         },
-        "tsumoRate": 37.14
+        "tsumoRate": 0.0
       },
       "riichi": {
-        "count": 46,
-        "rate": 25.7,
-        "successRate": 43.48,
-        "winRate": 50.0,
-        "chaseRate": 23.91,
-        "preemptiveRate": 76.09,
-        "avgTurn": 8.59,
-        "income": 7415,
-        "expense": 7720,
-        "ippatsuRate": 6.52,
-        "dealInRate": 10.87
+        "count": 0,
+        "rate": 0.0,
+        "successRate": 0.0,
+        "winRate": 0.0,
+        "chaseRate": 0.0,
+        "preemptiveRate": 0.0,
+        "avgTurn": 0.0,
+        "income": 0,
+        "expense": 0,
+        "ippatsuRate": 0.0,
+        "dealInRate": 0.0
       },
       "furo": {
-        "rate": 34.64
+        "rate": 0.0
       },
       "houju": {
-        "count": 25,
-        "rate": 13.97,
-        "avgScore": 5644.0,
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
         "byTiming": {
-          "riichi": 20.0,
-          "furo": 56.0,
-          "other": 24.0
+          "riichi": 0.0,
+          "furo": 0.0,
+          "other": 0.0
         },
         "toTarget": {
-          "riichi": 64.0,
-          "furo": 28.0,
-          "dama": 8.0
+          "riichi": 0.0,
+          "furo": 0.0,
+          "dama": 0.0
         }
       },
       "other": {
-        "tenpaiRate": 37.43,
-        "ryukyokuTenpaiRate": 44.12,
-        "riichiRyukyokuRate": 19.57,
-        "oyaKaburiRate": 50.0,
-        "oyaKaburiAvgScore": 10075.0
+        "tenpaiRate": 0.0,
+        "ryukyokuTenpaiRate": 0.0,
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
       },
       "efficiency": {
-        "scoreEfficiency": 1109.32,
-        "scoreLoss": 788.47,
-        "adjustedEfficiency": 320.86,
-        "agariHoujuDiff": 5.58
+        "scoreEfficiency": 0.0,
+        "scoreLoss": 0.0,
+        "adjustedEfficiency": 0.0,
+        "agariHoujuDiff": 0.0
+      },
+      "tobiRate": null
+    },
+    "福原": {
+      "summary": {
+        "avgRank": 1.2,
+        "games": 5,
+        "ranks": {
+          "1st": 4,
+          "2nd": 1,
+          "3rd": 0,
+          "4th": 0
+        },
+        "rates": {
+          "1st": 80.0,
+          "2nd": 20.0,
+          "3rd": 0.0,
+          "4th": 0.0,
+          "top2": 100.0,
+          "avoid4th": 100.0
+        }
+      },
+      "agari": {
+        "count": 15,
+        "rate": 27.27,
+        "avgScore": 8153.33,
+        "avgTurn": 12.6,
+        "byType": {
+          "riichi": {
+            "rate": 60.0,
+            "avgScore": 10144.44
+          },
+          "furo": {
+            "rate": 33.33,
+            "avgScore": 5360.0
+          },
+          "dama": {
+            "rate": 6.67,
+            "avgScore": 4200.0
+          }
+        },
+        "tsumoRate": 46.67
+      },
+      "riichi": {
+        "count": 13,
+        "rate": 23.64,
+        "successRate": 69.23,
+        "winRate": 66.67,
+        "chaseRate": 15.38,
+        "preemptiveRate": 84.62,
+        "avgTurn": 9.92,
+        "income": 10255.555555555555,
+        "expense": 0,
+        "ippatsuRate": 23.08,
+        "dealInRate": 0.0
+      },
+      "furo": {
+        "rate": 25.45
+      },
+      "houju": {
+        "count": 2,
+        "rate": 3.64,
+        "avgScore": 3750.0,
+        "byTiming": {
+          "riichi": 0.0,
+          "furo": 0.0,
+          "other": 100.0
+        },
+        "toTarget": {
+          "riichi": 50.0,
+          "furo": 50.0,
+          "dama": 0.0
+        }
+      },
+      "other": {
+        "tenpaiRate": 40.0,
+        "ryukyokuTenpaiRate": 42.86,
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 42.86,
+        "oyaKaburiAvgScore": 48333.0
+      },
+      "efficiency": {
+        "scoreEfficiency": 2223.41,
+        "scoreLoss": 136.5,
+        "adjustedEfficiency": 2086.91,
+        "agariHoujuDiff": 23.63
+      },
+      "tobiRate": null
+    },
+    "遥平": {
+      "summary": {
+        "avgRank": 0.0,
+        "games": 0,
+        "ranks": {
+          "1st": 0,
+          "2nd": 0,
+          "3rd": 0,
+          "4th": 0
+        },
+        "rates": {
+          "1st": 0.0,
+          "2nd": 0.0,
+          "3rd": 0.0,
+          "4th": 0.0,
+          "top2": 0.0,
+          "avoid4th": 0.0
+        }
+      },
+      "agari": {
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
+        "avgTurn": 0.0,
+        "byType": {
+          "riichi": {
+            "rate": 0.0,
+            "avgScore": 0.0
+          },
+          "furo": {
+            "rate": 0.0,
+            "avgScore": 0.0
+          },
+          "dama": {
+            "rate": 0.0,
+            "avgScore": 0.0
+          }
+        },
+        "tsumoRate": 0.0
+      },
+      "riichi": {
+        "count": 0,
+        "rate": 0.0,
+        "successRate": 0.0,
+        "winRate": 0.0,
+        "chaseRate": 0.0,
+        "preemptiveRate": 0.0,
+        "avgTurn": 0.0,
+        "income": 0,
+        "expense": 0,
+        "ippatsuRate": 0.0,
+        "dealInRate": 0.0
+      },
+      "furo": {
+        "rate": 0.0
+      },
+      "houju": {
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
+        "byTiming": {
+          "riichi": 0.0,
+          "furo": 0.0,
+          "other": 0.0
+        },
+        "toTarget": {
+          "riichi": 0.0,
+          "furo": 0.0,
+          "dama": 0.0
+        }
+      },
+      "other": {
+        "tenpaiRate": 0.0,
+        "ryukyokuTenpaiRate": 0.0,
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
+      },
+      "efficiency": {
+        "scoreEfficiency": 0.0,
+        "scoreLoss": 0.0,
+        "adjustedEfficiency": 0.0,
+        "agariHoujuDiff": 0.0
       },
       "tobiRate": null
     },
@@ -433,173 +433,173 @@
     },
     "高木": {
       "summary": {
-        "avgRank": 2.41,
-        "games": 100,
+        "avgRank": 2.67,
+        "games": 6,
         "ranks": {
-          "1st": 34,
-          "2nd": 17,
-          "3rd": 23,
-          "4th": 26
+          "1st": 1,
+          "2nd": 1,
+          "3rd": 3,
+          "4th": 1
         },
         "rates": {
-          "1st": 34.0,
-          "2nd": 17.0,
-          "3rd": 23.0,
-          "4th": 26.0,
-          "top2": 51.0,
-          "avoid4th": 74.0
+          "1st": 16.67,
+          "2nd": 16.67,
+          "3rd": 50.0,
+          "4th": 16.67,
+          "top2": 33.33,
+          "avoid4th": 83.33
         }
       },
       "agari": {
-        "count": 245,
-        "rate": 22.98,
-        "avgScore": 6511.43,
-        "avgTurn": 11.62,
+        "count": 17,
+        "rate": 29.31,
+        "avgScore": 5576.47,
+        "avgTurn": 10.65,
         "byType": {
           "riichi": {
-            "rate": 43.67,
-            "avgScore": 7858.88
+            "rate": 23.53,
+            "avgScore": 7825.0
           },
           "furo": {
-            "rate": 48.16,
-            "avgScore": 5139.83
+            "rate": 70.59,
+            "avgScore": 4966.67
           },
           "dama": {
-            "rate": 8.16,
-            "avgScore": 7395.0
+            "rate": 5.88,
+            "avgScore": 3900.0
           }
         },
-        "tsumoRate": 40.41
+        "tsumoRate": 47.06
       },
       "riichi": {
-        "count": 236,
-        "rate": 22.14,
-        "successRate": 45.34,
-        "winRate": 41.12,
-        "chaseRate": 21.19,
-        "preemptiveRate": 78.81,
-        "avgTurn": 9.31,
-        "income": 8176.6355140186915,
-        "expense": 6464,
-        "ippatsuRate": 13.56,
-        "dealInRate": 10.59
+        "count": 8,
+        "rate": 13.79,
+        "successRate": 50.0,
+        "winRate": 75.0,
+        "chaseRate": 12.5,
+        "preemptiveRate": 87.5,
+        "avgTurn": 10.12,
+        "income": 8075,
+        "expense": 3300,
+        "ippatsuRate": 0.0,
+        "dealInRate": 12.5
       },
       "furo": {
-        "rate": 27.11
+        "rate": 44.83
       },
       "houju": {
-        "count": 122,
-        "rate": 11.44,
-        "avgScore": 5426.23,
+        "count": 5,
+        "rate": 8.62,
+        "avgScore": 5380.0,
         "byTiming": {
-          "riichi": 19.67,
-          "furo": 31.15,
-          "other": 49.18
+          "riichi": 20.0,
+          "furo": 20.0,
+          "other": 60.0
         },
         "toTarget": {
-          "riichi": 40.16,
-          "furo": 45.9,
-          "dama": 13.93
+          "riichi": 20.0,
+          "furo": 60.0,
+          "dama": 20.0
         }
       },
       "other": {
-        "tenpaiRate": 37.43,
-        "ryukyokuTenpaiRate": 40.0,
-        "riichiRyukyokuRate": 23.31,
-        "oyaKaburiRate": 42.11,
-        "oyaKaburiAvgScore": 9392.0
+        "tenpaiRate": 36.21,
+        "ryukyokuTenpaiRate": 0.0,
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 100.0,
+        "oyaKaburiAvgScore": 10000.0
       },
       "efficiency": {
-        "scoreEfficiency": 1496.33,
-        "scoreLoss": 620.76,
-        "adjustedEfficiency": 875.57,
-        "agariHoujuDiff": 11.54
+        "scoreEfficiency": 1634.46,
+        "scoreLoss": 463.76,
+        "adjustedEfficiency": 1170.71,
+        "agariHoujuDiff": 20.69
       },
       "tobiRate": null
     },
     "志村": {
       "summary": {
-        "avgRank": 2.52,
-        "games": 44,
+        "avgRank": 2.0,
+        "games": 2,
         "ranks": {
-          "1st": 8,
-          "2nd": 16,
-          "3rd": 9,
-          "4th": 11
+          "1st": 0,
+          "2nd": 2,
+          "3rd": 0,
+          "4th": 0
         },
         "rates": {
-          "1st": 18.18,
-          "2nd": 36.36,
-          "3rd": 20.45,
-          "4th": 25.0,
-          "top2": 54.55,
-          "avoid4th": 75.0
+          "1st": 0.0,
+          "2nd": 100.0,
+          "3rd": 0.0,
+          "4th": 0.0,
+          "top2": 100.0,
+          "avoid4th": 100.0
         }
       },
       "agari": {
-        "count": 86,
-        "rate": 19.15,
-        "avgScore": 7295.35,
-        "avgTurn": 11.64,
+        "count": 3,
+        "rate": 23.08,
+        "avgScore": 6400.0,
+        "avgTurn": 12.0,
         "byType": {
           "riichi": {
-            "rate": 67.44,
-            "avgScore": 8422.41
+            "rate": 66.67,
+            "avgScore": 6600.0
           },
           "furo": {
-            "rate": 32.56,
-            "avgScore": 4960.71
+            "rate": 33.33,
+            "avgScore": 6000.0
           },
           "dama": {
             "rate": 0.0,
             "avgScore": 0.0
           }
         },
-        "tsumoRate": 46.51
+        "tsumoRate": 33.33
       },
       "riichi": {
-        "count": 99,
-        "rate": 22.05,
-        "successRate": 58.59,
-        "winRate": 53.45,
-        "chaseRate": 18.18,
-        "preemptiveRate": 81.82,
-        "avgTurn": 8.43,
-        "income": 8732.758620689656,
-        "expense": 7210,
-        "ippatsuRate": 10.1,
-        "dealInRate": 10.1
+        "count": 2,
+        "rate": 15.38,
+        "successRate": 100.0,
+        "winRate": 0.0,
+        "chaseRate": 0.0,
+        "preemptiveRate": 100.0,
+        "avgTurn": 7.0,
+        "income": 6600,
+        "expense": 0,
+        "ippatsuRate": 0.0,
+        "dealInRate": 0.0
       },
       "furo": {
-        "rate": 25.17
+        "rate": 23.08
       },
       "houju": {
-        "count": 65,
-        "rate": 14.48,
-        "avgScore": 5926.15,
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
         "byTiming": {
-          "riichi": 15.38,
-          "furo": 29.23,
-          "other": 55.38
+          "riichi": 0.0,
+          "furo": 0.0,
+          "other": 0.0
         },
         "toTarget": {
-          "riichi": 44.62,
-          "furo": 47.69,
-          "dama": 7.69
+          "riichi": 0.0,
+          "furo": 0.0,
+          "dama": 0.0
         }
       },
       "other": {
-        "tenpaiRate": 29.4,
-        "ryukyokuTenpaiRate": 28.57,
-        "riichiRyukyokuRate": 18.18,
-        "oyaKaburiRate": 56.25,
-        "oyaKaburiAvgScore": 12833.0
+        "tenpaiRate": 23.08,
+        "ryukyokuTenpaiRate": 0.0,
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 100.0,
+        "oyaKaburiAvgScore": 10150.0
       },
       "efficiency": {
-        "scoreEfficiency": 1397.06,
-        "scoreLoss": 858.11,
-        "adjustedEfficiency": 538.95,
-        "agariHoujuDiff": 4.67
+        "scoreEfficiency": 1477.12,
+        "scoreLoss": 0.0,
+        "adjustedEfficiency": 1477.12,
+        "agariHoujuDiff": 23.08
       },
       "tobiRate": null
     },
@@ -1035,87 +1035,87 @@
     },
     "梶田": {
       "summary": {
-        "avgRank": 3.24,
-        "games": 21,
+        "avgRank": 0.0,
+        "games": 0,
         "ranks": {
-          "1st": 2,
-          "2nd": 4,
-          "3rd": 2,
-          "4th": 13
+          "1st": 0,
+          "2nd": 0,
+          "3rd": 0,
+          "4th": 0
         },
         "rates": {
-          "1st": 9.52,
-          "2nd": 19.05,
-          "3rd": 9.52,
-          "4th": 61.9,
-          "top2": 28.57,
-          "avoid4th": 38.1
+          "1st": 0.0,
+          "2nd": 0.0,
+          "3rd": 0.0,
+          "4th": 0.0,
+          "top2": 0.0,
+          "avoid4th": 0.0
         }
       },
       "agari": {
-        "count": 27,
-        "rate": 12.11,
-        "avgScore": 5914.81,
-        "avgTurn": 11.81,
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
+        "avgTurn": 0.0,
         "byType": {
           "riichi": {
-            "rate": 66.67,
-            "avgScore": 6611.11
+            "rate": 0.0,
+            "avgScore": 0.0
           },
           "furo": {
-            "rate": 25.93,
-            "avgScore": 5157.14
+            "rate": 0.0,
+            "avgScore": 0.0
           },
           "dama": {
-            "rate": 7.41,
-            "avgScore": 2300.0
+            "rate": 0.0,
+            "avgScore": 0.0
           }
         },
-        "tsumoRate": 29.63
+        "tsumoRate": 0.0
       },
       "riichi": {
-        "count": 36,
-        "rate": 16.14,
-        "successRate": 50.0,
-        "winRate": 38.89,
-        "chaseRate": 19.44,
-        "preemptiveRate": 80.56,
-        "avgTurn": 8.72,
-        "income": 6833.333333333333,
-        "expense": 13000,
-        "ippatsuRate": 8.33,
-        "dealInRate": 2.78
+        "count": 0,
+        "rate": 0.0,
+        "successRate": 0.0,
+        "winRate": 0.0,
+        "chaseRate": 0.0,
+        "preemptiveRate": 0.0,
+        "avgTurn": 0.0,
+        "income": 0,
+        "expense": 0,
+        "ippatsuRate": 0.0,
+        "dealInRate": 0.0
       },
       "furo": {
-        "rate": 18.39
+        "rate": 0.0
       },
       "houju": {
-        "count": 35,
-        "rate": 15.7,
-        "avgScore": 6048.57,
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
         "byTiming": {
-          "riichi": 2.86,
-          "furo": 11.43,
-          "other": 85.71
+          "riichi": 0.0,
+          "furo": 0.0,
+          "other": 0.0
         },
         "toTarget": {
-          "riichi": 45.71,
-          "furo": 34.29,
-          "dama": 20.0
+          "riichi": 0.0,
+          "furo": 0.0,
+          "dama": 0.0
         }
       },
       "other": {
-        "tenpaiRate": 22.42,
-        "ryukyokuTenpaiRate": 28.57,
-        "riichiRyukyokuRate": 13.89,
-        "oyaKaburiRate": 69.23,
-        "oyaKaburiAvgScore": 10356.0
+        "tenpaiRate": 0.0,
+        "ryukyokuTenpaiRate": 0.0,
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
       },
       "efficiency": {
-        "scoreEfficiency": 716.28,
-        "scoreLoss": 949.63,
-        "adjustedEfficiency": -233.34,
-        "agariHoujuDiff": -3.59
+        "scoreEfficiency": 0.0,
+        "scoreLoss": 0.0,
+        "adjustedEfficiency": 0.0,
+        "agariHoujuDiff": 0.0
       },
       "tobiRate": null
     },
@@ -1207,286 +1207,28 @@
     },
     "杉崎": {
       "summary": {
-        "avgRank": 3.5,
-        "games": 4,
-        "ranks": {
-          "1st": 0,
-          "2nd": 1,
-          "3rd": 0,
-          "4th": 3
-        },
-        "rates": {
-          "1st": 0.0,
-          "2nd": 25.0,
-          "3rd": 0.0,
-          "4th": 75.0,
-          "top2": 25.0,
-          "avoid4th": 25.0
-        }
-      },
-      "agari": {
-        "count": 4,
-        "rate": 10.81,
-        "avgScore": 7000.0,
-        "avgTurn": 12.5,
-        "byType": {
-          "riichi": {
-            "rate": 75.0,
-            "avgScore": 7333.33
-          },
-          "furo": {
-            "rate": 25.0,
-            "avgScore": 6000.0
-          },
-          "dama": {
-            "rate": 0.0,
-            "avgScore": 0.0
-          }
-        },
-        "tsumoRate": 50.0
-      },
-      "riichi": {
-        "count": 8,
-        "rate": 21.62,
-        "successRate": 37.5,
-        "winRate": 33.33,
-        "chaseRate": 12.5,
-        "preemptiveRate": 87.5,
-        "avgTurn": 10.0,
-        "income": 7666.666666666667,
-        "expense": 3750,
-        "ippatsuRate": 12.5,
-        "dealInRate": 25.0
-      },
-      "furo": {
-        "rate": 16.22
-      },
-      "houju": {
-        "count": 4,
-        "rate": 10.81,
-        "avgScore": 7375.0,
-        "byTiming": {
-          "riichi": 50.0,
-          "furo": 25.0,
-          "other": 25.0
-        },
-        "toTarget": {
-          "riichi": 50.0,
-          "furo": 50.0,
-          "dama": 0.0
-        }
-      },
-      "other": {
-        "tenpaiRate": 24.32,
-        "ryukyokuTenpaiRate": 16.67,
-        "riichiRyukyokuRate": 12.5,
-        "oyaKaburiRate": 100.0,
-        "oyaKaburiAvgScore": 8150.0
-      },
-      "efficiency": {
-        "scoreEfficiency": null,
-        "scoreLoss": null,
-        "adjustedEfficiency": null,
-        "agariHoujuDiff": null
-      },
-      "tobiRate": null
-    },
-    "横塚": {
-      "summary": {
-        "avgRank": 2.5,
-        "games": 14,
-        "ranks": {
-          "1st": 4,
-          "2nd": 3,
-          "3rd": 3,
-          "4th": 4
-        },
-        "rates": {
-          "1st": 28.57,
-          "2nd": 21.43,
-          "3rd": 21.43,
-          "4th": 28.57,
-          "top2": 50.0,
-          "avoid4th": 71.43
-        }
-      },
-      "agari": {
-        "count": 19,
-        "rate": 13.19,
-        "avgScore": 8694.74,
-        "avgTurn": 12.63,
-        "byType": {
-          "riichi": {
-            "rate": 63.16,
-            "avgScore": 8283.33
-          },
-          "furo": {
-            "rate": 26.32,
-            "avgScore": 9160.0
-          },
-          "dama": {
-            "rate": 10.53,
-            "avgScore": 10000.0
-          }
-        },
-        "tsumoRate": 26.32
-      },
-      "riichi": {
-        "count": 29,
-        "rate": 20.14,
-        "successRate": 41.38,
-        "winRate": 33.33,
-        "chaseRate": 24.14,
-        "preemptiveRate": 75.86,
-        "avgTurn": 8.62,
-        "income": 8783.333333333334,
-        "expense": 8700,
-        "ippatsuRate": 10.34,
-        "dealInRate": 3.45
-      },
-      "furo": {
-        "rate": 16.67
-      },
-      "houju": {
-        "count": 16,
-        "rate": 11.11,
-        "avgScore": 4756.25,
-        "byTiming": {
-          "riichi": 6.25,
-          "furo": 25.0,
-          "other": 68.75
-        },
-        "toTarget": {
-          "riichi": 25.0,
-          "furo": 62.5,
-          "dama": 12.5
-        }
-      },
-      "other": {
-        "tenpaiRate": 26.39,
-        "ryukyokuTenpaiRate": 28.57,
-        "riichiRyukyokuRate": 27.59,
-        "oyaKaburiRate": 50.0,
-        "oyaKaburiAvgScore": 10150.0
-      },
-      "efficiency": {
-        "scoreEfficiency": 1146.84,
-        "scoreLoss": 528.42,
-        "adjustedEfficiency": 618.42,
-        "agariHoujuDiff": 2.08
-      },
-      "tobiRate": null
-    },
-    "安達": {
-      "summary": {
-        "avgRank": 3.5,
-        "games": 2,
+        "avgRank": 0.0,
+        "games": 0,
         "ranks": {
           "1st": 0,
           "2nd": 0,
-          "3rd": 1,
-          "4th": 1
+          "3rd": 0,
+          "4th": 0
         },
         "rates": {
           "1st": 0.0,
           "2nd": 0.0,
-          "3rd": 50.0,
-          "4th": 50.0,
-          "top2": 0.0,
-          "avoid4th": 50.0
-        }
-      },
-      "agari": {
-        "count": 5,
-        "rate": 20.0,
-        "avgScore": 4000.0,
-        "avgTurn": 13.8,
-        "byType": {
-          "riichi": {
-            "rate": 40.0,
-            "avgScore": 4100.0
-          },
-          "furo": {
-            "rate": 20.0,
-            "avgScore": 2100.0
-          },
-          "dama": {
-            "rate": 40.0,
-            "avgScore": 4850.0
-          }
-        },
-        "tsumoRate": 40.0
-      },
-      "riichi": {
-        "count": 3,
-        "rate": 12.0,
-        "successRate": 66.67,
-        "winRate": 100.0,
-        "chaseRate": 0.0,
-        "preemptiveRate": 100.0,
-        "avgTurn": 8.67,
-        "income": 4100,
-        "expense": 0,
-        "ippatsuRate": 0.0,
-        "dealInRate": 0.0
-      },
-      "furo": {
-        "rate": 12.0
-      },
-      "houju": {
-        "count": 3,
-        "rate": 12.0,
-        "avgScore": 8666.67,
-        "byTiming": {
-          "riichi": 0.0,
-          "furo": 33.33,
-          "other": 66.67
-        },
-        "toTarget": {
-          "riichi": 33.33,
-          "furo": 66.67,
-          "dama": 0.0
-        }
-      },
-      "other": {
-        "tenpaiRate": 28.0,
-        "ryukyokuTenpaiRate": 33.33,
-        "riichiRyukyokuRate": 33.33,
-        "oyaKaburiRate": 0.0,
-        "oyaKaburiAvgScore": 0.0
-      },
-      "efficiency": {
-        "scoreEfficiency": 800.0,
-        "scoreLoss": 1040.0,
-        "adjustedEfficiency": -240.0,
-        "agariHoujuDiff": 8.0
-      },
-      "tobiRate": null
-    },
-    "怜磨": {
-      "summary": {
-        "avgRank": 3.33,
-        "games": 3,
-        "ranks": {
-          "1st": 0,
-          "2nd": 1,
-          "3rd": 0,
-          "4th": 2
-        },
-        "rates": {
-          "1st": 0.0,
-          "2nd": 33.33,
           "3rd": 0.0,
-          "4th": 66.67,
-          "top2": 33.33,
-          "avoid4th": 33.33
+          "4th": 0.0,
+          "top2": 0.0,
+          "avoid4th": 0.0
         }
       },
       "agari": {
-        "count": 5,
-        "rate": 18.52,
+        "count": 0,
+        "rate": 0.0,
         "avgScore": 0.0,
-        "avgTurn": 15.0,
+        "avgTurn": 0.0,
         "byType": {
           "riichi": {
             "rate": 0.0,
@@ -1501,7 +1243,7 @@
             "avgScore": 0.0
           }
         },
-        "tsumoRate": 20.0
+        "tsumoRate": 0.0
       },
       "riichi": {
         "count": 0,
@@ -1520,18 +1262,104 @@
         "rate": 0.0
       },
       "houju": {
-        "count": 10,
-        "rate": 37.04,
-        "avgScore": 7770.0,
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
         "byTiming": {
           "riichi": 0.0,
           "furo": 0.0,
-          "other": 100.0
+          "other": 0.0
         },
         "toTarget": {
-          "riichi": 50.0,
-          "furo": 40.0,
-          "dama": 10.0
+          "riichi": 0.0,
+          "furo": 0.0,
+          "dama": 0.0
+        }
+      },
+      "other": {
+        "tenpaiRate": 0.0,
+        "ryukyokuTenpaiRate": 0.0,
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
+      },
+      "efficiency": {
+        "scoreEfficiency": null,
+        "scoreLoss": null,
+        "adjustedEfficiency": null,
+        "agariHoujuDiff": null
+      },
+      "tobiRate": null
+    },
+    "横塚": {
+      "summary": {
+        "avgRank": 0.0,
+        "games": 0,
+        "ranks": {
+          "1st": 0,
+          "2nd": 0,
+          "3rd": 0,
+          "4th": 0
+        },
+        "rates": {
+          "1st": 0.0,
+          "2nd": 0.0,
+          "3rd": 0.0,
+          "4th": 0.0,
+          "top2": 0.0,
+          "avoid4th": 0.0
+        }
+      },
+      "agari": {
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
+        "avgTurn": 0.0,
+        "byType": {
+          "riichi": {
+            "rate": 0.0,
+            "avgScore": 0.0
+          },
+          "furo": {
+            "rate": 0.0,
+            "avgScore": 0.0
+          },
+          "dama": {
+            "rate": 0.0,
+            "avgScore": 0.0
+          }
+        },
+        "tsumoRate": 0.0
+      },
+      "riichi": {
+        "count": 0,
+        "rate": 0.0,
+        "successRate": 0.0,
+        "winRate": 0.0,
+        "chaseRate": 0.0,
+        "preemptiveRate": 0.0,
+        "avgTurn": 0.0,
+        "income": 0,
+        "expense": 0,
+        "ippatsuRate": 0.0,
+        "dealInRate": 0.0
+      },
+      "furo": {
+        "rate": 0.0
+      },
+      "houju": {
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
+        "byTiming": {
+          "riichi": 0.0,
+          "furo": 0.0,
+          "other": 0.0
+        },
+        "toTarget": {
+          "riichi": 0.0,
+          "furo": 0.0,
+          "dama": 0.0
         }
       },
       "other": {
@@ -1543,267 +1371,439 @@
       },
       "efficiency": {
         "scoreEfficiency": 0.0,
-        "scoreLoss": 2878.01,
-        "adjustedEfficiency": -2878.01,
-        "agariHoujuDiff": -18.52
+        "scoreLoss": 0.0,
+        "adjustedEfficiency": 0.0,
+        "agariHoujuDiff": 0.0
       },
       "tobiRate": null
     },
-    "渡邉": {
+    "安達": {
       "summary": {
-        "avgRank": 2.5,
-        "games": 2,
+        "avgRank": 0.0,
+        "games": 0,
         "ranks": {
           "1st": 0,
-          "2nd": 1,
-          "3rd": 1,
+          "2nd": 0,
+          "3rd": 0,
           "4th": 0
         },
         "rates": {
           "1st": 0.0,
-          "2nd": 50.0,
-          "3rd": 50.0,
+          "2nd": 0.0,
+          "3rd": 0.0,
           "4th": 0.0,
-          "top2": 50.0,
-          "avoid4th": 100.0
+          "top2": 0.0,
+          "avoid4th": 0.0
         }
       },
       "agari": {
-        "count": 2,
-        "rate": 9.09,
-        "avgScore": 6600.0,
-        "avgTurn": 10.5,
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
+        "avgTurn": 0.0,
         "byType": {
           "riichi": {
             "rate": 0.0,
             "avgScore": 0.0
           },
           "furo": {
-            "rate": 50.0,
-            "avgScore": 5200.0
+            "rate": 0.0,
+            "avgScore": 0.0
           },
           "dama": {
-            "rate": 50.0,
-            "avgScore": 8000.0
+            "rate": 0.0,
+            "avgScore": 0.0
           }
         },
         "tsumoRate": 0.0
       },
       "riichi": {
-        "count": 2,
-        "rate": 9.09,
+        "count": 0,
+        "rate": 0.0,
         "successRate": 0.0,
         "winRate": 0.0,
-        "chaseRate": 50.0,
-        "preemptiveRate": 50.0,
-        "avgTurn": 10.0,
+        "chaseRate": 0.0,
+        "preemptiveRate": 0.0,
+        "avgTurn": 0.0,
         "income": 0,
         "expense": 0,
         "ippatsuRate": 0.0,
         "dealInRate": 0.0
       },
       "furo": {
-        "rate": 13.64
+        "rate": 0.0
       },
       "houju": {
-        "count": 3,
-        "rate": 13.64,
-        "avgScore": 7933.33,
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
         "byTiming": {
           "riichi": 0.0,
           "furo": 0.0,
-          "other": 100.0
+          "other": 0.0
         },
         "toTarget": {
-          "riichi": 33.33,
-          "furo": 66.67,
+          "riichi": 0.0,
+          "furo": 0.0,
           "dama": 0.0
         }
       },
       "other": {
-        "tenpaiRate": 22.73,
-        "ryukyokuTenpaiRate": 28.57,
-        "riichiRyukyokuRate": 50.0,
+        "tenpaiRate": 0.0,
+        "ryukyokuTenpaiRate": 0.0,
+        "riichiRyukyokuRate": 0.0,
         "oyaKaburiRate": 0.0,
         "oyaKaburiAvgScore": 0.0
       },
       "efficiency": {
-        "scoreEfficiency": 599.94,
-        "scoreLoss": 1082.11,
-        "adjustedEfficiency": -482.17,
-        "agariHoujuDiff": -4.55
+        "scoreEfficiency": 0.0,
+        "scoreLoss": 0.0,
+        "adjustedEfficiency": 0.0,
+        "agariHoujuDiff": 0.0
+      },
+      "tobiRate": null
+    },
+    "怜磨": {
+      "summary": {
+        "avgRank": 0.0,
+        "games": 0,
+        "ranks": {
+          "1st": 0,
+          "2nd": 0,
+          "3rd": 0,
+          "4th": 0
+        },
+        "rates": {
+          "1st": 0.0,
+          "2nd": 0.0,
+          "3rd": 0.0,
+          "4th": 0.0,
+          "top2": 0.0,
+          "avoid4th": 0.0
+        }
+      },
+      "agari": {
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
+        "avgTurn": 0.0,
+        "byType": {
+          "riichi": {
+            "rate": 0.0,
+            "avgScore": 0.0
+          },
+          "furo": {
+            "rate": 0.0,
+            "avgScore": 0.0
+          },
+          "dama": {
+            "rate": 0.0,
+            "avgScore": 0.0
+          }
+        },
+        "tsumoRate": 0.0
+      },
+      "riichi": {
+        "count": 0,
+        "rate": 0.0,
+        "successRate": 0.0,
+        "winRate": 0.0,
+        "chaseRate": 0.0,
+        "preemptiveRate": 0.0,
+        "avgTurn": 0.0,
+        "income": 0,
+        "expense": 0,
+        "ippatsuRate": 0.0,
+        "dealInRate": 0.0
+      },
+      "furo": {
+        "rate": 0.0
+      },
+      "houju": {
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
+        "byTiming": {
+          "riichi": 0.0,
+          "furo": 0.0,
+          "other": 0.0
+        },
+        "toTarget": {
+          "riichi": 0.0,
+          "furo": 0.0,
+          "dama": 0.0
+        }
+      },
+      "other": {
+        "tenpaiRate": 0.0,
+        "ryukyokuTenpaiRate": 0.0,
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
+      },
+      "efficiency": {
+        "scoreEfficiency": 0.0,
+        "scoreLoss": 0.0,
+        "adjustedEfficiency": 0.0,
+        "agariHoujuDiff": 0.0
+      },
+      "tobiRate": null
+    },
+    "渡邉": {
+      "summary": {
+        "avgRank": 0.0,
+        "games": 0,
+        "ranks": {
+          "1st": 0,
+          "2nd": 0,
+          "3rd": 0,
+          "4th": 0
+        },
+        "rates": {
+          "1st": 0.0,
+          "2nd": 0.0,
+          "3rd": 0.0,
+          "4th": 0.0,
+          "top2": 0.0,
+          "avoid4th": 0.0
+        }
+      },
+      "agari": {
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
+        "avgTurn": 0.0,
+        "byType": {
+          "riichi": {
+            "rate": 0.0,
+            "avgScore": 0.0
+          },
+          "furo": {
+            "rate": 0.0,
+            "avgScore": 0.0
+          },
+          "dama": {
+            "rate": 0.0,
+            "avgScore": 0.0
+          }
+        },
+        "tsumoRate": 0.0
+      },
+      "riichi": {
+        "count": 0,
+        "rate": 0.0,
+        "successRate": 0.0,
+        "winRate": 0.0,
+        "chaseRate": 0.0,
+        "preemptiveRate": 0.0,
+        "avgTurn": 0.0,
+        "income": 0,
+        "expense": 0,
+        "ippatsuRate": 0.0,
+        "dealInRate": 0.0
+      },
+      "furo": {
+        "rate": 0.0
+      },
+      "houju": {
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
+        "byTiming": {
+          "riichi": 0.0,
+          "furo": 0.0,
+          "other": 0.0
+        },
+        "toTarget": {
+          "riichi": 0.0,
+          "furo": 0.0,
+          "dama": 0.0
+        }
+      },
+      "other": {
+        "tenpaiRate": 0.0,
+        "ryukyokuTenpaiRate": 0.0,
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
+      },
+      "efficiency": {
+        "scoreEfficiency": 0.0,
+        "scoreLoss": 0.0,
+        "adjustedEfficiency": 0.0,
+        "agariHoujuDiff": 0.0
       },
       "tobiRate": null
     },
     "安井": {
       "summary": {
-        "avgRank": 2.4,
-        "games": 10,
+        "avgRank": 0.0,
+        "games": 0,
         "ranks": {
-          "1st": 3,
-          "2nd": 2,
-          "3rd": 3,
-          "4th": 2
+          "1st": 0,
+          "2nd": 0,
+          "3rd": 0,
+          "4th": 0
         },
         "rates": {
-          "1st": 30.0,
-          "2nd": 20.0,
-          "3rd": 30.0,
-          "4th": 20.0,
-          "top2": 50.0,
-          "avoid4th": 80.0
+          "1st": 0.0,
+          "2nd": 0.0,
+          "3rd": 0.0,
+          "4th": 0.0,
+          "top2": 0.0,
+          "avoid4th": 0.0
         }
       },
       "agari": {
-        "count": 19,
-        "rate": 17.43,
-        "avgScore": 7236.84,
-        "avgTurn": 12.16,
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
+        "avgTurn": 0.0,
         "byType": {
           "riichi": {
-            "rate": 42.11,
-            "avgScore": 10512.5
+            "rate": 0.0,
+            "avgScore": 0.0
           },
           "furo": {
-            "rate": 52.63,
-            "avgScore": 5230.0
+            "rate": 0.0,
+            "avgScore": 0.0
           },
           "dama": {
-            "rate": 5.26,
-            "avgScore": 1100.0
+            "rate": 0.0,
+            "avgScore": 0.0
           }
         },
-        "tsumoRate": 47.37
+        "tsumoRate": 0.0
       },
       "riichi": {
-        "count": 24,
-        "rate": 22.02,
-        "successRate": 33.33,
-        "winRate": 25.0,
-        "chaseRate": 45.83,
-        "preemptiveRate": 54.17,
-        "avgTurn": 9.88,
-        "income": 11012.5,
-        "expense": 8400,
+        "count": 0,
+        "rate": 0.0,
+        "successRate": 0.0,
+        "winRate": 0.0,
+        "chaseRate": 0.0,
+        "preemptiveRate": 0.0,
+        "avgTurn": 0.0,
+        "income": 0,
+        "expense": 0,
         "ippatsuRate": 0.0,
-        "dealInRate": 16.67
+        "dealInRate": 0.0
       },
       "furo": {
-        "rate": 24.77
+        "rate": 0.0
       },
       "houju": {
-        "count": 11,
-        "rate": 10.09,
-        "avgScore": 6254.55,
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
         "byTiming": {
-          "riichi": 36.36,
-          "furo": 27.27,
-          "other": 36.36
+          "riichi": 0.0,
+          "furo": 0.0,
+          "other": 0.0
         },
         "toTarget": {
-          "riichi": 63.64,
-          "furo": 27.27,
-          "dama": 9.09
+          "riichi": 0.0,
+          "furo": 0.0,
+          "dama": 0.0
         }
       },
       "other": {
-        "tenpaiRate": 36.7,
-        "ryukyokuTenpaiRate": 63.16,
-        "riichiRyukyokuRate": 29.17,
-        "oyaKaburiRate": 40.0,
-        "oyaKaburiAvgScore": 20150.0
+        "tenpaiRate": 0.0,
+        "ryukyokuTenpaiRate": 0.0,
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
       },
       "efficiency": {
-        "scoreEfficiency": 1261.38,
-        "scoreLoss": 631.08,
-        "adjustedEfficiency": 630.3,
-        "agariHoujuDiff": 7.34
+        "scoreEfficiency": 0.0,
+        "scoreLoss": 0.0,
+        "adjustedEfficiency": 0.0,
+        "agariHoujuDiff": 0.0
       },
       "tobiRate": null
     },
     "阿部": {
       "summary": {
-        "avgRank": 2.2,
-        "games": 5,
+        "avgRank": 0.0,
+        "games": 0,
         "ranks": {
-          "1st": 2,
-          "2nd": 1,
-          "3rd": 1,
-          "4th": 1
+          "1st": 0,
+          "2nd": 0,
+          "3rd": 0,
+          "4th": 0
         },
         "rates": {
-          "1st": 40.0,
-          "2nd": 20.0,
-          "3rd": 20.0,
-          "4th": 20.0,
-          "top2": 60.0,
-          "avoid4th": 80.0
+          "1st": 0.0,
+          "2nd": 0.0,
+          "3rd": 0.0,
+          "4th": 0.0,
+          "top2": 0.0,
+          "avoid4th": 0.0
         }
       },
       "agari": {
-        "count": 11,
-        "rate": 19.64,
-        "avgScore": 7281.82,
-        "avgTurn": 12.55,
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
+        "avgTurn": 0.0,
         "byType": {
           "riichi": {
-            "rate": 63.64,
-            "avgScore": 9071.43
+            "rate": 0.0,
+            "avgScore": 0.0
           },
           "furo": {
-            "rate": 18.18,
-            "avgScore": 6000.0
+            "rate": 0.0,
+            "avgScore": 0.0
           },
           "dama": {
-            "rate": 18.18,
-            "avgScore": 2300.0
+            "rate": 0.0,
+            "avgScore": 0.0
           }
         },
-        "tsumoRate": 45.45
+        "tsumoRate": 0.0
       },
       "riichi": {
-        "count": 14,
-        "rate": 25.0,
-        "successRate": 50.0,
-        "winRate": 42.86,
-        "chaseRate": 14.29,
-        "preemptiveRate": 85.71,
-        "avgTurn": 8.86,
-        "income": 9642.857142857143,
-        "expense": 3000,
-        "ippatsuRate": 28.57,
-        "dealInRate": 7.14
+        "count": 0,
+        "rate": 0.0,
+        "successRate": 0.0,
+        "winRate": 0.0,
+        "chaseRate": 0.0,
+        "preemptiveRate": 0.0,
+        "avgTurn": 0.0,
+        "income": 0,
+        "expense": 0,
+        "ippatsuRate": 0.0,
+        "dealInRate": 0.0
       },
       "furo": {
-        "rate": 21.43
+        "rate": 0.0
       },
       "houju": {
-        "count": 10,
-        "rate": 17.86,
-        "avgScore": 3030.0,
+        "count": 0,
+        "rate": 0.0,
+        "avgScore": 0.0,
         "byTiming": {
-          "riichi": 10.0,
-          "furo": 30.0,
-          "other": 60.0
+          "riichi": 0.0,
+          "furo": 0.0,
+          "other": 0.0
         },
         "toTarget": {
-          "riichi": 30.0,
-          "furo": 60.0,
-          "dama": 10.0
+          "riichi": 0.0,
+          "furo": 0.0,
+          "dama": 0.0
         }
       },
       "other": {
-        "tenpaiRate": 33.93,
-        "ryukyokuTenpaiRate": 45.45,
-        "riichiRyukyokuRate": 28.57,
-        "oyaKaburiRate": 100.0,
-        "oyaKaburiAvgScore": 12600.0
+        "tenpaiRate": 0.0,
+        "ryukyokuTenpaiRate": 0.0,
+        "riichiRyukyokuRate": 0.0,
+        "oyaKaburiRate": 0.0,
+        "oyaKaburiAvgScore": 0.0
       },
       "efficiency": {
-        "scoreEfficiency": 1430.15,
-        "scoreLoss": 541.16,
-        "adjustedEfficiency": 888.99,
-        "agariHoujuDiff": 1.78
+        "scoreEfficiency": 0.0,
+        "scoreLoss": 0.0,
+        "adjustedEfficiency": 0.0,
+        "agariHoujuDiff": 0.0
       },
       "tobiRate": null
     },
