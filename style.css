@@ -1772,3 +1772,87 @@ a:hover {
         font-size: 10px;
     }
 }
+
+/* ========== SUMMER CUP 成績ページ - スマホ対応 ========== */
+/* HTML側の<style>に書かれている .cup-* クラスのスマホ向け上書き。
+   8列のスコアグリッドがスマホ縦画面で窮屈になる問題を解消する。 */
+@media (max-width: 600px) {
+    .cup-card {
+        padding: 14px 10px;
+    }
+
+    .cup-card-header {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .cup-player-name {
+        font-size: 17px;
+        letter-spacing: 0.5px;
+    }
+
+    .cup-games-played {
+        font-size: 11px;
+    }
+
+    .cup-grid {
+        border-spacing: 2px;
+    }
+
+    .cup-grid th {
+        font-size: 9px;
+        padding: 2px 0;
+        letter-spacing: 0;
+    }
+
+    .cup-grid td {
+        padding: 8px 1px;
+        font-size: 11px;
+        letter-spacing: -0.5px;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .cup-total {
+        padding: 8px;
+    }
+
+    .cup-total-label {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .cup-total-value {
+        font-size: 19px;
+    }
+
+    .cup-section + .cup-section {
+        margin-top: 12px;
+        padding-top: 12px;
+    }
+}
+
+/* さらに狭い端末（iPhone SE 等、横幅380px以下）向け */
+@media (max-width: 380px) {
+    .cup-card {
+        padding: 12px 8px;
+    }
+
+    .cup-grid {
+        border-spacing: 1px;
+    }
+
+    .cup-grid th {
+        font-size: 8px;
+    }
+
+    .cup-grid td {
+        font-size: 10px;
+        padding: 7px 0;
+    }
+
+    .cup-total-value {
+        font-size: 17px;
+    }
+}
