@@ -1,0 +1,179 @@
+{
+  "date": "2026-06-19",
+  "players": [
+    "福原",
+    "高木",
+    "坂井",
+    "大村",
+    "志村",
+    "中江"
+  ],
+  "games": [
+    {
+      "round": 1,
+      "results": [
+        {
+          "player": "坂井",
+          "point": 81.8
+        },
+        {
+          "player": "福原",
+          "point": -4.2
+        },
+        {
+          "player": "大村",
+          "point": -25.1
+        },
+        {
+          "player": "高木",
+          "point": -52.5
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "results": [
+        {
+          "player": "高木",
+          "point": 50.6
+        },
+        {
+          "player": "大村",
+          "point": 12.5
+        },
+        {
+          "player": "福原",
+          "point": -19.1
+        },
+        {
+          "player": "坂井",
+          "point": -44.5
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "results": [
+        {
+          "player": "大村",
+          "point": 60.9
+        },
+        {
+          "player": "志村",
+          "point": 4.7
+        },
+        {
+          "player": "高木",
+          "point": -23.1
+        },
+        {
+          "player": "福原",
+          "point": -42.5
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "results": [
+        {
+          "player": "志村",
+          "point": 49.3
+        },
+        {
+          "player": "中江",
+          "point": 15.1
+        },
+        {
+          "player": "大村",
+          "point": -14.1
+        },
+        {
+          "player": "坂井",
+          "point": -50.3
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "results": [
+        {
+          "player": "坂井",
+          "point": 44.6
+        },
+        {
+          "player": "志村",
+          "point": 5.5
+        },
+        {
+          "player": "福原",
+          "point": -19.6
+        },
+        {
+          "player": "高木",
+          "point": -30.5
+        }
+      ]
+    },
+    {
+      "round": "祝儀",
+      "results": [
+        {
+          "player": "坂井",
+          "point": 7.0
+        },
+        {
+          "player": "中江",
+          "point": 2.0
+        },
+        {
+          "player": "志村",
+          "point": 2.0
+        },
+        {
+          "player": "大村",
+          "point": 2.0
+        },
+        {
+          "player": "高木",
+          "point": -1.0
+        },
+        {
+          "player": "福原",
+          "point": -14.0
+        }
+      ]
+    }
+  ],
+  "totals": [
+    {
+      "player": "福原",
+      "point": -85.4,
+      "income": -3962
+    },
+    {
+      "player": "高木",
+      "point": -55.5,
+      "income": -1765
+    },
+    {
+      "player": "坂井",
+      "point": 31.6,
+      "income": 1648
+    },
+    {
+      "player": "大村",
+      "point": 34.2,
+      "income": 1226
+    },
+    {
+      "player": "志村",
+      "point": 59.5,
+      "income": 1985
+    },
+    {
+      "player": "中江",
+      "point": 15.1,
+      "income": 653
+    }
+  ]
+}
