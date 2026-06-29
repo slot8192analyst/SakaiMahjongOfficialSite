@@ -1,0 +1,75 @@
+{
+  "date": "2026-06-26",
+  "players": [
+    "梶田",
+    "志村",
+    "福原",
+    "平野"
+  ],
+  "games": [
+    {
+      "round": 1,
+      "results": [
+        {
+          "player": "志村",
+          "point": 54.9
+        },
+        {
+          "player": "福原",
+          "point": 9.0
+        },
+        {
+          "player": "平野",
+          "point": -18.8
+        },
+        {
+          "player": "梶田",
+          "point": -45.1
+        }
+      ]
+    },
+    {
+      "round": "祝儀",
+      "results": [
+        {
+          "player": "志村",
+          "point": 3.0
+        },
+        {
+          "player": "平野",
+          "point": 1.0
+        },
+        {
+          "player": "福原",
+          "point": -2.0
+        },
+        {
+          "player": "梶田",
+          "point": -2.0
+        }
+      ]
+    }
+  ],
+  "totals": [
+    {
+      "player": "梶田",
+      "point": -45.1,
+      "income": -571
+    },
+    {
+      "player": "志村",
+      "point": 54.9,
+      "income": 639
+    },
+    {
+      "player": "福原",
+      "point": 9.0,
+      "income": 30
+    },
+    {
+      "player": "平野",
+      "point": -18.8,
+      "income": -158
+    }
+  ]
+}
