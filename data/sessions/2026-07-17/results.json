@@ -1,0 +1,138 @@
+{
+  "date": "2026-07-17",
+  "players": [
+    "高木",
+    "中江",
+    "福原",
+    "坂井"
+  ],
+  "games": [
+    {
+      "round": 1,
+      "results": [
+        {
+          "player": "福原",
+          "point": 59.0
+        },
+        {
+          "player": "高木",
+          "point": 9.8
+        },
+        {
+          "player": "中江",
+          "point": -25.6
+        },
+        {
+          "player": "坂井",
+          "point": -43.2
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "results": [
+        {
+          "player": "坂井",
+          "point": 59.3
+        },
+        {
+          "player": "高木",
+          "point": 2.9
+        },
+        {
+          "player": "中江",
+          "point": -25.2
+        },
+        {
+          "player": "福原",
+          "point": -37.0
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "results": [
+        {
+          "player": "福原",
+          "point": 58.3
+        },
+        {
+          "player": "高木",
+          "point": 7.9
+        },
+        {
+          "player": "中江",
+          "point": -27.6
+        },
+        {
+          "player": "坂井",
+          "point": -38.6
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "results": [
+        {
+          "player": "中江",
+          "point": 49.5
+        },
+        {
+          "player": "高木",
+          "point": 2.4
+        },
+        {
+          "player": "坂井",
+          "point": -19.7
+        },
+        {
+          "player": "福原",
+          "point": -32.2
+        }
+      ]
+    },
+    {
+      "round": "祝儀",
+      "results": [
+        {
+          "player": "福原",
+          "point": 11.0
+        },
+        {
+          "player": "高木",
+          "point": 2.0
+        },
+        {
+          "player": "中江",
+          "point": -3.0
+        },
+        {
+          "player": "坂井",
+          "point": -10.0
+        }
+      ]
+    }
+  ],
+  "totals": [
+    {
+      "player": "高木",
+      "point": 23.0,
+      "income": 1425
+    },
+    {
+      "player": "中江",
+      "point": -28.9,
+      "income": -1895
+    },
+    {
+      "player": "福原",
+      "point": 48.1,
+      "income": 4055
+    },
+    {
+      "player": "坂井",
+      "point": -42.2,
+      "income": -3610
+    }
+  ]
+}
