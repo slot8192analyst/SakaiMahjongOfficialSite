@@ -1,0 +1,211 @@
+{
+  "date": "2026-09-11",
+  "players": [
+    "高木",
+    "中江",
+    "坂井",
+    "怜磨",
+    "志村"
+  ],
+  "games": [
+    {
+      "round": 1,
+      "results": [
+        {
+          "player": "坂井",
+          "point": 57.6
+        },
+        {
+          "player": "中江",
+          "point": 12.7
+        },
+        {
+          "player": "高木",
+          "point": -21.2
+        },
+        {
+          "player": "怜磨",
+          "point": -49.1
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "results": [
+        {
+          "player": "中江",
+          "point": 53.3
+        },
+        {
+          "player": "高木",
+          "point": 21.0
+        },
+        {
+          "player": "怜磨",
+          "point": -19.2
+        },
+        {
+          "player": "坂井",
+          "point": -55.1
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "results": [
+        {
+          "player": "高木",
+          "point": 48.4
+        },
+        {
+          "player": "坂井",
+          "point": 7.4
+        },
+        {
+          "player": "中江",
+          "point": -18.9
+        },
+        {
+          "player": "怜磨",
+          "point": -36.9
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "results": [
+        {
+          "player": "中江",
+          "point": 51.9
+        },
+        {
+          "player": "怜磨",
+          "point": 21.8
+        },
+        {
+          "player": "高木",
+          "point": -18.6
+        },
+        {
+          "player": "志村",
+          "point": -55.1
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "results": [
+        {
+          "player": "怜磨",
+          "point": 44.4
+        },
+        {
+          "player": "中江",
+          "point": 8.8
+        },
+        {
+          "player": "高木",
+          "point": -17.3
+        },
+        {
+          "player": "志村",
+          "point": -35.9
+        }
+      ]
+    },
+    {
+      "round": 6,
+      "results": [
+        {
+          "player": "坂井",
+          "point": 79.7
+        },
+        {
+          "player": "高木",
+          "point": 1.9
+        },
+        {
+          "player": "怜磨",
+          "point": -21.1
+        },
+        {
+          "player": "志村",
+          "point": -60.5
+        }
+      ]
+    },
+    {
+      "round": 7,
+      "results": [
+        {
+          "player": "高木",
+          "point": 50.7
+        },
+        {
+          "player": "志村",
+          "point": 14.1
+        },
+        {
+          "player": "怜磨",
+          "point": -7.2
+        },
+        {
+          "player": "坂井",
+          "point": -57.6
+        }
+      ]
+    },
+    {
+      "round": "祝儀",
+      "results": [
+        {
+          "player": "怜磨",
+          "point": 10.0
+        },
+        {
+          "player": "坂井",
+          "point": 3.0
+        },
+        {
+          "player": "中江",
+          "point": 2.0
+        },
+        {
+          "player": "高木",
+          "point": -6.0
+        },
+        {
+          "player": "志村",
+          "point": -9.0
+        }
+      ]
+    }
+  ],
+  "totals": [
+    {
+      "player": "高木",
+      "point": 64.9,
+      "income": 2345
+    },
+    {
+      "player": "中江",
+      "point": 107.8,
+      "income": 5690
+    },
+    {
+      "player": "坂井",
+      "point": 32.0,
+      "income": 2050
+    },
+    {
+      "player": "怜磨",
+      "point": -67.3,
+      "income": -1865
+    },
+    {
+      "player": "志村",
+      "point": -137.4,
+      "income": -8220
+    }
+  ]
+}
