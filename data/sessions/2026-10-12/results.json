@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-12",
+  "players": [
+    "志村",
+    "坂井",
+    "高木",
+    "怜磨"
+  ],
+  "games": [
+    {
+      "round": 1,
+      "results": [
+        {
+          "player": "怜磨",
+          "point": 51.5
+        },
+        {
+          "player": "志村",
+          "point": 10.8
+        },
+        {
+          "player": "高木",
+          "point": -10.9
+        },
+        {
+          "player": "坂井",
+          "point": -51.4
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "results": [
+        {
+          "player": "坂井",
+          "point": 72.5
+        },
+        {
+          "player": "志村",
+          "point": 3.8
+        },
+        {
+          "player": "高木",
+          "point": -27.5
+        },
+        {
+          "player": "怜磨",
+          "point": -58.0
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "results": [
+        {
+          "player": "怜磨",
+          "point": 60.6
+        },
+        {
+          "player": "高木",
+          "point": 7.3
+        },
+        {
+          "player": "志村",
+          "point": -17.1
+        },
+        {
+          "player": "坂井",
+          "point": -50.8
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "results": [
+        {
+          "player": "坂井",
+          "point": 58.7
+        },
+        {
+          "player": "怜磨",
+          "point": 10.5
+        },
+        {
+          "player": "高木",
+          "point": -25.0
+        },
+        {
+          "player": "志村",
+          "point": -44.2
+        }
+      ]
+    },
+    {
+      "round": "祝儀",
+      "results": [
+        {
+          "player": "坂井",
+          "point": 6.0
+        },
+        {
+          "player": "志村",
+          "point": 6.0
+        },
+        {
+          "player": "高木",
+          "point": 1.0
+        },
+        {
+          "player": "怜磨",
+          "point": -13.0
+        }
+      ]
+    }
+  ],
+  "totals": [
+    {
+      "player": "志村",
+      "point": -46.7,
+      "income": -1435
+    },
+    {
+      "player": "坂井",
+      "point": 29.0,
+      "income": 2960
+    },
+    {
+      "player": "高木",
+      "point": -56.1,
+      "income": -2655
+    },
+    {
+      "player": "怜磨",
+      "point": 64.6,
+      "income": 1280
+    }
+  ]
+}
